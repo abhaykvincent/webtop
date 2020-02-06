@@ -1,8 +1,21 @@
 $(document).ready(function () {
-    //hiding all main screens
-    $(section).hide();
+    //////////////////////
+    // GLOBAL VARIABLES //
+    //////////////////////
+    var accounts=[{
+        name: "Abhay Vincent",
+        type:"admin",
+        image: "profile1"
+    },{
+        name: "Guest",
+        type:"guest",
+        image: "guest"
+    },];
 
 
     //showing accounts screen
-    $(section).show();
+    $(".accounts-screen").show();
+
+    $(".accountName").text(accounts[0].name);
+    console.log(accounts[0].name)
 });
