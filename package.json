@@ -1,0 +1,23 @@
+{
+  "name": "Webtop",
+  "version": "1.0.0",
+  "description": "Webtop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhaykvincent/webtop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abhaykvincent/webtop/issues"
+  },
+  "homepage": "https://github.com/abhaykvincent/webtop#readme",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
