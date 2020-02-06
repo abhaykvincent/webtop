@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap");
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -5,6 +6,10 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+* {
+  font-family: 'Quicksand', sans-serif;
+}
+
 html {
   line-height: 1.15;
   /* 1 */
@@ -357,11 +362,15 @@ section.accounts-screen {
 
 section.accounts-screen .accounts {
   position: relative;
-  float: left;
   top: 50vh;
+  display: -ms-grid;
+  display: grid;
+  float: left;
   left: 70vw;
   -webkit-transform: translate(0%, -50%);
           transform: translate(0%, -50%);
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }
 
 section.accounts-screen .accounts .account {
@@ -370,14 +379,89 @@ section.accounts-screen .accounts .account {
   height: 100px;
   margin: 10px;
   border-radius: 50%;
-  background-color: #c8c8c8;
+  background-color: #6f6f6f;
+  -webkit-transition-duration: 0.1s;
+          transition-duration: 0.1s;
+  z-index: 10;
+}
+
+section.accounts-screen .accounts .account:hover {
+  -webkit-transform: scale(1.5) translateY(0%);
+          transform: scale(1.5) translateY(0%);
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  z-index: 11;
+}
+
+section.accounts-screen .accounts .account:active {
+  -webkit-transform: scale(1.5) translateY(0%);
+          transform: scale(1.5) translateY(0%);
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+section.accounts-screen .accounts .account:hover + .accountName {
+  opacity: 0;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
 }
 
 section.accounts-screen .accounts .accountName {
   position: absolute;
+  bottom: -30px;
   width: 100%;
   color: white;
-  bottom: -30px;
   text-align: center;
+  -webkit-transition-duration: 0.1s;
+          transition-duration: 0.1s;
+}
+
+section.accounts-screen .accounts .acctPassword {
+  display: block;
+  width: 170px;
+  height: 30px;
+  margin-top: 20px;
+  -webkit-transform: translateX(-30px);
+          transform: translateX(-30px);
+  border-radius: 15px;
+  border: 0px;
+}
+
+section.accounts-screen .accounts .acctDetails {
+  display: block;
+  width: 170px;
+  height: 30px;
+  margin-top: 20px;
+  -webkit-transform: translateX(-30px);
+          transform: translateX(-30px);
+  border-radius: 15px;
+  border: 0px;
+  text-align: center;
+}
+
+section.accounts-screen .accounts .acctDetails .loginButton {
+  padding: 5px 30px;
+  background-color: #e0e0e0;
+  color: black;
+  border-radius: 20px;
+  margin-left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+section.accounts-screen .accounts .acctDetails a {
+  font-size: 10px;
+  color: black;
+}
+
+section.accounts-screen .back {
+  position: fixed;
+  top: 20px;
+  left: 30px;
+  font-size: 35px;
+  color: white;
+  opacity: 0;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
 }
 /*# sourceMappingURL=main.css.map */
