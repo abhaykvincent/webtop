@@ -7,6 +7,10 @@ $(document).ready(function () {
         type:"admin",
         image: "profile1"
     },{
+        name: "Arun",
+        type:"user",
+        image: "profile2"
+    },,{
         name: "Guest",
         type:"guest",
         image: "guest"
