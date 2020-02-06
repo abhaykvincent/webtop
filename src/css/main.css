@@ -344,4 +344,40 @@ template {
 body {
   background-color: #d1d1d1;
 }
+
+section {
+  width: 100vw;
+  height: 100vh;
+}
+
+section.accounts-screen {
+  background: url("/src/img/wallpaper1.jpg");
+  background-size: 100%;
+}
+
+section.accounts-screen .accounts {
+  position: relative;
+  float: left;
+  top: 50vh;
+  left: 70vw;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+}
+
+section.accounts-screen .accounts .account {
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  border-radius: 50%;
+  background-color: #c8c8c8;
+}
+
+section.accounts-screen .accounts .accountName {
+  position: absolute;
+  width: 100%;
+  color: white;
+  bottom: -30px;
+  text-align: center;
+}
 /*# sourceMappingURL=main.css.map */

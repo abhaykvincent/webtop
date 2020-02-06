@@ -3,3 +3,36 @@ body{
     background-color: rgb(209, 209, 209);
 }
 
+section{
+    width: 100vw;
+    height: 100vh;
+    &.accounts-screen{
+        background: url("/src/img/wallpaper1.jpg");
+        background-size: 100%;
+        .accounts{
+            position: relative;
+            float: left;
+            top: 50vh;
+            left: 70vw;
+            transform: translate(0%,-50%);
+            .account{
+                float: left;
+                width: 100px;
+                height: 100px;
+
+                margin: 10px;
+                
+                border-radius: 50%;
+                background-color: rgb(200, 200, 200);
+            }
+            .accountName{
+                position: absolute;
+                width: 100%;
+                color: white;
+                bottom: -30px;
+                text-align: center;
+            }
+        }
+    }
+}
+
