@@ -490,6 +490,30 @@ section.landing-screen header .logo {
   background-color: #00000010;
 }
 
+section.landing-screen header .headerPanel {
+  float: right;
+  width: 200px;
+  height: 60px;
+  background-color: #00000020;
+}
+
+section.landing-screen header .headerPanel .dateTime {
+  display: inline-block;
+}
+
+section.landing-screen header .headerPanel .dateTime .date {
+  float: right;
+  width: 200px;
+  height: 30px;
+  background-color: #00000020;
+}
+
+section.landing-screen header .headerPanel .dateTime .time {
+  float: right;
+  width: 200px;
+  height: 30px;
+}
+
 section.landing-screen header .settings {
   float: right;
   width: 50px;
@@ -499,7 +523,7 @@ section.landing-screen header .settings {
 }
 
 section.landing-screen header .options {
-  float: right;
+  float: left;
   width: 400px;
   height: 50px;
   padding: 5px;
@@ -521,10 +545,14 @@ section.landing-screen .settingsWindow {
 }
 
 section.landing-screen main {
+  position: relative;
   width: 100%;
-  min-height: 800px;
   padding-top: 60px;
   background-color: #cecece;
+}
+
+section.landing-screen main .panels {
+  display: inline-block;
 }
 
 section.landing-screen main .top {
@@ -542,14 +570,70 @@ section.landing-screen main .left {
 }
 
 section.landing-screen main .right {
-  float: right;
+  float: left;
   min-height: 800px;
-  width: 80%;
-  background: #00000015;
+  width: 50%;
+  background: #00000005;
 }
 
-<<<<<<< Updated upstream
-=======
+section.landing-screen main .right .articles {
+  width: 70%;
+  min-height: 10px;
+}
+
+section.landing-screen main .right .articles article {
+  position: relative;
+  width: 90%;
+  height: auto;
+  margin: 5%;
+  padding-bottom: 10px;
+  background-color: rgba(184, 184, 184, 0.2);
+}
+
+section.landing-screen main .right .articles article .mainHeading {
+  position: relative;
+  width: 90%;
+  height: 50px;
+  margin: 0px;
+  background-color: rgba(75, 75, 75, 0.3);
+}
+
+section.landing-screen main .right .articles article .subHeading {
+  position: relative;
+  width: 80%;
+  height: 20px;
+  margin: 10px 0px;
+  background-color: rgba(75, 75, 75, 0.15);
+}
+
+section.landing-screen main .right .articles article .description {
+  position: initial;
+  height: 5px;
+  background-color: rgba(75, 75, 75, 0.55);
+  margin: 5px 0px;
+}
+
+section.landing-screen main .right .articles article .description.place {
+  width: 100px;
+}
+
+section.landing-screen main .right .articles article .description.date {
+  right: 20px;
+  width: 60px;
+}
+
+section.landing-screen main .right .articles article .content {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  margin: 10px 0px;
+  background-color: rgba(75, 75, 75, 0.1);
+}
+
+section.landing-screen main .panels {
+  position: relative;
+}
+
 section.landing-screen .settingsWindow {
   position: fixed;
   top: 60px;
@@ -564,11 +648,33 @@ section.landing-screen .settingsWindow {
           transition-duration: 0.3s;
 }
 
->>>>>>> Stashed changes
 section.landing-screen footer {
-  position: relative;
   width: 100%;
   height: 200px;
   background-color: #616161;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section.landing-screen footer .footerElements {
+  display: table-cell;
+  height: 200px;
+}
+
+section.landing-screen footer .left {
+  width: 33.3%;
+  height: 200px;
+  background: #999999;
+}
+
+section.landing-screen footer .middle {
+  width: 33.3%;
+  background: #00000025;
+}
+
+section.landing-screen footer .right {
+  width: 33.3%;
+  background: #00000015;
 }
 /*# sourceMappingURL=main.css.map */

@@ -119,6 +119,29 @@ section{
                 padding: 5px;
                 background-color: #00000010;
             }
+            .headerPanel{
+                float:right;
+                width: 200px;
+                height: 60px;
+                background-color: #00000020;
+                .dateTime{
+                display: inline-block;
+                .date{
+                    float: right;
+                    width: 200px;
+                    height: 30px;
+                    background-color: #00000020;
+
+                }
+                .time{
+                    float: right;
+                    width: 200px;
+                    height: 30px;
+                   
+
+                } 
+                }
+            }
             .settings{
                 float: right;
                 width: 50px;
@@ -127,7 +150,7 @@ section{
                 background-color: #00000030;
             }
             .options{
-                float: right;
+                float: left;
                 width: 400px;
                 height: 50px;
                 padding: 5px;
@@ -146,10 +169,13 @@ section{
             z-index: 99;
         }
         main{
+            position: relative;
             width: 100%;
-            min-height: 800px;
             padding-top: 60px;
             background-color: #cecece;
+            .panels{
+                display: inline-block;
+            }
             .top{
                 float: left;
                 min-height: 150px;
@@ -163,14 +189,62 @@ section{
                 background: #00000025;
             }
             .right{
-                float: right;
+                float: left;
                 min-height: 800px;
-                width: 80%;
-                background: #00000015;
+                width: 50%;
+                background: #00000005;
+                .articles{
+                    width:70%;
+                    min-height: 10px;
+                    article{
+                        position: relative;
+                        width: 90%;
+                        height: auto;
+                        margin: 5%;
+                        padding-bottom: 10px;
+                        background-color: rgba(184, 184, 184, 0.2);
+                        .mainHeading{
+                            position: relative;
+                            width: 90%;
+                            height: 50px;
+                            margin:0px;
+                            background-color: rgba(75, 75, 75, 0.3);
+                        }
+                        .subHeading{
+                            position: relative;
+                            width: 80%;
+                            height: 20px;
+                            margin: 10px 0px;
+                            background-color: rgba(75, 75, 75, 0.15);
+                        }
+                        .description{
+                            position: initial;
+                            height: 5px;
+                            background-color: rgba(75, 75, 75, 0.55);
+                            margin: 5px 0px;
+                            &.place{
+                                width: 100px;
+                            }
+                            &.date{
+                                right: 20px;
+                                width: 60px;
+                            }
+                        }
+                        .content{
+                            position: relative;
+                            width: 100%;
+                            height: 200px;
+                            margin: 10px 0px;
+                            background-color: rgba(75, 75, 75, 0.1);
+                        }
+                    }
+                }
+            }
+
+            .panels{
+                position: relative;
             }
         }
-<<<<<<< Updated upstream
-=======
         .settingsWindow{
             position: fixed;
             top: 60px;
@@ -182,12 +256,29 @@ section{
             z-index: 99;
             transition-duration: 0.3s;
         }
->>>>>>> Stashed changes
         footer{
-            position: relative;
             width: 100%;
             height: 200px;
             background-color: #616161;
+            display: flex;
+            .footerElements{
+                
+                display: table-cell;
+                height: 200px;
+            }
+            .left{
+                width: 33.3%;
+                height: 200px;
+                background: #999999;
+            }
+            .middle{
+                width:33.3%;
+                background: #00000025;
+            }
+            .right{
+                width:33.3%;
+                background: #00000015;
+            }
         }
     }
 }
