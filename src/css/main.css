@@ -361,7 +361,10 @@ section.accounts-screen {
 }
 
 section.accounts-screen .heading {
-  position: fixed;
+  position: relative;
+  top: 30px;
+  display: block;
+  margin: 0px;
   color: white;
   text-align: center;
 }
@@ -469,5 +472,44 @@ section.accounts-screen .back {
   opacity: 0;
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
+}
+
+section.landing-screen header {
+  width: 100%;
+  height: 100px;
+  background-color: #464646;
+}
+
+section.landing-screen main {
+  width: 100%;
+  min-height: 600px;
+  background-color: #bdbdbd;
+}
+
+section.landing-screen main .top {
+  float: left;
+  min-height: 100px;
+  width: 100%;
+  background: #6f6f6f;
+}
+
+section.landing-screen main .left {
+  float: left;
+  min-height: 400px;
+  width: 20%;
+  background: #00000025;
+}
+
+section.landing-screen main .right {
+  float: right;
+  min-height: 400px;
+  width: 80%;
+  background: #00000015;
+}
+
+section.landing-screen footer {
+  width: 100%;
+  height: 200px;
+  background-color: #474747;
 }
 /*# sourceMappingURL=main.css.map */

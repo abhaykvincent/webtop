@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     //////////////////////
     // GLOBAL VARIABLES //
     //////////////////////
@@ -16,7 +17,17 @@ $(document).ready(function () {
         image: "guest"
     },];
 
+    let login={
+        accountName:"Abhay Vincent",
+        isLoggedIn: true
+    }
+
+
+    //////////////////////
+    // Account Screen   //
+    //////////////////////
     //showing accounts screen
+    $("section").hide();
     $(".accounts-screen").show();
     $(".acctPassword").hide();
     $(".acctDetails").hide();
@@ -43,7 +54,7 @@ $(document).ready(function () {
         $(this).find(".accountName").hide();
         $('.acctPassword').focus();
     });
-
+    // on back button click reset
     $(".back").click(function (e) { 
         e.preventDefault();
         //hide all accounts
@@ -57,4 +68,22 @@ $(document).ready(function () {
         $(thisDiv).find(".acctDetails").hide();
         $(thisDiv).find(".accountName").show();
     });
+
+
+    //////////////////////
+    // Landing Screen   //
+    //////////////////////
+
+    $(".loginButton").click(function (e) { 
+        e.preventDefault();
+        if(login.isLoggedIn==true)
+        {
+            console.log(login.isLoggedIn)
+            $("section").hide();
+            $(".landing-screen").show();
+        }
+    });
+
+    $("section").hide();
+    $(".landing-screen").show();
 });
