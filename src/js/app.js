@@ -69,11 +69,6 @@ $(document).ready(function () {
         $(thisDiv).find(".accountName").show();
     });
 
-
-    //////////////////////
-    // Landing Screen   //
-    //////////////////////
-
     $(".loginButton").click(function (e) { 
         e.preventDefault();
         if(login.isLoggedIn==true)
@@ -81,6 +76,29 @@ $(document).ready(function () {
             console.log(login.isLoggedIn)
             $("section").hide();
             $(".landing-screen").show();
+        }
+    });
+
+    //////////////////////
+    // Landing Screen   //
+    //////////////////////
+
+    //header
+
+
+    $(".settingsWindow").data("active", "false");
+    $(".settings").click(function (e) { 
+        let isActive =  $(".settingsWindow").data('active');
+        e.preventDefault();
+        if(isActive  === "false"){
+            console.log("was inactive");
+            $(".settingsWindow").data("active", "true");
+            $(".settingsWindow").css({"transform":"translateY(0%)"});
+        }
+        else{
+            console.log("was active");
+            $(".settingsWindow").data("active", "false");
+            $(".settingsWindow").css({"transform":"translateY(-100%)"});
         }
     });
 

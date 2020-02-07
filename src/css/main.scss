@@ -111,6 +111,7 @@ section{
             width: 100%;
             height: 60px;
             background-color: #464646;
+            z-index: 100;
             .logo{
                 float: left;
                 width: 50px;
@@ -132,6 +133,17 @@ section{
                 padding: 5px;
                 background-color: #00000020;
             }
+        }
+        .settingsWindow{
+            position: fixed;
+            top: 60px;
+            right: 0px;
+            width: 200px;
+            height: 300px;
+            transform: translateY(-100%);
+            background-color: rgb(97, 97, 97);
+            transition-duration: 0.2s;
+            z-index: 99;
         }
         main{
             width: 100%;
@@ -157,14 +169,20 @@ section{
                 background: #00000015;
             }
         }
+<<<<<<< Updated upstream
+=======
         .settingsWindow{
             position: fixed;
             top: 60px;
             right: 0px;
             width: 200px;
             height: 300px;
+            transform: translateY(-100%);
             background-color: rgb(97, 97, 97);
+            z-index: 99;
+            transition-duration: 0.3s;
         }
+>>>>>>> Stashed changes
         footer{
             position: relative;
             width: 100%;

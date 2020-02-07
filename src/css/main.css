@@ -479,6 +479,7 @@ section.landing-screen header {
   width: 100%;
   height: 60px;
   background-color: #464646;
+  z-index: 100;
 }
 
 section.landing-screen header .logo {
@@ -503,6 +504,20 @@ section.landing-screen header .options {
   height: 50px;
   padding: 5px;
   background-color: #00000020;
+}
+
+section.landing-screen .settingsWindow {
+  position: fixed;
+  top: 60px;
+  right: 0px;
+  width: 200px;
+  height: 300px;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  background-color: #616161;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  z-index: 99;
 }
 
 section.landing-screen main {
@@ -533,15 +548,23 @@ section.landing-screen main .right {
   background: #00000015;
 }
 
+<<<<<<< Updated upstream
+=======
 section.landing-screen .settingsWindow {
   position: fixed;
   top: 60px;
   right: 0px;
   width: 200px;
   height: 300px;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
   background-color: #616161;
+  z-index: 99;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
 }
 
+>>>>>>> Stashed changes
 section.landing-screen footer {
   position: relative;
   width: 100%;
