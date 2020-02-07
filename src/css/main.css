@@ -360,6 +360,12 @@ section.accounts-screen {
   background-size: 100%;
 }
 
+section.accounts-screen .heading {
+  position: fixed;
+  color: white;
+  text-align: center;
+}
+
 section.accounts-screen .accounts {
   position: relative;
   top: 50vh;

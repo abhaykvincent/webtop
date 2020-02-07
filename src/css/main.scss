@@ -12,6 +12,11 @@ section{
     &.accounts-screen{
         background: url("/src/img/wallpaper1.jpg");
         background-size: 100%;
+        .heading{
+            position: fixed;
+            color: white;
+            text-align: center;
+        }
         .accounts{
             position: relative;
             top: 50vh;
