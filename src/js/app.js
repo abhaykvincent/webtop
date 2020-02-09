@@ -94,11 +94,19 @@ $(document).ready(function () {
             console.log("was inactive");
             $(".settingsWindow").data("active", "true");
             $(".settingsWindow").css({"transform":"translateY(0%)"});
+            TweenMax.to(".settingsOptionSub",0.2,{
+                x: 0,
+                delay: 0.2
+            })
         }
         else{
             console.log("was active");
             $(".settingsWindow").data("active", "false");
             $(".settingsWindow").css({"transform":"translateY(-100%)"});
+            TweenMax.to(".settingsOptionSub",0.2,{
+                x:40,
+                delay: 0.2
+            })
         }
     });
 
@@ -132,12 +140,13 @@ $(document).ready(function () {
         e.preventDefault();
         if(isActive  === "false"){
             $(this).data("active", "true");
-            $("+.panelSettingsWindow",this).css({"width":"200px"});
-            $(".panel .settings").css({"width":"20px"});
+            $("+.panelSettingsWindow",this).addClass("panelSettingsWindow-active");
+            $(this).css({"width":"20px","transform":"rotate(90deg)"});
         }
         else{
             $(this).data("active", "false");
-            $("+.panelSettingsWindow",this).css({"width":"0px"});
+            $("+.panelSettingsWindow",this).removeClass("panelSettingsWindow-active");
+            $(this).css({"width":"20px","transform":"rotate(0deg)"});
             
         }
     });
