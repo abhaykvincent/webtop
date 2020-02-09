@@ -5,7 +5,9 @@
 body{
     background-color: rgb(209, 209, 209);
 }
-
+*{
+    border-radius: 10px  10px 10px 3px;
+}
 section{
     width: 100vw;
     height: 100vh;
@@ -123,22 +125,31 @@ section{
                 float:right;
                 width: 200px;
                 height: 60px;
-                background-color: #00000020;
                 .dateTime{
                 display: inline-block;
                 .date{
                     float: right;
                     width: 200px;
                     height: 30px;
-                    background-color: #00000020;
-
+                    p{
+                        margin: 10px;
+                        float:right;
+                        width: 70%;
+                        height: 5px;
+                        background-color: rgba(255, 255, 255, 0.432);
+                    }
                 }
                 .time{
                     float: right;
                     width: 200px;
                     height: 30px;
-                   
-
+                    p{
+                        margin: 10px;
+                        float:right;
+                        width: 50%;
+                        height: 10px;
+                        background-color: rgba(255, 255, 255, 0.432);
+                    }
                 } 
                 }
             }
@@ -164,7 +175,7 @@ section{
             width: 200px;
             height: 300px;
             transform: translateY(-100%);
-            background-color: rgb(97, 97, 97);
+            background-color: rgba(97, 97, 97, 0.233);
             transition-duration: 0.2s;
             z-index: 99;
         }
@@ -178,36 +189,101 @@ section{
             }
             .top{
                 float: left;
-                min-height: 150px;
+                min-height: 40px;
                 width: 100%;
-                background: #999999;
+                background: #49494921;
+                .topPanelOption{
+                    float: left;
+                    width:19% ;
+                    height: 10px;
+                    margin:15px 0px 10px 1%;
+                    background-color: #4d4d4d71;
+                    &:last-child{
+                        margin-right: 0px;
+                    }
+                }
             }
             .left{
                 float: left;
-                min-height: 400px;
                 width: 20%;
-                background: #00000025;
+                padding: 40px;
+                background: #00000007;
+                box-sizing: border-box;
+                .leftPanelOption{
+                    width: 100%;
+                    height: 40px;
+                    margin-bottom: 5%;
+                    background-color: rgba(128, 128, 128, 0.2);
+                    &.randomFeature1{
+                        margin-top: 40px;
+                        height: 300px;
+                        background-color: rgba(128, 128, 128, 0.25);
+                    }
+                    &.randomFeature2{
+                        margin-top: 40px;
+                        height: 600px;
+                        background-color: rgba(128, 128, 128, 0.15);
+                    }
+                }
+                .settings{
+                    height: 20px;
+                    background-color: rgba(128, 128, 128, 0.1);
+                }
             }
             .right{
                 float: left;
                 min-height: 800px;
-                width: 50%;
-                background: #00000005;
+                width: 80%;
+                padding: 40px 0px 0px 0px;
+                background: #00000007;
+                box-sizing: border-box;
                 .articles{
-                    width:70%;
+                    width:50%;
+                    float: left;
                     min-height: 10px;
                     article{
                         position: relative;
-                        width: 90%;
+                        width: 100%;
                         height: auto;
-                        margin: 5%;
-                        padding-bottom: 10px;
+                        margin-bottom: 60px;
                         background-color: rgba(184, 184, 184, 0.2);
+                        .panel{
+
+                            position: relative;
+                            width: 100%;
+                            height: 20px;
+                            margin:0px 0px 5px 0px !important;
+                            background-color: rgba(75, 75, 75, 0.1);
+                            .settings{
+                                float: right;
+                                width: 20px;
+                                height: 20px;
+                                background-color: rgba(75, 75, 75, 0.2);
+                                transition-duration: 0.3s;
+                                &:hover{
+                                    transform: scale(1.5);
+                                    transition-duration: 0.1s;
+                                    background-color: rgba(75, 75, 75, 0.4);
+                                }
+                            }
+                            .panelSettingsWindow{
+                                position: absolute;
+                                top: 20px;
+                                right: 0px;
+                                height:  320px;
+                                background-color: rgba(0, 0, 0, 0.05);
+                                transition-duration: 0.3s;
+                            }
+                            &:hover{
+                                transition-duration: 0.3s;
+                            }
+                            
+                        }
                         .mainHeading{
                             position: relative;
                             width: 90%;
                             height: 50px;
-                            margin:0px;
+                            margin:0px !important;te
                             background-color: rgba(75, 75, 75, 0.3);
                         }
                         .subHeading{
@@ -239,6 +315,58 @@ section{
                         }
                     }
                 }
+                .toToAPP{
+                    float: right;
+                    width: 50%;
+                    padding: 0px 40px;
+                    box-sizing: border-box;
+                    .app{
+                        width: 100%;
+                        min-height: 200px;
+                        margin-bottom: 40px;
+                        background-color: rgba(0, 0, 0, 0.034);
+                    }
+                    .todo{
+                        .heading{
+                        width: 100%;
+                        height: 40px;
+                        background-color: rgba(0, 0, 0, 0.3);
+                        margin: 0px;
+                        .maximize{
+                            float: right;
+                            width: 30px;
+                            height: 40px;
+                            background-color: rgba(0, 0, 0, 0.4);
+                            transition-duration: 0.3s;
+
+                        }
+                        }
+                        .todoContent{
+                            width: 100%;
+                            display:inline-block;
+                            padding: 20px;
+                            box-sizing: border-box;
+                            #todoLists{
+                                float: left;
+                                width: 50%;
+                                transition-duration: 0.2s;
+                                .todoList{
+                                    width: 100%;
+                                    height: 15px;
+                                    background-color: rgba(0, 0, 0, 0.1);
+                                    margin-bottom: 15px;
+                                }
+                            }
+                            #todoListDetails{
+                                float: right;
+                                width: calc(50% - 20px);
+                                min-height: 200px;
+                                background-color: rgba(0, 0, 0, 0.05);
+                                transition-duration: 0.2s;
+                            }
+                        }
+                    }
+                }
             }
 
             .panels{
@@ -252,32 +380,57 @@ section{
             width: 200px;
             height: 300px;
             transform: translateY(-100%);
-            background-color: rgb(97, 97, 97);
+            background-color: rgba(97, 97, 97, 0.6);
             z-index: 99;
             transition-duration: 0.3s;
         }
         footer{
             width: 100%;
             height: 200px;
-            background-color: #616161;
             display: flex;
             .footerElements{
-                
                 display: table-cell;
                 height: 200px;
+                padding:40px;
+                box-sizing: border-box;
             }
             .left{
                 width: 33.3%;
                 height: 200px;
-                background: #999999;
+                background: #0000001a;
             }
             .middle{
                 width:33.3%;
-                background: #00000025;
+                background: #00000028;
+                .withLove{
+                    position: relative;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    margin-top: 80px;
+                    width: 40%;
+                    height: 10px;
+                    background-color: rgba(0, 0, 0, 0.205);
+                }
+                .techs{
+                    position: relative;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    margin-top: 5px;
+                    width: 80%;
+                    height: 20px;
+                    background-color: rgba(0, 0, 0, 0.205);
+                }
+                .copy{
+                    position: relative;
+                    margin-top: 20px;
+                    width: 100%;
+                    height: 10px;
+                    background-color: rgba(0, 0, 0, 0.10);
+                }
             }
             .right{
                 width:33.3%;
-                background: #00000015;
+                background: #0000001c;
             }
         }
     }

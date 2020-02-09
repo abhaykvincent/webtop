@@ -87,7 +87,7 @@ $(document).ready(function () {
 
 
     $(".settingsWindow").data("active", "false");
-    $(".settings").click(function (e) { 
+    $("header .settings").click(function (e) { 
         let isActive =  $(".settingsWindow").data('active');
         e.preventDefault();
         if(isActive  === "false"){
@@ -99,6 +99,46 @@ $(document).ready(function () {
             console.log("was active");
             $(".settingsWindow").data("active", "false");
             $(".settingsWindow").css({"transform":"translateY(-100%)"});
+        }
+    });
+
+    //To Do app maximize app
+    $(".heading .maximize").data("active", "false");
+    $(".heading  .maximize").click(function (e) { 
+        let isActive =  $(".heading .maximize").data('active');
+        e.preventDefault();
+        if(isActive  === "false"){
+            console.log("was inactive");
+            $(".heading .maximize").data("active", "true");
+            $("#todoLists").css({"width":"100%"});
+            $("#todoListDetails").css({"width":"0%"});
+            $(".heading .maximize").css({"width":"40px"});
+        }
+        else{
+            console.log("was active");
+            $(".heading .maximize").data("active", "false");
+            $("#todoLists").css({"width":"50%"});
+            $("#todoListDetails").css({"width":"calc(50% - 20px)"});
+            $(".heading .maximize").css({"width":"35px"});
+            
+        }
+    });
+
+
+    //Areticle panel settings drop down
+    $(".panel .settings").data("active", "false");
+    $(".panel .settings").click(function (e) { 
+        let isActive =  $(this).data('active');
+        e.preventDefault();
+        if(isActive  === "false"){
+            $(this).data("active", "true");
+            $("+.panelSettingsWindow",this).css({"width":"200px"});
+            $(".panel .settings").css({"width":"20px"});
+        }
+        else{
+            $(this).data("active", "false");
+            $("+.panelSettingsWindow",this).css({"width":"0px"});
+            
         }
     });
 
