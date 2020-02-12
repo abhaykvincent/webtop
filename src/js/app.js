@@ -118,16 +118,20 @@ $(document).ready(function () {
         if(isActive  === "false"){
             console.log("was inactive");
             $(".heading .maximize").data("active", "true");
-            $("#todoLists").css({"width":"100%"});
-            $("#todoListDetails").css({"width":"0%"});
+            $("#todoLists").css({"width":"50%"});
+            $("#todoListDetails").css({"width":"calc(50% - 20px)"});
             $(".heading .maximize").css({"width":"40px"});
+            $(".toToAPP").css("width", "100%");
+            $(".toToAPP").css("padding", "0px 40px 0px 0px");
         }
         else{
             console.log("was active");
             $(".heading .maximize").data("active", "false");
-            $("#todoLists").css({"width":"50%"});
-            $("#todoListDetails").css({"width":"calc(50% - 20px)"});
+            $("#todoLists").css({"width":"100%"});
+            $("#todoListDetails").css({"width":"0px"});
             $(".heading .maximize").css({"width":"35px"});
+            $(".toToAPP").css("width", "50%");
+            $(".toToAPP").css("padding", "0px 40px");
             
         }
     });
@@ -150,6 +154,41 @@ $(document).ready(function () {
             
         }
     });
+
+        //Top panel option drop down
+        $(".topPanelOption-heading").data("active", "false");
+        $(".topPanelOption-heading").click(function (e) { 
+            let isActive =  $(this).data('active');
+            e.preventDefault();
+            if(isActive  === "false"){
+                $(".topPanelOption-heading").data("active", "false");
+                $(this).data("active", "true");
+                $(".topPanelOption-list").removeClass("topPanelOption-list-active");
+                $("+.topPanelOption-list",this).addClass("topPanelOption-list-active");
+            }
+            else{
+                $(this).data("active", "false");
+                $("+.topPanelOption-list",this).removeClass("topPanelOption-list-active");
+                
+            }
+        });
+
+$(".leftPanelLabel").data("active", "false");
+$(".leftPanelLabel").click(function (e) { let isActive =  $(this).data('active');
+e.preventDefault();
+if(isActive  === "false"){
+    $(this).data("active", "true");
+    $("+.leftPanelOptions",this).addClass("showOptions");
+}
+else{
+    $(this).data("active", "false");
+    $("+.leftPanelOptions",this).removeClass("showOptions");
+    
+}
+    
+});
+
+        
 
     $("section").hide();
     $(".landing-screen").show();

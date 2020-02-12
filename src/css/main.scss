@@ -114,6 +114,7 @@ section{
             height: 60px;
             background-color: #464646;
             z-index: 100;
+            border-radius: 0px;
             .logo{
                 float: left;
                 width: calc(20% - 10px);
@@ -159,6 +160,7 @@ section{
                 height: 50px;
                 padding: 5px;
                 background-color: #00000030;
+                cursor: pointer;
             }
             .search{
                 float: left;
@@ -166,24 +168,73 @@ section{
                 height: 60px;
                 .searchInput{
                     float: left;
-                    width: calc(100% - 90px);
+                    width: calc(100% - 80px);
                     height: 25px;
                     margin:  15px 0px;
                     border: 0px;
                     border-radius: 5px 0px 0px 5px;
-
-                    padding:0px;
+                    padding:1px 20px;
                     background-color: rgba(255, 255, 255, 0.9);
+                    font-size: 90%;
+                    transition-duration: 0.2s;
+                    box-sizing: border-box;
+                    &:focus{
+                        padding:0px 10px;
+                        outline: none;
+                    }
                 }
                 .searchButton{
-                    position:absolute;
+                    float:right;
                     top: 0px;
-                    width: 90px;
+                    width: 80px;
                     height: 25px;
                     margin:  15px 0px;
+                    padding:0px 15px;
                     border: 0px;
+
+                    text-align: left;
+                    font-size: 80%;
                     border-radius: 0px 5px 5px 0px;
                     background-color: rgba(255, 255, 255, 0.5);
+                    box-sizing: border-box;
+                    transition-duration: 0.2s;
+                    cursor: pointer;
+                    i{
+                        display: none;
+                        float: right;
+                        opacity: 0.7;
+                        color: rgb(179, 179, 179);
+                        transition-duration: 0.2s;
+                    }
+                    &:hover{
+                        width: 110px;
+                        transition-duration: 0.2s;
+                        color: white;
+                        background-color: rgba(0, 0, 0, 0.4);
+                    }
+                    &:active{
+                        width: 110px;
+                        transition-duration: 0.3s;
+                        color: black;
+                        background-color: rgba(206, 206, 206, 0.4);
+                    }
+                    &:active > i{
+                        color: black;
+                        opacity: 1;
+                        transition-duration: 0.2s;
+                    }
+                    &:hover ~ .searchInput{
+                        width: calc(100% - 110px);
+                        transition-duration: 0.2s;
+                    }
+                    &:hover i{
+                        display: block;
+                        opacity: 1;
+                        transition-duration: 0.2s;
+                    }
+                    &:focus{
+                        outline: none;
+                    }
                 }
             }
         }
@@ -231,15 +282,38 @@ section{
             }
             .top{
                 float: left;
-                min-height: 40px;
+                height: 40px;
                 width: 100%;
                 background: #49494921;
+                z-index: 80;
                 .topPanelOption{
+                    position: relative;
                     float: left;
                     width:19% ;
-                    height: 10px;
+                    min-height: 10px;
                     margin:15px 0px 10px 1%;
-                    background-color: #4d4d4d71;
+                    .topPanelOption-heading{
+                        width:100% ;
+                        background-color: #8a8a8a;
+                        height: 10px;
+                        margin: 0px;
+                        &:hover{
+                            background-color: #4d4d4d;
+                            transition-duration: 0.2s;
+
+                        }
+                    }
+                    .topPanelOption-list{
+                        width:100% ;
+                        background-color: #c3c3c39c;
+                        height: 0px;
+                        margin: 0px;
+                        transition-duration: 0.2s;
+                    }
+                    .topPanelOption-list-active{
+                        height: 300px;
+                        transition-duration: 0.3s;
+                    }
                     &:last-child{
                         margin-right: 0px;
                     }
@@ -252,18 +326,42 @@ section{
                 box-sizing: border-box;
                 .leftPanelOption{
                     width: 100%;
-                    height: 40px;
+                    height: auto;
                     margin-bottom: 5%;
-                    background-color: rgba(128, 128, 128, 0.2);
+                    background-color: rgb(212, 212, 212);
+                    .leftPanelLabel{
+                        width: 100%;
+                        height: 40px;
+                        background-color: rgb(177, 177, 177);
+                    }
+                    .leftPanelOptions{
+                        width: 100%;
+                        height: 0px;
+                        overflow: hidden;
+                        transition-duration: 0.3s;
+                        &:hover{
+                        transition-duration: 0.1s;
+                        }
+                        .leftPanelOption{
+                            height: 30px;
+                            width: 100%;
+                            margin-bottom: 1px;
+                        }
+                    }
+                    .showOptions{
+                        height: auto;
+                        transition-duration: 0.3s;
+
+                    }
                     &.randomFeature1{
                         margin-top: 40px;
                         height: 300px;
-                        background-color: rgba(128, 128, 128, 0.25);
+                        background-color: rgb(128, 128, 128);
                     }
                     &.randomFeature2{
                         margin-top: 40px;
                         height: 600px;
-                        background-color: rgba(128, 128, 128, 0.15);
+                        background-color: rgba(128, 128, 128, 0.876);
                     }
                 }
                 .settings{
@@ -358,6 +456,49 @@ section{
                             background-color: rgba(75, 75, 75, 0.1);
                         }
                     }
+                    .editor{
+                        display: inline-block;
+                        width: 100%;
+                        height: 20px;
+                        margin-bottom: 20px;
+                        background-color: rgba(255, 255, 255, 0);
+                        .buttons{
+                            cursor: pointer;
+                            display: inline-block;
+                            padding:5px 10px;
+                            margin-right: 15px;
+                            background-color: rgb(128, 128, 128);
+                            color: white;
+                            font-weight: medium ;
+                            text-align: center;
+                        }
+                        .rightTools{
+                            float: right;
+                            margin-right: 0px;
+                        }
+                    }
+                    .addPost{
+                        min-height: 200px;
+                        padding:0px;
+                        input{
+                            border: 0px;
+                            border-radius: 1px;
+                            width: 100%;
+                            min-height: 40px;
+                            margin-bottom: 1px;
+                            padding: 0px 30px;
+                            box-sizing: border-box;
+                            &:focus{
+                                outline: none;
+                            }
+                        }
+                        .addMainHeading{
+                            height: 50px !important
+                        }
+                        .addContent{
+                            height: 140px !important
+                        }
+                    }
                 }
                 .toToAPP{
                     float: right;
@@ -374,8 +515,16 @@ section{
                         .heading{
                         width: 100%;
                         height: 40px;
-                        background-color: rgba(0, 0, 0, 0.3);
+                        background-color: rgba(0, 0, 0, 0.2);
                         margin: 0px;
+                        p{
+                            font-weight: bold;
+                            float: left;
+                            width: 90%;
+                            text-align: center;
+                            line-height: 40px;;
+                            margin: 0px;
+                        }
                         .maximize{
                             float: right;
                             width: 30px;
@@ -392,18 +541,39 @@ section{
                             box-sizing: border-box;
                             #todoLists{
                                 float: left;
-                                width: 50%;
+                                width: 100%;
                                 transition-duration: 0.2s;
                                 .todoList{
                                     width: 100%;
-                                    height: 15px;
-                                    background-color: rgba(0, 0, 0, 0.1);
+                                    height: 25px;
                                     margin-bottom: 15px;
+                                    .addTask{
+                                        width: 100%
+                                    }
+                                    .taskName{
+                                        float: left;
+                                        height: 25px;
+                                        line-height: 25px;
+                                        width: calc(100% - 30px );
+                                        margin: 0px;
+                                        padding: 0px 0px 0px 20px;
+                                        background-color: rgba(0, 0, 0, 0.05);
+                                        box-sizing: border-box;
+
+                                    }
+                                    i{
+                                        text-align: center;
+                                        font-size: 25px;
+                                        float: right;
+                                        width: 25px;
+                                        height: 25px;
+                                        color: rgb(211, 20, 20);
+                                    }
                                 }
                             }
                             #todoListDetails{
                                 float: right;
-                                width: calc(50% - 20px);
+                                width: 0px;
                                 min-height: 200px;
                                 background-color: rgba(0, 0, 0, 0.05);
                                 transition-duration: 0.2s;
