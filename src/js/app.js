@@ -119,8 +119,10 @@ $(document).ready(function () {
             console.log("was inactive");
             $(".heading .maximize").data("active", "true");
             $("#todoLists").css({"width":"50%"});
+            $(".todoList").css({"margin-bottom":"15px","font-size":"120%"});
+            $(".addTask").css({"margin-bottom":"10px","margin-top":"20px"});
             $("#todoListDetails").css({"width":"calc(50% - 20px)"});
-            $(".heading .maximize").css({"width":"40px"});
+            $(".heading .maximize").css({"width":"30px"});
             $(".toToAPP").css("width", "100%");
             $(".toToAPP").css("padding", "0px 40px 0px 0px");
         }
@@ -129,6 +131,7 @@ $(document).ready(function () {
             $(".heading .maximize").data("active", "false");
             $("#todoLists").css({"width":"100%"});
             $("#todoListDetails").css({"width":"0px"});
+            $(".todoList").css({"margin-bottom":"10px","margin-top":"0px","font-size":"100%"});
             $(".heading .maximize").css({"width":"35px"});
             $(".toToAPP").css("width", "50%");
             $(".toToAPP").css("padding", "0px 40px");
@@ -187,6 +190,91 @@ else{
 }
     
 });
+
+
+//////////////
+    var tasks=[{
+        taskId:1,
+        taskName:  "Portfolio Development",
+        status: "pending"
+    },{
+        taskId:2,
+        taskName:  "Easy Grocries",
+        status: "pending"
+    },{
+        taskId:3,
+        taskName:  "Resume",
+        status: "pending"
+    },{
+        taskId:4,
+        taskName:  "Regex Form",
+        status: "pending"
+    },{
+        taskId:5,
+        taskName:  "Wordpress",
+        status: "pending"
+    }];
+function taskList(){
+    let taskContentHTML="";
+
+    $(".todoListWrap").html(taskContentHTML);
+    tasks.forEach(element => {
+        taskContentHTML +=`<div class="todoList">
+                                    <p class="taskName">${element.taskName}</p>
+                                    <i class="taskDelete_button delete far fa-check-circle" data-task-id="${element.taskId}"></i>
+                                </div>`
+    });
+    $(".todoListWrap").append(taskContentHTML);
+
+
+    $(".todoList .delete").mouseenter(function () {
+        $(this).attr('class', '');
+        $(this).addClass("delete green fas fa-check-circle");
+        
+    }
+    );
+    $(".todoList .delete").mouseleave(function () {
+    $(this).attr('class', '');
+    $(this).addClass("delete red far fa-check-circle");
+
+    }
+);
+
+///
+}
+
+function deleteTask(){
+    $(".taskDelete_button").click(function (e) { 
+        e.preventDefault();
+        let taskId = $(this).data("task-id");
+        delete tasks[taskId-1];
+        taskList(); //
+    });
+}
+function addTask(){
+    $("#addTask").click(function (e) { 
+        e.preventDefault();
+        let taskName = $(".addTaskInput").val();
+        console.log(taskName);
+        let taskIdValue=tasks[tasks.length-1].taskId+1;
+        let taskNameValue=tasks[tasks.length-1].taskName=taskName;
+        let taskStatusValue="pending";
+        let value = {
+            taskId:taskIdValue,
+            taskName:taskNameValue,
+            taskStatus:taskStatusValue
+        }
+        tasks.push(value);
+        console.log(tasks);
+        taskList(); //
+    });
+}
+
+/////////////
+taskList(); //
+deleteTask();
+addTask();
+//////////////
 
         
 

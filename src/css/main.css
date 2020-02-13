@@ -499,7 +499,7 @@ section.landing-screen header .logo {
 
 section.landing-screen header .headerPanel {
   float: right;
-  width: 200px;
+  width: 150px;
   height: 60px;
 }
 
@@ -509,30 +509,35 @@ section.landing-screen header .headerPanel .dateTime {
 
 section.landing-screen header .headerPanel .dateTime .date {
   float: right;
-  width: 200px;
   height: 30px;
 }
 
 section.landing-screen header .headerPanel .dateTime .date p {
-  margin: 10px;
+  margin: 0px 10px;
+  font-size: 70%;
+  text-align: right;
   float: right;
-  width: 70%;
-  height: 5px;
-  background-color: rgba(255, 255, 255, 0.432);
+  line-height: 30px;
+  color: rgba(255, 255, 255, 0.432);
 }
 
 section.landing-screen header .headerPanel .dateTime .time {
   float: right;
-  width: 200px;
   height: 30px;
 }
 
 section.landing-screen header .headerPanel .dateTime .time p {
-  margin: 10px;
+  font-weight: 400;
+  font-size: 150%;
+  text-align: right;
+  margin: 0px 10px;
   float: right;
-  width: 50%;
-  height: 10px;
-  background-color: rgba(255, 255, 255, 0.432);
+  line-height: 45px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+section.landing-screen header .headerPanel .dateTime .time p span {
+  font-size: 70%;
 }
 
 section.landing-screen header .settings {
@@ -979,13 +984,13 @@ section.landing-screen main .right .toToAPP .app {
   width: 100%;
   min-height: 200px;
   margin-bottom: 40px;
-  background-color: rgba(0, 0, 0, 0.034);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 section.landing-screen main .right .toToAPP .todo .heading {
   width: 100%;
   height: 40px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #5da8d3;
   margin: 0px;
 }
 
@@ -999,6 +1004,7 @@ section.landing-screen main .right .toToAPP .todo .heading p {
 }
 
 section.landing-screen main .right .toToAPP .todo .heading .maximize {
+  cursor: col-resize;
   float: right;
   width: 30px;
   height: 40px;
@@ -1011,6 +1017,7 @@ section.landing-screen main .right .toToAPP .todo .todoContent {
   width: 100%;
   display: inline-block;
   padding: 20px;
+  border: 1px solid #3987b486;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -1028,8 +1035,66 @@ section.landing-screen main .right .toToAPP .todo .todoContent #todoLists .todoL
   margin-bottom: 15px;
 }
 
-section.landing-screen main .right .toToAPP .todo .todoContent #todoLists .todoList .addTask {
-  width: 100%;
+section.landing-screen main .right .toToAPP .todo .todoContent #todoLists .todoList.panel {
+  height: auto;
+  background: rgba(0, 0, 0, 0.068);
+  margin-bottom: 0px;
+}
+
+section.landing-screen main .right .toToAPP .todo .todoContent #todoLists .todoList.panel .addTaskSubmit {
+  cursor: context-menu;
+  float: right;
+  width: auto;
+  height: 40px;
+  font-size: 15px;
+  padding: 0px 20px;
+  color: white;
+  background-color: rgba(0, 128, 0, 0.8);
+}
+
+section.landing-screen main .right .toToAPP .todo .todoContent #todoLists .todoList.panel .addTaskSubmit.left {
+  float: left;
+  background-color: #ffffff00;
+  border: 0px;
+  outline: none;
+  font-size: 20px;
+  padding: 5px 5px;
+}
+
+section.landing-screen main .right .toToAPP .todo .todoContent #todoLists .todoList.panel .addTaskSubmit.importent {
+  color: #ce4141;
+}
+
+section.landing-screen main .right .toToAPP .todo .todoContent #todoLists .todoList.panel .addTaskSubmit.importent:hover {
+  color: #da2424;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition-duration: 0.1s;
+          transition-duration: 0.1s;
+}
+
+section.landing-screen main .right .toToAPP .todo .todoContent #todoLists .todoList.panel .addTaskSubmit.leaf {
+  color: #398a3f;
+}
+
+section.landing-screen main .right .toToAPP .todo .todoContent #todoLists .todoList.panel .addTaskSubmit.leaf:hover {
+  color: #08a34e;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition-duration: 0.1s;
+          transition-duration: 0.1s;
+}
+
+section.landing-screen main .right .toToAPP .todo .todoContent #todoLists .todoList.panel .addTaskSubmit.college {
+  color: #1cc794;
+}
+
+section.landing-screen main .right .toToAPP .todo .todoContent #todoLists .todoList.panel .addTaskSubmit.college:hover {
+  color: #06b373;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition-duration: 0.1s;
+          transition-duration: 0.1s;
 }
 
 section.landing-screen main .right .toToAPP .todo .todoContent #todoLists .todoList .taskName {
@@ -1038,19 +1103,45 @@ section.landing-screen main .right .toToAPP .todo .todoContent #todoLists .todoL
   line-height: 25px;
   width: calc(100% - 30px);
   margin: 0px;
-  padding: 0px 0px 0px 20px;
-  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0px 0px 0px 0px;
+  background-color: rgba(0, 0, 0, 0);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-section.landing-screen main .right .toToAPP .todo .todoContent #todoLists .todoList i {
+section.landing-screen main .right .toToAPP .todo .todoContent #todoLists .todoList i.delete {
+  cursor: pointer;
   text-align: center;
   font-size: 25px;
   float: right;
   width: 25px;
   height: 25px;
   color: #d31414;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+section.landing-screen main .right .toToAPP .todo .todoContent #todoLists .todoList i.delete.red {
+  color: #d31414;
+  -webkit-transition-duration: 0.1s;
+          transition-duration: 0.1s;
+}
+
+section.landing-screen main .right .toToAPP .todo .todoContent #todoLists .todoList i.delete.green {
+  color: #20ad0e;
+  -webkit-transition-duration: 0.1s;
+          transition-duration: 0.1s;
+}
+
+section.landing-screen main .right .toToAPP .todo .todoContent #todoLists .todoList i.delete:hover > p.taskName {
+  background-color: rgba(90, 25, 25, 0.089) !important;
+}
+
+section.landing-screen main .right .toToAPP .todo .todoContent #todoLists .addTask {
+  width: 100%;
+  border: 0px;
+  padding-top: 20px;
+  margin-bottom: 15px;
 }
 
 section.landing-screen main .right .toToAPP .todo .todoContent #todoListDetails {

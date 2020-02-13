@@ -124,32 +124,36 @@ section{
             }
             .headerPanel{
                 float:right;
-                width: 200px;
+                width: 150px;
                 height: 60px;
                 .dateTime{
                 display: inline-block;
                 .date{
                     float: right;
-                    width: 200px;
                     height: 30px;
                     p{
-                        margin: 10px;
+                        margin: 0px 10px;
+                        font-size: 70%;
+                        text-align: right;
                         float:right;
-                        width: 70%;
-                        height: 5px;
-                        background-color: rgba(255, 255, 255, 0.432);
+                        line-height: 30px;
+                        color: rgba(255, 255, 255, 0.432);
                     }
                 }
                 .time{
                     float: right;
-                    width: 200px;
                     height: 30px;
                     p{
-                        margin: 10px;
+                        font-weight: 400;
+                        font-size: 150%;
+                        text-align: right;
+                        margin: 0px 10px;
                         float:right;
-                        width: 50%;
-                        height: 10px;
-                        background-color: rgba(255, 255, 255, 0.432);
+                        line-height: 45px;
+                        color: rgba(255, 255, 255, 0.7);
+                        span{
+                            font-size: 70%;
+                        }
                     }
                 } 
                 }
@@ -509,13 +513,13 @@ section{
                         width: 100%;
                         min-height: 200px;
                         margin-bottom: 40px;
-                        background-color: rgba(0, 0, 0, 0.034);
+                        background-color: rgba(0, 0, 0, 0);
                     }
                     .todo{
                         .heading{
                         width: 100%;
                         height: 40px;
-                        background-color: rgba(0, 0, 0, 0.2);
+                        background-color: rgb(93, 168, 211);
                         margin: 0px;
                         p{
                             font-weight: bold;
@@ -526,6 +530,7 @@ section{
                             margin: 0px;
                         }
                         .maximize{
+                            cursor: col-resize;
                             float: right;
                             width: 30px;
                             height: 40px;
@@ -538,6 +543,7 @@ section{
                             width: 100%;
                             display:inline-block;
                             padding: 20px;
+                            border: 1px solid#3987b486;
                             box-sizing: border-box;
                             #todoLists{
                                 float: left;
@@ -547,8 +553,57 @@ section{
                                     width: 100%;
                                     height: 25px;
                                     margin-bottom: 15px;
-                                    .addTask{
-                                        width: 100%
+                                    &.panel{
+                                        height: auto;
+                                        background: rgba(0, 0, 0, 0.068);
+                                        margin-bottom: 0px;
+                                        
+                                            .addTaskSubmit{
+                                                cursor: context-menu;
+                                                float:right;
+                                                width: auto;
+                                                height: 40px;
+                                                font-size: 15px;
+                                                padding: 0px 20px;
+                                                color: white;
+                                                background-color: rgba(0, 128, 0, 0.8);
+                                                &.left{
+                                                    float: left;
+                                                    background-color: #ffffff00;
+                                                    border: 0px ;
+                                                    outline: none;
+                                                    font-size: 20px;
+                                                    padding:5px 5px;
+                                                }
+                                                &.importent{
+                                                    color: rgb(206, 65, 65);
+                                                    &:hover{
+                                                        color: rgb(218, 36, 36);
+                                                        transform: scale(1.2);
+                                                        transition-duration: 0.1s;
+
+                                                    }
+                                                }
+                                                &.leaf{
+                                                    color: rgb(57, 138, 63);
+                                                    &:hover{
+                                                        color: rgb(8, 163, 78);
+                                                        transform: scale(1.2);
+                                                        transition-duration: 0.1s;
+                                                        
+                                                    }
+                                                }
+                                                &.college{
+                                                    color: rgb(28, 199, 148);
+                                                    &:hover{
+                                                        color: rgb(6, 179, 115);
+                                                        transform: scale(1.2);
+                                                        transition-duration: 0.1s;
+                                                        
+                                                    }
+                                                }
+                                            }
+                            
                                     }
                                     .taskName{
                                         float: left;
@@ -556,19 +611,40 @@ section{
                                         line-height: 25px;
                                         width: calc(100% - 30px );
                                         margin: 0px;
-                                        padding: 0px 0px 0px 20px;
-                                        background-color: rgba(0, 0, 0, 0.05);
+                                        padding: 0px 0px 0px 0px;
+                                        background-color: rgba(0, 0, 0, 0);
                                         box-sizing: border-box;
 
                                     }
-                                    i{
+                                    i.delete{
+                                        cursor: pointer;
                                         text-align: center;
                                         font-size: 25px;
                                         float: right;
                                         width: 25px;
                                         height: 25px;
                                         color: rgb(211, 20, 20);
+                                        transition-duration: 0.3s;
+                                        &.red{
+                                            color: rgb(211, 20, 20);
+                                            transition-duration: 0.1s;
+
+                                        }
+                                        &.green{
+                                            color: rgb(32, 173, 14);
+                                            transition-duration: 0.1s;
+
+                                        }
+                                        &:hover > p.taskName{
+                                            background-color: rgba(90, 25, 25, 0.089) !important;
+                                        }
                                     }
+                                }
+                                .addTask{
+                                    width: 100%;
+                                    border:0px;
+                                    padding-top: 20px;
+                                    margin-bottom:15px;
                                 }
                             }
                             #todoListDetails{
