@@ -115,6 +115,15 @@ section{
             background-color: #464646;
             z-index: 100;
             border-radius: 0px;
+            .geoStatus{
+                float: right;
+                i{
+                    font-size: 100%;;
+                    font-weight: 400;
+                    margin: 5px 5px;
+                    color: rgba(255, 255, 255, 0.4);
+                }
+            }
             .logo{
                 float: left;
                 width: calc(20% - 10px);
@@ -126,28 +135,29 @@ section{
                 float:right;
                 width: 150px;
                 height: 60px;
+                
                 .dateTime{
-                display: inline-block;
-                .date{
-                    float: right;
-                    height: 30px;
-                    p{
-                        margin: 0px 10px;
-                        font-size: 70%;
-                        text-align: right;
-                        float:right;
-                        line-height: 30px;
-                        color: rgba(255, 255, 255, 0.432);
+                    display: inline-block;
+                    .date{
+                        float: right;
+                        height: 30px;
+                        p{
+                            margin: 0px 0px;
+                            font-size: 70%;
+                            text-align: right;
+                            float:right;
+                            line-height: 30px;
+                            color: rgba(255, 255, 255, 0.432);
+                        }
                     }
-                }
-                .time{
+                    .time{
                     float: right;
                     height: 30px;
                     p{
                         font-weight: 400;
                         font-size: 150%;
                         text-align: right;
-                        margin: 0px 10px;
+                        margin: 0px 0px;
                         float:right;
                         line-height: 45px;
                         color: rgba(255, 255, 255, 0.7);
@@ -155,7 +165,30 @@ section{
                             font-size: 70%;
                         }
                     }
-                } 
+                    }
+                    &:hover + .graveYard{
+                        transform: translate(0px ,-100%);
+                        transition-duration: 0.3s;
+                    }
+                    
+                }
+                
+
+                .graveYard{
+                    opacity: 0.8;
+                    transform: translate(100px ,0%);
+                    position: fixed;
+                    left:0px;
+                    top: 100vh !important;
+                    width: 100vw;
+                    height: 50px;
+                    background: url("/src/img/graveyard.png");
+                    background-position: right;
+                    background-size:  auto 100%;
+                    background-repeat: no-repeat;
+                    transition-duration: 0.5s;
+                    transition-timing-function: ease-in;
+                    border-radius: 0px;;
                 }
             }
             .settings{

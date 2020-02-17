@@ -489,6 +489,17 @@ section.landing-screen header {
   border-radius: 0px;
 }
 
+section.landing-screen header .geoStatus {
+  float: right;
+}
+
+section.landing-screen header .geoStatus i {
+  font-size: 100%;
+  font-weight: 400;
+  margin: 5px 5px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
 section.landing-screen header .logo {
   float: left;
   width: calc(20% - 10px);
@@ -513,7 +524,7 @@ section.landing-screen header .headerPanel .dateTime .date {
 }
 
 section.landing-screen header .headerPanel .dateTime .date p {
-  margin: 0px 10px;
+  margin: 0px 0px;
   font-size: 70%;
   text-align: right;
   float: right;
@@ -530,7 +541,7 @@ section.landing-screen header .headerPanel .dateTime .time p {
   font-weight: 400;
   font-size: 150%;
   text-align: right;
-  margin: 0px 10px;
+  margin: 0px 0px;
   float: right;
   line-height: 45px;
   color: rgba(255, 255, 255, 0.7);
@@ -538,6 +549,33 @@ section.landing-screen header .headerPanel .dateTime .time p {
 
 section.landing-screen header .headerPanel .dateTime .time p span {
   font-size: 70%;
+}
+
+section.landing-screen header .headerPanel .dateTime:hover + .graveYard {
+  -webkit-transform: translate(0px, -100%);
+          transform: translate(0px, -100%);
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+section.landing-screen header .headerPanel .graveYard {
+  opacity: 0.8;
+  -webkit-transform: translate(100px, 0%);
+          transform: translate(100px, 0%);
+  position: fixed;
+  left: 0px;
+  top: 100vh !important;
+  width: 100vw;
+  height: 50px;
+  background: url("/src/img/graveyard.png");
+  background-position: right;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+  border-radius: 0px;
 }
 
 section.landing-screen header .settings {
