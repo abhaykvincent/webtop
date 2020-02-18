@@ -36,12 +36,14 @@
 
     <section class="landing-screen">
         <header>
-            <div class="logo"></div>
+            <div class="logo"><i class="fab fa-weebly"></i></div>
             <div class="search">
                 <button class="searchButton">Search <i class="fas fa-search"></i></button>
                 <input class="searchInput" type="text" placeholder="search" name="" id="">
             </div>
-            <div class="settings"></div>
+            <div class="settings">
+                <i class="fas fa-cog"></i>
+            </div>
             <div class="geoStatus">
                 <i class="fas fa-moon"></i>
             </div>
@@ -55,7 +57,7 @@
                     </div>
                 </div>
                 <div class="graveYard">
-                    
+
                 </div>
             </div>
         </header>
@@ -72,69 +74,32 @@
         </div>
         <main>
             <div class="panels top">
-                <div class="topPanelOption">
-                    <h3 class="topPanelOption-heading"></h3>
-                    <div class="topPanelOption-list"></div>
-                </div>
-                <div class="topPanelOption">
-                    <h3 class="topPanelOption-heading"></h3>
-                    <div class="topPanelOption-list"></div>
-                </div>
-                <div class="topPanelOption">
-                    <h3 class="topPanelOption-heading"></h3>
-                    <div class="topPanelOption-list"></div>
-                </div>
-                <div class="topPanelOption">
-                    <h3 class="topPanelOption-heading"></h3>
-                    <div class="topPanelOption-list"></div>
-                </div>
             </div>
             <div class="panels left">
                 <div class="leftPanelOption settings"></div>
-                <div class="leftPanelOption">
-                    <div class="leftPanelLabel">
-                    </div>
-                    <div class="leftPanelOptions">
-                        <div class="leftPanelOption"></div>
-                        <div class="leftPanelOption"></div>
-
-                    </div>
-                </div>
-                <div class="leftPanelOption">
-                    <div class="leftPanelLabel"></div>
-                    <div class="leftPanelOptions">
-                        <div class="leftPanelOption"></div>
-                        <div class="leftPanelOption"></div>
-                        <div class="leftPanelOption"></div>
-                        <div class="leftPanelOption"></div>
-                    </div>
-                </div>
-                <div class="leftPanelOption">
-                    <div class="leftPanelLabel"></div>
-                    <div class="leftPanelOptions"></div>
-                </div>
-                <div class="leftPanelOption"></div>
-                <div class="leftPanelOption randomFeature1"></div>
+                
             </div>
             <div class="panels right">
                 <div class="toToAPP">
                     <div class="todo app">
                         <div class="heading">
                             <p>Task Manager</h1>
-                            <div class="maximize" data-active="true"></div>
+                                <div class="maximize" data-active="true"></div>
                         </div>
                         <div class="todoContent">
                             <div id="todoLists">
                                 <div class="todoListWrap"></div>
                                 <input type="text" name="" class="addTask addTaskInput todoList">
                                 <div class="todoList panel">
-                                    <button class="addTaskSubmit left importent"><i class="fas fa-asterisk"></i></button>
+                                    <button class="addTaskSubmit left importent"><i
+                                            class="fas fa-asterisk"></i></button>
                                     <button class="addTaskSubmit left leaf"><i class="fas fa-leaf"></i></button>
-                                    <button class="addTaskSubmit left college"><i class="fas fa-university"></i></button>
+                                    <button class="addTaskSubmit left college"><i
+                                            class="fas fa-university"></i></button>
                                     <button class="addTaskSubmit" id="addTask">Add Reminder</button>
                                 </div>
                             </div>
-                            
+
                             <div id="todoListDetails">
                             </div>
                         </div>
@@ -146,54 +111,15 @@
                         <div class="buttons ">Reminders</div>
                         <div class="buttons rightTools ">Add Post</div>
                     </article>
+                    
                     <article class="addPost">
-                        <input type="text" name="" class="addMainHeading">
-                        <input type="text" name="" class="addSubHeading">
-                        <input type="text" name="" class="addContent">
-                    </article>
-                    <article>
-                        <div class="panel">
-                            <div class="settings"></div>
-                            <div class="panelSettingsWindow"></div>
+                        <textarea type="text" name="" class="addMainHeading"></textarea>
+                        <textarea type="text" name="" class="addSubHeading"></textarea>
+                        <textarea type="text" class="addContent" id="" cols="30" rows="10"></textarea>
+                        <div class="addPostPanel">
+                            <div class="buttonMain">Add Post</div>
                         </div>
-                        <h1 class="mainHeading"></h1>
-                        <h2 class="subHeading"></h2>
-                        <p class="description place"></p>
-                        <p class="description date"></p>
-                        <p class="content"></p>
-                    </article>
-                    <article>
-                        <div class="panel">
-                            <div class="settings"></div>
-                            <div class="panelSettingsWindow"></div>
-                        </div>
-                        <h1 class="mainHeading"></h1>
-                        <h2 class="subHeading"></h2>
-                        <p class="description place"></p>
-                        <p class="description date"></p>
-                        <p class="content"></p>
-                    </article>
-                    <article>
-                        <div class="panel">
-                            <div class="settings"></div>
-                            <div class="panelSettingsWindow"></div>
-                        </div>
-                        <h1 class="mainHeading"></h1>
-                        <h2 class="subHeading"></h2>
-                        <p class="description place"></p>
-                        <p class="description date"></p>
-                        <p class="content"></p>
-                    </article>
-                    <article>
-                        <div class="panel">
-                            <div class="settings"></div>
-                            <div class="panelSettingsWindow"></div>
-                        </div>
-                        <h1 class="mainHeading"></h1>
-                        <h2 class="subHeading"></h2>
-                        <p class="description place"></p>
-                        <p class="description date"></p>
-                        <p class="content"></p>
+
                     </article>
                 </div>
         </main>
@@ -211,13 +137,13 @@
 
     <!-- File connections -->
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="src/css/main.css">
     <!-- Scripts -->
     <script src="src/js/vendor/jquery.js"></script>
     <script src="src/js/vendor/TweenMax.min.js"></script>
     <script src="https://kit.fontawesome.com/9f2e6fd0b8.js" crossorigin="anonymous"></script>
     <script src="src/js/app.js"></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="src/css/main.css">
 </body>
 
 </html>

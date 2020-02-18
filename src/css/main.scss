@@ -1,20 +1,30 @@
-// fonts
-@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap');
 // import files
 @import "_norm.scss";
-body{
+@import "_templates.scss";
+// fonts
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,300i,400i,500,600,700,700i,800,900&display=swap');
+
+
+body {
+	font-family: 'Quicksand', sans-serif;
     background-color: rgb(230, 230, 230);
 }
-*{
-    border-radius: 3px  10px 10px 10px;transition-timing-function: cubic-bezier(0.36, 0.68, 0.46, 1);
+
+* {
+    border-radius: 3px 10px 10px 10px;
+    transition-timing-function: cubic-bezier(0.36, 0.68, 0.46, 1);
 }
-section{
+
+section {
     width: 100vw;
     height: 100vh;
-    &.accounts-screen{
+
+    &.accounts-screen {
         background: url("/src/img/wallpaper1.jpg");
         background-size: 100%;
-        .heading{
+
+        .heading {
             position: relative;
             top: 30px;
             display: block;
@@ -22,39 +32,45 @@ section{
             color: white;
             text-align: center;
         }
-        .accounts{
+
+        .accounts {
             position: relative;
             top: 50vh;
             display: grid;
             float: left;
             left: 70vw;
-            transform: translate(0%,-50%);
+            transform: translate(0%, -50%);
             transition-duration: 0.5s;
-            .account{
+
+            .account {
                 float: left;
                 width: 100px;
                 height: 100px;
                 margin: 10px;
-                
+
                 border-radius: 50%;
                 background-color: #6f6f6f;
                 transition-duration: 0.1s;
                 z-index: 10;
-                &:hover{
+
+                &:hover {
                     transform: scale(1.5) translateY(0%);
                     transition-duration: 0.2s;
                     z-index: 11;
                 }
-                &:active{
+
+                &:active {
                     transform: scale(1.5) translateY(0%);
                     transition-duration: 0.2s;
                 }
-                &:hover+.accountName{
+
+                &:hover+.accountName {
                     opacity: 0;
                     transition-duration: 0.2s;
                 }
             }
-            .accountName{
+
+            .accountName {
                 position: absolute;
                 bottom: -30px;
                 width: 100%;
@@ -63,7 +79,8 @@ section{
                 text-align: center;
                 transition-duration: 0.1s;
             }
-            .acctPassword{
+
+            .acctPassword {
                 display: block;
                 width: 170px;
                 height: 30px;
@@ -73,7 +90,8 @@ section{
                 border-radius: 15px;
                 border: 0px;
             }
-            .acctDetails{
+
+            .acctDetails {
                 display: block;
                 width: 170px;
                 height: 30px;
@@ -83,7 +101,8 @@ section{
                 border-radius: 15px;
                 border: 0px;
                 text-align: center;
-                .loginButton{
+
+                .loginButton {
                     padding: 5px 30px;
                     background-color: rgb(224, 224, 224);
                     color: black;
@@ -91,13 +110,15 @@ section{
                     margin-left: 50%;
                     transform: translateX(-50%);
                 }
-                a{
+
+                a {
                     font-size: 10px;
                     color: black;
                 }
             }
         }
-        .back{
+
+        .back {
             position: fixed;
             top: 20px;
             left: 30px;
@@ -107,126 +128,166 @@ section{
             transition-duration: 0.2s;
         }
     }
-    &.landing-screen{
-        header{
+
+    &.landing-screen {
+        header {
             position: fixed;
             width: 100%;
             height: 60px;
             background-color: #464646;
             z-index: 100;
             border-radius: 0px;
-            .geoStatus{
+
+            .geoStatus {
                 float: right;
-                i{
-                    font-size: 100%;;
+                transform: translateX(-130px);
+                color: rgba(253, 255, 231, 0.432);
+
+                i {
+                    font-size: 100%;
+                    ;
                     font-weight: 400;
                     margin: 5px 5px;
-                    color: rgba(255, 255, 255, 0.4);
                 }
             }
-            .logo{
+
+            .logo {
                 float: left;
                 width: calc(20% - 10px);
                 height: 50px;
-                padding: 5px;
+                font-size: 40px;
+                color: rgba(255, 255, 255, 0.8);
+                padding: 5px 40px;
                 background-color: #00000010;
             }
-            .headerPanel{
-                float:right;
+
+            .headerPanel {
+                float: right;
                 width: 150px;
                 height: 60px;
-                
-                .dateTime{
+
+                .dateTime {
                     display: inline-block;
-                    .date{
+                    border-bottom: 4px solid #ef8223a2;
+                    border-radius: 0px;
+                    transform: translate(26px, -4px);
+
+                    .date {
                         float: right;
                         height: 30px;
-                        p{
+
+                        p {
                             margin: 0px 0px;
                             font-size: 70%;
                             text-align: right;
-                            float:right;
+                            float: right;
+                            padding: 0px 20px;
                             line-height: 30px;
                             color: rgba(255, 255, 255, 0.432);
                         }
                     }
-                    .time{
-                    float: right;
-                    height: 30px;
-                    p{
-                        font-weight: 400;
-                        font-size: 150%;
-                        text-align: right;
-                        margin: 0px 0px;
-                        float:right;
-                        line-height: 45px;
-                        color: rgba(255, 255, 255, 0.7);
-                        span{
-                            font-size: 70%;
+
+                    .time {
+                        float: right;
+                        height: 30px;
+
+                        p {
+                            font-weight: 400;
+                            font-size: 150%;
+                            text-align: right;
+                            margin: 0px 0px;
+                            float: right;
+                            padding: 0px 20px;
+                            line-height: 45px;
+                            color: rgba(255, 255, 255, 0.7);
+
+                            span {
+                                font-size: 70%;
+                            }
                         }
                     }
-                    }
-                    &:hover + .graveYard{
-                        transform: translate(0px ,-100%);
+
+                    &:hover+.graveYard {
+                        transform: translate(0px, -100%);
                         transition-duration: 0.3s;
                     }
-                    
-                }
-                
 
-                .graveYard{
+                }
+
+
+                .graveYard {
                     opacity: 0.8;
-                    transform: translate(100px ,0%);
+                    transform: translate(100px, 0%);
                     position: fixed;
-                    left:0px;
+                    left: 0px;
                     top: 100vh !important;
                     width: 100vw;
                     height: 50px;
                     background: url("/src/img/graveyard.png");
                     background-position: right;
-                    background-size:  auto 100%;
+                    background-size: auto 100%;
                     background-repeat: no-repeat;
                     transition-duration: 0.5s;
                     transition-timing-function: ease-in;
-                    border-radius: 0px;;
+                    border-radius: 0px;
+                    ;
                 }
             }
-            .settings{
+
+            .settings {
                 float: right;
                 width: 50px;
-                height: 50px;
+                height: 46px;
                 padding: 5px;
-                background-color: #00000030;
+                background-color: #00000010;
                 cursor: pointer;
+                border-radius: 0px;
+                border-bottom: 4px solid #3f8d20;
+                
+                i {
+                    width: 100%;
+                    line-height: 50px;
+                    font-size: 30px;
+                    text-align: center;
+                    color: rgba(255, 255, 255, 0.4);
+                    &:hover{
+                    color:rgba(255, 255, 255, 0.589) ;
+                }
+
+                }
             }
-            .search{
+
+            .search {
                 float: left;
                 width: 40%;
                 height: 60px;
-                .searchInput{
+
+                .searchInput {
                     float: left;
                     width: calc(100% - 80px);
                     height: 25px;
-                    margin:  15px 0px;
+                    margin: 15px 0px;
                     border: 0px;
                     border-radius: 5px 0px 0px 5px;
-                    padding:1px 20px;
+                    padding: 1px 20px;
                     background-color: rgba(255, 255, 255, 0.9);
                     font-size: 90%;
                     transition-duration: 0.2s;
                     box-sizing: border-box;
-                    &:focus{
-                        padding:0px 10px;
+
+                    &:focus {
+                        padding: 0px 10px;
                         outline: none;
                     }
                 }
-                .searchButton{
-                    float:right;
+
+                .searchButton {
+                    float: right;
                     top: 0px;
                     width: 80px;
                     height: 25px;
-                    margin:  15px 0px;
-                    padding:0px 15px;
+                    margin: 15px 0px;
+                    padding: 0px 15px;
                     border: 0px;
 
                     text-align: left;
@@ -236,46 +297,54 @@ section{
                     box-sizing: border-box;
                     transition-duration: 0.2s;
                     cursor: pointer;
-                    i{
+
+                    i {
                         display: none;
                         float: right;
                         opacity: 0.7;
                         color: rgb(179, 179, 179);
                         transition-duration: 0.2s;
                     }
-                    &:hover{
+
+                    &:hover {
                         width: 110px;
                         transition-duration: 0.2s;
                         color: white;
                         background-color: rgba(0, 0, 0, 0.4);
                     }
-                    &:active{
+
+                    &:active {
                         width: 110px;
                         transition-duration: 0.3s;
                         color: black;
                         background-color: rgba(206, 206, 206, 0.4);
                     }
-                    &:active > i{
+
+                    &:active>i {
                         color: black;
                         opacity: 1;
                         transition-duration: 0.2s;
                     }
-                    &:hover ~ .searchInput{
+
+                    &:hover~.searchInput {
                         width: calc(100% - 110px);
                         transition-duration: 0.2s;
                     }
-                    &:hover i{
+
+                    &:hover i {
                         display: block;
                         opacity: 1;
                         transition-duration: 0.2s;
                     }
-                    &:focus{
+
+                    &:focus {
                         outline: none;
                     }
                 }
             }
         }
-        .settingsWindow{
+
+        .settingsWindow {
             position: fixed;
             top: 60px;
             right: 0px;
@@ -286,7 +355,8 @@ section{
             transition-duration: 0.2s;
             z-index: 99;
         }
-        .settingsWindowSubBottom{
+
+        .settingsWindowSubBottom {
             position: fixed;
             top: 750px;
             right: 0px;
@@ -296,360 +366,535 @@ section{
             background-color: rgba(92, 92, 92, 0.01);
             transition-duration: 0.2s;
             z-index: 99;
-            .settingsOptionSub{
+
+            .settingsOptionSub {
                 width: 30px;
-                height: 30px;   
+                height: 30px;
                 margin: 10px 10px 10px auto;
                 background-color: rgba(80, 80, 80, 0.76);
                 transform: translateX(100px);
                 transition-duration: 0.1s;
-                &:hover{
+
+                &:hover {
                     transform: scale(1.2) rotate(-90deg) !important;
                     transition-duration: 0.2s;
                 }
             }
         }
-        main{
+
+        main {
             position: relative;
             width: 100%;
             padding-top: 60px;
             background-color: #cecece;
-            .panels{
+
+            .panels {
                 display: inline-block;
             }
-            .top{
+
+            .top {
                 float: left;
                 height: 40px;
                 width: 100%;
+                padding: 0px 30px;
                 background: #49494921;
                 z-index: 80;
-                .topPanelOption{
+                box-sizing: border-box;
+
+                .topPanelOption {
                     position: relative;
                     float: left;
-                    width:19% ;
-                    min-height: 10px;
-                    margin:15px 0px 10px 1%;
-                    .topPanelOption-heading{
-                        width:100% ;
-                        background-color: #8a8a8a;
-                        height: 10px;
-                        margin: 0px;
-                        &:hover{
-                            background-color: #4d4d4d;
+                    width: 10%;
+                    margin-right: 20px;
+                    .dropdownIcon{
+                        float: right;
+                    }
+
+                    .topPanelOption-heading {
+                        cursor: s-resize;
+                        width: 100%;
+                        font-size: 100%;
+                        font-weight: 400;;
+                        padding: 3px 20px;
+                        margin: 5px 0px;
+                        box-sizing: border-box;
+                        &:hover {
+                            background-color: #8a8a8ab0;
                             transition-duration: 0.2s;
 
                         }
                     }
-                    .topPanelOption-list{
-                        width:100% ;
-                        background-color: #c3c3c39c;
+
+                    .topPanelOption-list {
+                        width: 100%;
+                        background-color: #e4e4e4da;
+                        overflow: hidden;
                         height: 0px;
+                        min-height: 0px;
                         margin: 0px;
                         transition-duration: 0.2s;
+                        box-sizing: border-box;
+                        border-radius: 0px 0px 5px 5px;
+                        border: 1px solid rgba(0, 0, 0, 0.198);
+                        .topPanelOption-listBTN{
+                            cursor: pointer;
+                            padding: 5px 10px;
+                            margin: 0px;
+                            &:hover{
+                                background-color: rgba(255, 255, 255, 0.5);
+                            }
+
+                        }
                     }
-                    .topPanelOption-list-active{
-                        height: 300px;
+
+                    .topPanelOption-list-active {
+                        height: auto;
+                        min-height: 100px;
                         transition-duration: 0.3s;
                     }
-                    &:last-child{
+
+                    &:last-child {
                         margin-right: 0px;
                     }
                 }
             }
-            .left{
+
+            .left {
+                font-family: 'Poppins';
                 float: left;
                 width: 20%;
                 padding: 40px;
                 box-sizing: border-box;
-                .leftPanelOption{
+
+                .leftPanelOption {
                     width: 100%;
                     height: auto;
-                    margin-bottom: 5%;
-                    background-color: rgb(212, 212, 212);
-                    .leftPanelLabel{
+                    margin-bottom: 20px;
+                    background-color: rgba(212, 212, 212, 0.815);
+
+                    .leftPanelLabel {
+                        cursor: pointer;
                         width: 100%;
                         height: 40px;
-                        background-color: rgb(177, 177, 177);
+                        font-size: 50%;
+                        padding-left: 20px;
+                        background-color: rgba(228, 228, 228, 0.164);
+                        box-sizing: border-box;
+                        line-height: 40px;
+                        h1{
+                            cursor: s-resize;
+                            font-weight: 300;
+                            i{
+                                margin-right: 10px;
+                            }
+                        }
                     }
-                    .leftPanelOptions{
+
+                    .leftPanelOptions {
+                        cursor: pointer;
                         width: 100%;
                         height: 0px;
                         overflow: hidden;
                         transition-duration: 0.3s;
-                        &:hover{
-                        transition-duration: 0.1s;
+
+                        &:hover {
+                            transition-duration: 0.1s;
                         }
-                        .leftPanelOption{
+
+                        .leftPanelOption {
                             height: 30px;
                             width: 100%;
-                            margin-bottom: 1px;
+                            margin-top: 5px;
+                            margin-bottom: 5px;
+                            padding-left: 20px;
+                            line-height: 30PX;
+                            font-weight: 300;
+                            font-size: 80%;
+                            box-sizing: border-box;
+                            transition-duration: 0.1s;
+                            i{
+                                margin-right: 10px;
+                            }
+                            &:HOVER {
+                                background-color: rgba(167, 167, 167, 0.3);
+                                transition-duration: 0.1s;
+                            }
+                            &:first-child {
+                                
+                            }
                         }
                     }
-                    .showOptions{
+
+                    .showOptions {
+                        width: 100%;
                         height: auto;
                         transition-duration: 0.3s;
 
                     }
-                    &.randomFeature1{
+
+                    &.randomFeature1 {
                         margin-top: 40px;
                         height: 300px;
                         background-color: rgb(128, 128, 128);
                     }
-                    &.randomFeature2{
+
+                    &.randomFeature2 {
                         margin-top: 40px;
                         height: 600px;
                         background-color: rgba(128, 128, 128, 0.876);
                     }
                 }
-                .settings{
+
+                .settings {
                     height: 20px;
                     background-color: rgba(128, 128, 128, 0.1);
                 }
             }
-            .right{
+
+            .right {
                 float: left;
                 min-height: 800px;
                 width: 80%;
                 padding: 40px 0px 0px 0px;
                 box-sizing: border-box;
-                .articles{
-                    width:50%;
+
+                .articles {
+                    width: 50%;
                     float: left;
                     min-height: 10px;
-                    article{
+
+                    article {
+                        font-family: 'Poppins';
                         position: relative;
                         width: 100%;
                         height: auto;
                         margin-bottom: 60px;
-                        background-color: rgba(184, 184, 184, 0.2);
-                        .panel{
+                        border: 1px solid rgba(0, 0, 0, 0.03);
+                        background-color: rgba(184, 184, 184, 0.1);
+                        z-index: 39;
+                        .panel {
 
                             position: relative;
                             width: 100%;
                             height: 20px;
-                            margin:0px 0px 5px 0px !important;
-                            background-color: rgba(75, 75, 75, 0.1);
-                            .settings{
+                            margin: 0px 0px 5px 0px !important;
+                            border: 1px solid rgba(0, 0, 0, 0.03);
+                            background-color: rgba(75, 75, 75, 0.03);
+
+                            .settings {
                                 float: right;
                                 width: 20px;
                                 height: 20px;
+                                font-size: 70%;
+                                text-align: center;
+                                line-height: 20px;
                                 background-color: rgba(75, 75, 75, 0.2);
                                 transition-duration: 0.2s;
-                                &:hover{
+
+                                &:hover {
                                     transition-duration: 0.2s;
                                     background-color: rgba(75, 75, 75, 0.4);
                                 }
                             }
-                            .panelSettingsWindow{
+
+                            .panelSettingsWindow {
                                 position: absolute;
+                                overflow: hidden;
                                 top: 20px;
                                 right: 0px;
-                                width:0px;
-                                height:  320px;
-                                background-color: rgba(0, 0, 0, 0.05);
-                                transition-duration: 0.3s;
-                            }
-                            .panelSettingsWindow-active{
-                                width:200px;
+                                width: 0px;
+                                background-color: #e6e6e6f3;
+                                font-weight: 300;;
+                                box-sizing: border-box;
                                 transition-duration: 0.2s;
+                                z-index: 40;
                             }
-                            &:hover{
+
+                            .panelSettingsWindow-active {
+                                border: 1px solid rgba(0, 0, 0, 0.185);
+                                width: 200px;
+                                transition-duration: 0.1s;
+                            }
+                            p{
+                                margin: 0px;
+                                padding:10px 20px;
+                                transition-duration: 0.2s;
+                                &:hover{
+                                    background-color: rgba(255, 255, 255, 0.5);
+                                    transition-duration: 0.1s;
+                                }
+                            }
+                            &:hover {
                                 transition-duration: 0.3s;
                             }
-                            
+
                         }
-                        .mainHeading{
+
+                        .mainHeading {
                             position: relative;
                             width: 90%;
-                            height: 50px;
-                            margin:0px !important;
-                            background-color: rgba(75, 75, 75, 0.3);
+                            margin: 0px !important;
+                            font-weight: 400;
+                            padding:10px 30px 0px 30px;
+                            box-sizing: border-box;
                         }
-                        .subHeading{
+
+                        .subHeading {
                             position: relative;
                             width: 80%;
-                            height: 20px;
-                            margin: 10px 0px;
-                            background-color: rgba(75, 75, 75, 0.15);
+                            margin: 10px 0px 0px 0px;
+                            font-size: 120%;
+                            font-weight: 300;
+                            padding:0px 30px;
+                            box-sizing: border-box;
                         }
-                        .description{
+
+                        .description {
                             position: initial;
-                            height: 5px;
-                            background-color: rgba(75, 75, 75, 0.55);
-                            margin: 5px 0px;
-                            &.place{
-                                width: 100px;
+                            text-align: right;
+                            margin: -1px 0px;
+                            font-size: 11px;
+                            font-weight: 400;
+                            padding:0px 30px;
+                            box-sizing: border-box;
+                            i{
+                                width: 10px;
+                                font-size: 80%;
+                                color: rgba(0, 0, 0, 0.6);
                             }
-                            &.date{
+                            &.place {
+                            }
+
+                            &.date {
                                 right: 20px;
-                                width: 60px;
+                                font-weight: 200;
                             }
                         }
-                        .content{
+
+                        .content {
                             position: relative;
+                            text-indent: 40px;
                             width: 100%;
-                            height: 200px;
+                            padding-bottom: 20px;
                             margin: 10px 0px;
-                            background-color: rgba(75, 75, 75, 0.1);
+                            padding:0px 30px;
+                            box-sizing: border-box;
+                            line-height: 1.7;
+                            font-weight: 200;
                         }
                     }
-                    .editor{
+
+                    .editor {
                         display: inline-block;
                         width: 100%;
                         height: 20px;
                         margin-bottom: 20px;
                         background-color: rgba(255, 255, 255, 0);
-                        .buttons{
+
+                        .buttons {
                             cursor: pointer;
                             display: inline-block;
-                            padding:5px 10px;
+                            padding: 5px 10px;
                             margin-right: 15px;
                             background-color: rgb(128, 128, 128);
                             color: white;
-                            font-weight: medium ;
+                            font-weight: medium;
                             text-align: center;
                         }
-                        .rightTools{
+
+                        .rightTools {
                             float: right;
                             margin-right: 0px;
                         }
                     }
-                    .addPost{
+
+                    .addPost {
                         min-height: 200px;
-                        padding:0px;
-                        input{
+                        padding: 0px;
+                        border: 1px solid rgba(51, 104, 58, 0.6);
+                        input,
+                        textarea {
                             border: 0px;
                             border-radius: 1px;
                             width: 100%;
                             min-height: 40px;
                             margin-bottom: 1px;
-                            padding: 0px 30px;
+                            padding: 10px;
                             box-sizing: border-box;
-                            &:focus{
+                            background-color: rgba(0, 0, 0, 0.05);
+                            &:focus {
                                 outline: none;
                             }
                         }
-                        .addMainHeading{
-                            height: 50px !important
+                        .addPostPanel{
+                            display: inline-block;
+                            border: 0px;
+                            border-radius: 1px;
+                            width: 100%;
+                            margin-bottom: 1px;
+                            padding: 10px;
+                            box-sizing: border-box;
+                            background-color: rgba(0, 0, 0, 0.03);
+                            .buttonMain{
+                                background-color: #1bab2d;
+                            }
+
+
                         }
-                        .addContent{
-                            height: 140px !important
+
+                        .addMainHeading {
+                            height: 50px !important;
+                            font-size: 150%;
+                            background-color: rgba(0, 0, 0, 0.1);
+                        }
+
+                        .addContent {
+                            height: auto;
+                            background-color: rgba(0, 0, 0, 0.0);
+                            width: 100% !important;
+                            font-size: 80%;
+                            margin: 0px !important;
+                            padding: 10px 30px;
                         }
                     }
                 }
-                .toToAPP{
+
+                .toToAPP {
                     float: right;
                     width: 50%;
                     padding: 0px 40px;
                     box-sizing: border-box;
-                    .app{
+
+                    .app {
                         width: 100%;
                         min-height: 200px;
                         margin-bottom: 40px;
                         background-color: rgba(0, 0, 0, 0);
                     }
-                    .todo{
-                        .heading{
-                        width: 100%;
-                        height: 40px;
-                        background-color: rgb(93, 168, 211);
-                        margin: 0px;
-                        p{
-                            font-weight: bold;
-                            float: left;
-                            width: 90%;
-                            text-align: center;
-                            line-height: 40px;;
-                            margin: 0px;
-                        }
-                        .maximize{
-                            cursor: col-resize;
-                            float: right;
-                            width: 30px;
-                            height: 40px;
-                            background-color: rgba(0, 0, 0, 0.4);
-                            transition-duration: 0.3s;
 
-                        }
-                        }
-                        .todoContent{
+                    .todo {
+                        .heading {
                             width: 100%;
-                            display:inline-block;
+                            height: 40px;
+                            background-color: rgb(93, 168, 211);
+                            margin: 0px;
+
+                            p {
+                                font-weight: bold;
+                                float: left;
+                                width: 90%;
+                                text-align: center;
+                                line-height: 40px;
+                                ;
+                                margin: 0px;
+                            }
+
+                            .maximize {
+                                cursor: col-resize;
+                                float: right;
+                                width: 30px;
+                                height: 40px;
+                                background-color: rgba(0, 0, 0, 0.4);
+                                transition-duration: 0.3s;
+
+                            }
+                        }
+
+                        .todoContent {
+                            width: 100%;
+                            display: inline-block;
                             padding: 20px;
                             border: 1px solid#3987b486;
                             box-sizing: border-box;
-                            #todoLists{
+
+                            #todoLists {
                                 float: left;
                                 width: 100%;
                                 transition-duration: 0.2s;
-                                .todoList{
+
+                                .todoList {
                                     width: 100%;
                                     height: 25px;
                                     margin-bottom: 15px;
-                                    &.panel{
+
+                                    &.panel {
                                         height: auto;
                                         background: rgba(0, 0, 0, 0.068);
                                         margin-bottom: 0px;
-                                        
-                                            .addTaskSubmit{
-                                                cursor: context-menu;
-                                                float:right;
-                                                width: auto;
-                                                height: 40px;
-                                                font-size: 15px;
-                                                padding: 0px 20px;
-                                                color: white;
-                                                background-color: rgba(0, 128, 0, 0.8);
-                                                &.left{
-                                                    float: left;
-                                                    background-color: #ffffff00;
-                                                    border: 0px ;
-                                                    outline: none;
-                                                    font-size: 20px;
-                                                    padding:5px 5px;
-                                                }
-                                                &.importent{
-                                                    color: rgb(206, 65, 65);
-                                                    &:hover{
-                                                        color: rgb(218, 36, 36);
-                                                        transform: scale(1.2);
-                                                        transition-duration: 0.1s;
 
-                                                    }
-                                                }
-                                                &.leaf{
-                                                    color: rgb(57, 138, 63);
-                                                    &:hover{
-                                                        color: rgb(8, 163, 78);
-                                                        transform: scale(1.2);
-                                                        transition-duration: 0.1s;
-                                                        
-                                                    }
-                                                }
-                                                &.college{
-                                                    color: rgb(28, 199, 148);
-                                                    &:hover{
-                                                        color: rgb(6, 179, 115);
-                                                        transform: scale(1.2);
-                                                        transition-duration: 0.1s;
-                                                        
-                                                    }
+                                        .addTaskSubmit {
+                                            cursor: context-menu;
+                                            float: right;
+                                            width: auto;
+                                            height: 40px;
+                                            font-size: 15px;
+                                            padding: 0px 20px;
+                                            color: white;
+                                            background-color: #2988beee;
+
+                                            &.left {
+                                                float: left;
+                                                background-color: #ffffff00;
+                                                border: 0px;
+                                                outline: none;
+                                                font-size: 20px;
+                                                padding: 5px 5px;
+                                            }
+
+                                            &.importent {
+                                                color: rgb(206, 65, 65);
+
+                                                &:hover {
+                                                    color: rgb(218, 36, 36);
+                                                    transform: scale(1.2);
+                                                    transition-duration: 0.1s;
+
                                                 }
                                             }
-                            
+
+                                            &.leaf {
+                                                color: rgb(57, 138, 63);
+
+                                                &:hover {
+                                                    color: rgb(8, 163, 78);
+                                                    transform: scale(1.2);
+                                                    transition-duration: 0.1s;
+
+                                                }
+                                            }
+
+                                            &.college {
+                                                color: rgb(28, 199, 148);
+
+                                                &:hover {
+                                                    color: rgb(6, 179, 115);
+                                                    transform: scale(1.2);
+                                                    transition-duration: 0.1s;
+
+                                                }
+                                            }
+                                        }
+
+                                        #addTask {
+                                            cursor: url("../img/icons/addReminder.cur"), auto;
+
+                                        }
+
                                     }
-                                    .taskName{
+
+                                    .taskName {
                                         float: left;
                                         height: 25px;
                                         line-height: 25px;
-                                        width: calc(100% - 30px );
+                                        width: calc(100% - 30px);
                                         margin: 0px;
                                         padding: 0px 0px 0px 0px;
                                         background-color: rgba(0, 0, 0, 0);
                                         box-sizing: border-box;
 
                                     }
-                                    i.delete{
+
+                                    i.delete {
                                         cursor: pointer;
                                         text-align: center;
                                         font-size: 25px;
@@ -658,29 +903,34 @@ section{
                                         height: 25px;
                                         color: rgb(211, 20, 20);
                                         transition-duration: 0.3s;
-                                        &.red{
+
+                                        &.red {
                                             color: rgb(211, 20, 20);
                                             transition-duration: 0.1s;
 
                                         }
-                                        &.green{
+
+                                        &.green {
                                             color: rgb(32, 173, 14);
                                             transition-duration: 0.1s;
 
                                         }
-                                        &:hover > p.taskName{
+
+                                        &:hover>p.taskName {
                                             background-color: rgba(90, 25, 25, 0.089) !important;
                                         }
                                     }
                                 }
-                                .addTask{
+
+                                .addTask {
                                     width: 100%;
-                                    border:0px;
+                                    border: 0px;
                                     padding-top: 20px;
-                                    margin-bottom:15px;
+                                    margin-bottom: 15px;
                                 }
                             }
-                            #todoListDetails{
+
+                            #todoListDetails {
                                 float: right;
                                 width: 0px;
                                 min-height: 200px;
@@ -692,11 +942,12 @@ section{
                 }
             }
 
-            .panels{
+            .panels {
                 position: relative;
             }
         }
-        .settingsWindow{
+
+        .settingsWindow {
             position: fixed;
             top: 60px;
             right: 0px;
@@ -707,25 +958,30 @@ section{
             z-index: 99;
             transition-duration: 0.3s;
         }
-        footer{
+
+        footer {
             width: 100%;
             height: 200px;
             display: flex;
-            .footerElements{
+
+            .footerElements {
                 display: table-cell;
                 height: 200px;
-                padding:40px;
+                padding: 40px;
                 box-sizing: border-box;
             }
-            .left{
+
+            .left {
                 width: 33.3%;
                 height: 200px;
                 background: #0000001a;
             }
-            .middle{
-                width:33.3%;
+
+            .middle {
+                width: 33.3%;
                 background: #00000028;
-                .withLove{
+
+                .withLove {
                     position: relative;
                     left: 50%;
                     transform: translateX(-50%);
@@ -734,7 +990,8 @@ section{
                     height: 10px;
                     background-color: rgba(0, 0, 0, 0.205);
                 }
-                .techs{
+
+                .techs {
                     position: relative;
                     left: 50%;
                     transform: translateX(-50%);
@@ -743,7 +1000,8 @@ section{
                     height: 20px;
                     background-color: rgba(0, 0, 0, 0.205);
                 }
-                .copy{
+
+                .copy {
                     position: relative;
                     margin-top: 20px;
                     width: 100%;
@@ -751,11 +1009,11 @@ section{
                     background-color: rgba(0, 0, 0, 0.10);
                 }
             }
-            .right{
-                width:33.3%;
+
+            .right {
+                width: 33.3%;
                 background: #0000001c;
             }
         }
     }
 }
-
