@@ -110,7 +110,6 @@ var leftPanel = [{
         optionIcon: [`<i class="fas fa-plus"></i>`, `<i class="far fa-trash-alt"></i>`],
     }
 ];
-
 // top panel name and dropdown options
 var topPanel = [{
         name: "Lorem",
@@ -271,6 +270,20 @@ function topPanelDropdown() { //Article panel settings drop down
     addTopPanelOptions();
 
 
+}
+function leftpanelDropdownn(){
+    $(".leftPanelLabel").data("active", "false");
+    $(".leftPanelLabel").click(function (e) {
+        let isActive = $(this).data('active');
+        e.preventDefault();
+        if (isActive === "false") {
+            $(this).data("active", "true");
+            $("+.leftPanelOptions", this).addClass("showOptions");
+        } else {
+            $(this).data("active", "false");
+            $("+.leftPanelOptions", this).removeClass("showOptions");
+        }
+    });
 }
 
 function taskList() {
@@ -447,39 +460,32 @@ function alert_deletePost() {
         alertWindow("Delete", "Do you want to delete this Post", "Delete", "red");
     });
 }
-/////////////
+
+
+
+////////////////
+// Production
+function productionMode(){
+    $("section").hide();
+    $(".landing-screen").show();
+}
+////////////////
 $(document).ready(function () {
-    addLeftPanelOptions();
-    reminderAppMaxBTN();
+    //header
     headerSetting_dropdown();
+    //body
+    addLeftPanelOptions();
     topPanelDropdown();
+    leftpanelDropdownn();
+    //Task-manager
+    reminderAppMaxBTN();
     taskList(); //
     deleteTask();
     addTask();
-
+    //Blogs
     loadPosts();
     panelFunctionality();
     alert_deletePost();
-    //////////////
 
-    $(".leftPanelLabel").data("active", "false");
-    $(".leftPanelLabel").click(function (e) {
-        let isActive = $(this).data('active');
-        e.preventDefault();
-        if (isActive === "false") {
-            $(this).data("active", "true");
-            $("+.leftPanelOptions", this).addClass("showOptions");
-        } else {
-            $(this).data("active", "false");
-            $("+.leftPanelOptions", this).removeClass("showOptions");
-
-        }
-
-    });
-
-
-
-
-    $("section").hide();
-    $(".landing-screen").show();
+    productionMode(".landing-screen");
 });
