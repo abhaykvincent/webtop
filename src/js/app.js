@@ -181,7 +181,8 @@ var posts = [{
     }
 ]
 
-//
+
+    //header
 function headerSetting_dropdown() {
     //header
     $(".settingsWindow").data("active", "false");
@@ -212,7 +213,57 @@ function headerSetting_dropdown() {
     });
 
 }
+    //body
+function addLeftPanelOptions() {
+    let content = "";
+    leftPanel.forEach(element => {
+        content += `<div class="leftPanelOption">
+                        <div class="leftPanelLabel">
+                        <h1>${element.icon} ${element.name}</h1>
+                        </div>
+                        <div class="leftPanelOptions">`
+        element.options.forEach((option, i) => {
+            content += `<div class="leftPanelOption">${element.optionIcon[i]} ${option}</div>`
+        });
+        content += `</div>
+                    </div>`;
+    });
+    $(".panels.left").append(content);
+}
+function addTopPanelOptions() {
+    let content = "";
+    topPanel.forEach(element => {
+        content += `<div class="topPanelOption">
+        <h3 class="topPanelOption-heading">${element.name} <i class="dropdownIcon fas fa-caret-down"></i></h3>
+        <div class="topPanelOption-list">`
+        element.options.forEach((option, i) => {
+            content += `<p class="topPanelOption-listBTN">${option}</p>`
+        });
+        content += `</div></div>`;
+    });
+    $(".panels.top").append(content);
+}
+function topPanelDropdown() { //Article panel settings drop down
 
+    addTopPanelOptions();
+
+
+}
+function leftpanelDropdownn(){
+    $(".leftPanelLabel").data("active", "false");
+    $(".leftPanelLabel").click(function (e) {
+        let isActive = $(this).data('active');
+        e.preventDefault();
+        if (isActive === "false") {
+            $(this).data("active", "true");
+            $("+.leftPanelOptions", this).addClass("showOptions");
+        } else {
+            $(this).data("active", "false");
+            $("+.leftPanelOptions", this).removeClass("showOptions");
+        }
+    });
+}
+    //Task-manager
 function reminderAppMaxBTN() {
     //To Do app maximize app
     $(".heading .maximize").data("active", "false");
@@ -264,28 +315,6 @@ function reminderAppMaxBTN() {
         }
     });
 }
-
-function topPanelDropdown() { //Article panel settings drop down
-
-    addTopPanelOptions();
-
-
-}
-function leftpanelDropdownn(){
-    $(".leftPanelLabel").data("active", "false");
-    $(".leftPanelLabel").click(function (e) {
-        let isActive = $(this).data('active');
-        e.preventDefault();
-        if (isActive === "false") {
-            $(this).data("active", "true");
-            $("+.leftPanelOptions", this).addClass("showOptions");
-        } else {
-            $(this).data("active", "false");
-            $("+.leftPanelOptions", this).removeClass("showOptions");
-        }
-    });
-}
-
 function taskList() {
     let taskContentHTML = "";
     $(".todoListWrap").html(taskContentHTML);
@@ -311,7 +340,6 @@ function taskList() {
 
     ///
 }
-
 function deleteTask() {
     /* 
         $(".taskDelete_button").click(function (e) { 
@@ -322,7 +350,6 @@ function deleteTask() {
             taskList(); //
         }); */
 }
-
 function addTask() {
     $("#addTask").click(function (e) {
         e.preventDefault();
@@ -341,38 +368,7 @@ function addTask() {
         taskList(); //
     });
 }
-
-function addLeftPanelOptions() {
-    let content = "";
-    leftPanel.forEach(element => {
-        content += `<div class="leftPanelOption">
-                        <div class="leftPanelLabel">
-                        <h1>${element.icon} ${element.name}</h1>
-                        </div>
-                        <div class="leftPanelOptions">`
-        element.options.forEach((option, i) => {
-            content += `<div class="leftPanelOption">${element.optionIcon[i]} ${option}</div>`
-        });
-        content += `</div>
-                    </div>`;
-    });
-    $(".panels.left").append(content);
-}
-
-function addTopPanelOptions() {
-    let content = "";
-    topPanel.forEach(element => {
-        content += `<div class="topPanelOption">
-        <h3 class="topPanelOption-heading">${element.name} <i class="dropdownIcon fas fa-caret-down"></i></h3>
-        <div class="topPanelOption-list">`
-        element.options.forEach((option, i) => {
-            content += `<p class="topPanelOption-listBTN">${option}</p>`
-        });
-        content += `</div></div>`;
-    });
-    $(".panels.top").append(content);
-}
-
+    //Blog
 function panelFunctionality() {
     $(".panel .settings").data("active", "false");
     $(".panel .settings").click(function (e) {
@@ -413,7 +409,6 @@ function panelFunctionality() {
         }
     });
 }
-
 function loadPostSettings() {
     let content = "";
     postSettings.options.forEach(option => {
@@ -424,7 +419,6 @@ function loadPostSettings() {
     });
     $(".panelSettingsWindow").append(content);
 }
-
 function loadPosts() {
     let content = "";
     posts.forEach(post => {
@@ -445,7 +439,6 @@ function loadPosts() {
     $(".articles").append(content);
     loadPostSettings();
 }
-
 function alertWindow(head, content, button, className) {
     $(".alertWindow").addClass(className);
     $(".alertWindow h1").html(head);
@@ -453,16 +446,12 @@ function alertWindow(head, content, button, className) {
     $(".alertWindow button").html(button);
     $(".alertWindow").css("transform", "scale(1) translate(-50%,-50%)");
 }
-
 function alert_deletePost() {
     $(".deletePost_button").click(function (e) {
         e.preventDefault();
         alertWindow("Delete", "Do you want to delete this Post", "Delete", "red");
     });
 }
-
-
-
 ////////////////
 // Production
 function productionMode(){
