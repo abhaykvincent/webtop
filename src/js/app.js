@@ -317,10 +317,13 @@ function taskList() {
     $(".todoListWrap").html(taskContentHTML);
     //creates HTML element for tasks
     tasks.forEach((element,i) => {
+        if(element.taskName!="")
+        {
         taskContentHTML += `<div class="todoList">
                                     <p class="taskName">${element.taskName}</p>
                                     <i class="taskDelete_button delete far fa-check-circle" data-task-index="${i}" data-task-id="${element.taskId}"></i>
                                 </div>`
+        }
     });
     $(".todoListWrap").html(taskContentHTML);
 
@@ -337,24 +340,38 @@ function taskList() {
     ///
 }
 function addTask() {
-    $("#addTask").click(function (e) {
-        e.preventDefault();
+    $("#addTask").click(function (e) { 
+        e.stopImmediatePropagation();
         let taskName = $(".addTaskInput").val();
-        console.log(taskName);
         let taskIdValue = tasks[tasks.length - 1].taskId + 1;
         let taskNameValue = tasks[tasks.length - 1].taskName = taskName;
         let taskStatusValue = "pending";
         let value = {
             taskId: taskIdValue,
             taskName: taskNameValue,
-            taskStatus: taskStatusValue
+            status: taskStatusValue
         }
         tasks.push(value);
-        console.log(tasks);
-        taskList(); //
-    });
+        let arrlength= tasks.length;
+        tasks[arrlength-1]={
+            taskId: "",
+            taskName: "",
+            status: ""
+        }
+        taskList();
+        $(".addTaskInput").val("");
+        return false;
+  });
 }
 function deleteTask() {
+    $(document).on("click", ".taskDelete_button", function() {
+        let taskIndex = $(this).data("task-index");
+                parseInt(taskIndex);
+                            console.log(taskIndex);
+                tasks.splice(taskIndex, 1);
+                            console.log(tasks);
+                taskList();
+      });
 }
 //Blog
 function panelFunctionality() {
@@ -457,19 +474,14 @@ $(document).ready(function () {
     //Task-manager
     reminderAppMaxBTN();
     taskList(); //
+    deleteTask();
     addTask();
     //Blogs
     loadPosts();
     panelFunctionality();
     alert_deletePost();
-    $(document).on("click", ".taskDelete_button", function() {
-        let taskIndex = $(this).data("task-index");
-                parseInt(taskIndex);
-                console.log(taskIndex);
-                tasks.splice(taskIndex, 1);
-                console.log(tasks);
-                taskList();
-      });
+    
+    
 
     productionMode(".landing-screen");
 });
