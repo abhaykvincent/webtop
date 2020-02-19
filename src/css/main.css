@@ -1060,8 +1060,9 @@ section.landing-screen main .right {
 
 section.landing-screen main .right .infinity-loader {
   margin-left: 16%;
+  margin-bottom: 10px;
   width: 20%;
-  height: 200px;
+  height: 100px;
   background: url("https://media3.giphy.com/media/Zcc3ZeeZ5ztdw1oNSB/giphy.gif");
   background-size: auto 100%;
   background-repeat: no-repeat;
@@ -1496,6 +1497,25 @@ section.landing-screen .settingsWindow {
   z-index: 99;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
+}
+
+section.landing-screen .desktop-wave {
+  position: fixed;
+  bottom: 0px;
+  height: 5px;
+  width: 100vw;
+  position: bottom;
+  background-blend-mode: darkens;
+  background-size: auto 100%;
+}
+
+section.landing-screen .desktop-wave-top {
+  position: fixed;
+  top: 0px;
+  height: 5px;
+  width: 100vw;
+  background-size: auto 100%;
+  z-index: 105;
 }
 
 section.landing-screen footer {
