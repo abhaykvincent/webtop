@@ -1,4 +1,4 @@
-$(document).ready(function () {
+
 
     //////////////////////
     // GLOBAL VARIABLES //
@@ -137,13 +137,16 @@ var postSettings={
     options:[
     {
         name:"Edit Post",
-        icon:`<i class="fas fa-edit"></i>`
+        icon:`<i class="fas fa-edit"></i>`,
+        class:"editPost_button"
     },{
         name:"Delete Post",
-        icon:`<i class="fas fa-trash-alt"></i>`
+        icon:`<i class="fas fa-trash-alt"></i>`,
+        class:"deletePost_button"
     },{
         name:"Private",
-        icon:`<i class="fas fa-user-lock"></i>`
+        icon:`<i class="fas fa-user-lock"></i>`,
+        class:"privatePost_button"
     }]
 }
 var posts=[
@@ -230,7 +233,6 @@ function topPanelDropdown(){   //Article panel settings drop down
 }
 function taskList(){
     let taskContentHTML="";
-
     $(".todoListWrap").html(taskContentHTML);
     tasks.forEach(element => {
         taskContentHTML +=`<div class="todoList">
@@ -238,7 +240,7 @@ function taskList(){
                                     <i class="taskDelete_button delete far fa-check-circle" data-task-id="${element.taskId}"></i>
                                 </div>`
     });
-    $(".todoListWrap").append(taskContentHTML);
+    $(".todoListWrap").html(taskContentHTML);
 
 
     $(".todoList .delete").mouseenter(function () {
@@ -256,13 +258,14 @@ function taskList(){
 
 ///
 }
-function deleteTask(){
+function deleteTask(){/* 
     $(".taskDelete_button").click(function (e) { 
         e.preventDefault();
         let taskId = $(this).data("task-id");
-        delete tasks[taskId-1];
+        tasks.splice(taskId-1, 1);
+        console.log(tasks);
         taskList(); //
-    });
+    }); */
 }
 function addTask(){
     $("#addTask").click(function (e) { 
@@ -352,7 +355,7 @@ function loadPostSettings(){
     postSettings.options.forEach(option => {
         content+=
             `
-            <p>${option.name} ${option.icon}</p>
+            <p class="${option.class}" >${option.icon}  ${option.name}</p>
             `
     });
     $(".panelSettingsWindow").append(content);
@@ -377,7 +380,22 @@ function loadPosts(){
     $(".articles").append(content);
     loadPostSettings();
 }
+
+function alertWindow(head, content, button, className){
+    $(".alertWindow").addClass(className);
+    $(".alertWindow h1").html(head);
+    $(".alertWindow p").html(content);
+    $(".alertWindow button").html(button);
+    $(".alertWindow").css("transform", "scale(1) translate(-50%,-50%)");
+}
+function alert_deletePost(){
+    $(".deletePost_button").click(function (e) { 
+        e.preventDefault();
+        alertWindow("Delete", "Do you want to delete this Post", "Delete","red");
+    });
+}
 /////////////
+$(document).ready(function () {
 addLeftPanelOptions();
 reminderAppMaxBTN();
 headerSetting_dropdown();
@@ -388,6 +406,7 @@ addTask();
 
 loadPosts();
 panelFunctionality();
+alert_deletePost();
 //////////////
 
 $(".leftPanelLabel").data("active", "false");

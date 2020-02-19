@@ -8,12 +8,13 @@
 
 body {
 	font-family: 'Quicksand', sans-serif;
-    background-color: rgb(230, 230, 230);
+    background-color: #f6f7f9
 }
 
 * {
     border-radius: 3px 10px 10px 10px;
     transition-timing-function: cubic-bezier(0.36, 0.68, 0.46, 1);
+    transition-duration: 0.1s;
 }
 
 section {
@@ -130,6 +131,89 @@ section {
     }
 
     &.landing-screen {
+        .alertWindow{
+            *{
+                margin: 0px;
+            }
+            position: fixed;
+            top: 50vh;
+            left: 50vw;
+            width: 300px;
+            padding-bottom: 20px;
+            
+            background-color: rgb(231, 231, 231);
+            border-radius: 15px;
+            z-index: 70;
+            font-family: 'Poppins';
+            text-align: center;
+            transform: translate(-50%,-50%) scale(0);
+            border:1px solid rgb(211, 67, 67);
+
+            box-shadow: 0px 0px 300px #e6afae;
+            &:hover{
+                transform: scale(2);
+            }
+            .closeButton{
+                display: block;
+                position: absolute;
+                right: 0px;
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                color:rgb(211, 67, 67) ;
+                background-color:#ebcece ;
+                border:2px solid rgb(211, 67, 67);
+                border-radius: 30px;
+                transform: scale(1.2);
+                &:hover{
+                    background-color:rgb(211, 67, 67) ;
+                    color:#ebcece ;
+                    transform: scale(1.35);
+                }
+                &:active i{
+                    transform: scale(2);
+                    color: rgba(0, 0, 0, 0) ;
+
+                }
+
+                i{
+                    font-size: 120%;
+                    line-height: 30px;
+                }
+
+            }
+            h1{
+                padding: 6px;
+                width: 100%;
+                font-weight: 300;
+                font-size: 100%;
+                color: black;
+                border-radius: 13px;
+                box-sizing: border-box;
+                border-bottom:1px solid rgb(211, 67, 67);
+                background-color: rgb(235, 206, 206);
+            }
+            p{
+                padding: 30px 10px;
+                box-sizing: border-box;
+                font-weight: 200;
+            }
+            button{
+                color: white;
+                padding: 10px 50px;
+                font-weight: 400;
+                border-radius: 15px;
+                &:hover{
+                    transform: scale(1.05);
+                    transition-duration: 0.1s;
+                }
+            }
+            &.red{
+                button{
+                    background-color: rgb(211, 67, 67);
+                }
+            }
+        }
         header {
             position: fixed;
             width: 100%;
@@ -557,7 +641,19 @@ section {
                 width: 80%;
                 padding: 40px 0px 0px 0px;
                 box-sizing: border-box;
-
+                
+                .infinity-loader{
+                    margin-left: 16%;
+                    width: 20%;
+                    height: 200px;
+                    background:url("https://media3.giphy.com/media/Zcc3ZeeZ5ztdw1oNSB/giphy.gif");
+                    background-size:  auto 100%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    img{
+                        width: 100%;
+                    }
+                }
                 .articles {
                     width: 50%;
                     float: left;
@@ -622,6 +718,9 @@ section {
                                 &:hover{
                                     background-color: rgba(255, 255, 255, 0.5);
                                     transition-duration: 0.1s;
+                                }
+                                i{
+                                    width: 30px
                                 }
                             }
                             &:hover {
