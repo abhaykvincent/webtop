@@ -24,17 +24,17 @@ let login = {
 //////////////////////
 //showing accounts screen
 
-function accountScreenSetup(){
+function accountScreenSetup() {
     $("section").hide();
     $(".accounts-screen").show();
     $(".acctPassword").hide();
     $(".acctDetails").hide();
-    
+
     // setting accounts name
     $(".accountName").text(accounts[0].name);
     let thisDiv;
 
-//onclick background blur & make account profile center and password input
+    //onclick background blur & make account profile center and password input
     $(".accounts").click(function (e) {
         e.preventDefault();
         thisDiv = this;
@@ -45,7 +45,7 @@ function accountScreenSetup(){
         //hide all accounts
         $(".accounts").not(this).hide();
         //blur background
-    
+
         //make selected account center to screen
         $(this).css({
             "left": "50vw",
@@ -63,7 +63,7 @@ function accountScreenSetup(){
         //hide all accounts
         $(".accounts").not(this).show();
         //blur background
-    
+
         //make selected account center to screen
         $(thisDiv).removeAttr('style');
         //show input box for password
@@ -71,7 +71,7 @@ function accountScreenSetup(){
         $(thisDiv).find(".acctDetails").hide();
         $(thisDiv).find(".accountName").show();
     });
-    
+
     $(".loginButton").click(function (e) {
         e.preventDefault();
         if (login.isLoggedIn == true) {
@@ -80,16 +80,13 @@ function accountScreenSetup(){
             $(".landing-screen").show();
         }
     });
-    
+
 
 }
 accountScreenSetup();
 //////////////////////
 // Landing Screen   //
 //////////////////////
-
-
-//////////////
 // left panel name and dropdown options
 var leftPanel = [{
         name: "Blog",
@@ -182,7 +179,7 @@ var posts = [{
 ]
 
 
-    //header
+//header
 function headerSetting_dropdown() {
     //header
     $(".settingsWindow").data("active", "false");
@@ -213,7 +210,7 @@ function headerSetting_dropdown() {
     });
 
 }
-    //body
+//body
 function addLeftPanelOptions() {
     let content = "";
     leftPanel.forEach(element => {
@@ -249,7 +246,7 @@ function topPanelDropdown() { //Article panel settings drop down
 
 
 }
-function leftpanelDropdownn(){
+function leftpanelDropdownn() {
     $(".leftPanelLabel").data("active", "false");
     $(".leftPanelLabel").click(function (e) {
         let isActive = $(this).data('active');
@@ -263,7 +260,7 @@ function leftpanelDropdownn(){
         }
     });
 }
-    //Task-manager
+//Task-manager
 function reminderAppMaxBTN() {
     //To Do app maximize app
     $(".heading .maximize").data("active", "false");
@@ -318,57 +315,65 @@ function reminderAppMaxBTN() {
 function taskList() {
     let taskContentHTML = "";
     $(".todoListWrap").html(taskContentHTML);
-    tasks.forEach(element => {
+    //creates HTML element for tasks
+    tasks.forEach((element,i) => {
+        if(element.taskName!="")
+        {
         taskContentHTML += `<div class="todoList">
                                     <p class="taskName">${element.taskName}</p>
-                                    <i class="taskDelete_button delete far fa-check-circle" data-task-id="${element.taskId}"></i>
+                                    <i class="taskDelete_button delete far fa-check-circle" data-task-index="${i}" data-task-id="${element.taskId}"></i>
                                 </div>`
+        }
     });
     $(".todoListWrap").html(taskContentHTML);
 
-
+    //styling
     $(".todoList .delete").mouseenter(function () {
         $(this).attr('class', '');
-        $(this).addClass("delete green fas fa-check-circle");
-
+        $(this).addClass("taskDelete_button delete green fas fa-check-circle");
     });
     $(".todoList .delete").mouseleave(function () {
         $(this).attr('class', '');
-        $(this).addClass("delete red far fa-check-circle");
-
+        $(this).addClass("taskDelete_button delete red far fa-check-circle");
     });
 
     ///
 }
-function deleteTask() {
-    /* 
-        $(".taskDelete_button").click(function (e) { 
-            e.preventDefault();
-            let taskId = $(this).data("task-id");
-            tasks.splice(taskId-1, 1);
-            console.log(tasks);
-            taskList(); //
-        }); */
-}
 function addTask() {
-    $("#addTask").click(function (e) {
-        e.preventDefault();
+    $("#addTask").click(function (e) { 
+        e.stopImmediatePropagation();
         let taskName = $(".addTaskInput").val();
-        console.log(taskName);
         let taskIdValue = tasks[tasks.length - 1].taskId + 1;
         let taskNameValue = tasks[tasks.length - 1].taskName = taskName;
         let taskStatusValue = "pending";
         let value = {
             taskId: taskIdValue,
             taskName: taskNameValue,
-            taskStatus: taskStatusValue
+            status: taskStatusValue
         }
         tasks.push(value);
-        console.log(tasks);
-        taskList(); //
-    });
+        let arrlength= tasks.length;
+        tasks[arrlength-1]={
+            taskId: "",
+            taskName: "",
+            status: ""
+        }
+        taskList();
+        $(".addTaskInput").val("");
+        return false;
+  });
 }
-    //Blog
+function deleteTask() {
+    $(document).on("click", ".taskDelete_button", function() {
+        let taskIndex = $(this).data("task-index");
+                parseInt(taskIndex);
+                            console.log(taskIndex);
+                tasks.splice(taskIndex, 1);
+                            console.log(tasks);
+                taskList();
+      });
+}
+//Blog
 function panelFunctionality() {
     $(".panel .settings").data("active", "false");
     $(".panel .settings").click(function (e) {
@@ -454,9 +459,9 @@ function alert_deletePost() {
 }
 ////////////////
 // Production
-function productionMode(){
+function productionMode(screen) {
     $("section").hide();
-    $(".landing-screen").show();
+    $(screen).show();
 }
 ////////////////
 $(document).ready(function () {
@@ -475,6 +480,8 @@ $(document).ready(function () {
     loadPosts();
     panelFunctionality();
     alert_deletePost();
+    
+    
 
     productionMode(".landing-screen");
 });
