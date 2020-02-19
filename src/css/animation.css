@@ -2,7 +2,7 @@
     animation-name: example;
     animation-duration: 10s;
     animation-iteration-count: infinite;
-    opacity: 0.6;
+    opacity: 0.5;
 }
 .desktop-wave-top{
     height: 3px !important;
