@@ -358,13 +358,15 @@ template {
 
 body {
   font-family: 'Quicksand', sans-serif;
-  background-color: #e6e6e6;
+  background-color: #f6f7f9;
 }
 
 * {
   border-radius: 3px 10px 10px 10px;
   -webkit-transition-timing-function: cubic-bezier(0.36, 0.68, 0.46, 1);
           transition-timing-function: cubic-bezier(0.36, 0.68, 0.46, 1);
+  -webkit-transition-duration: 0.1s;
+          transition-duration: 0.1s;
 }
 
 section {
@@ -489,6 +491,104 @@ section.accounts-screen .back {
   opacity: 0;
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
+}
+
+section.landing-screen .alertWindow {
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  width: 300px;
+  padding-bottom: 20px;
+  background-color: #e7e7e7;
+  border-radius: 15px;
+  z-index: 70;
+  font-family: 'Poppins';
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  border: 1px solid #d34343;
+  -webkit-box-shadow: 0px 0px 300px #e6afae;
+          box-shadow: 0px 0px 300px #e6afae;
+}
+
+section.landing-screen .alertWindow * {
+  margin: 0px;
+}
+
+section.landing-screen .alertWindow:hover {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+section.landing-screen .alertWindow .closeButton {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  color: #d34343;
+  background-color: #ebcece;
+  border: 2px solid #d34343;
+  border-radius: 30px;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+section.landing-screen .alertWindow .closeButton:hover {
+  background-color: #d34343;
+  color: #ebcece;
+  -webkit-transform: scale(1.35);
+          transform: scale(1.35);
+}
+
+section.landing-screen .alertWindow .closeButton:active i {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  color: rgba(0, 0, 0, 0);
+}
+
+section.landing-screen .alertWindow .closeButton i {
+  font-size: 120%;
+  line-height: 30px;
+}
+
+section.landing-screen .alertWindow h1 {
+  padding: 6px;
+  width: 100%;
+  font-weight: 300;
+  font-size: 100%;
+  color: black;
+  border-radius: 13px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-bottom: 1px solid #d34343;
+  background-color: #ebcece;
+}
+
+section.landing-screen .alertWindow p {
+  padding: 30px 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: 200;
+}
+
+section.landing-screen .alertWindow button {
+  color: white;
+  padding: 10px 50px;
+  font-weight: 400;
+  border-radius: 15px;
+}
+
+section.landing-screen .alertWindow button:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition-duration: 0.1s;
+          transition-duration: 0.1s;
+}
+
+section.landing-screen .alertWindow.red button {
+  background-color: #d34343;
 }
 
 section.landing-screen header {
@@ -958,6 +1058,20 @@ section.landing-screen main .right {
           box-sizing: border-box;
 }
 
+section.landing-screen main .right .infinity-loader {
+  margin-left: 16%;
+  width: 20%;
+  height: 200px;
+  background: url("https://media3.giphy.com/media/Zcc3ZeeZ5ztdw1oNSB/giphy.gif");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+section.landing-screen main .right .infinity-loader img {
+  width: 100%;
+}
+
 section.landing-screen main .right .articles {
   width: 50%;
   float: left;
@@ -1035,6 +1149,10 @@ section.landing-screen main .right .articles article .panel p:hover {
   background-color: rgba(255, 255, 255, 0.5);
   -webkit-transition-duration: 0.1s;
           transition-duration: 0.1s;
+}
+
+section.landing-screen main .right .articles article .panel p i {
+  width: 30px;
 }
 
 section.landing-screen main .right .articles article .panel:hover {
