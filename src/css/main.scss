@@ -1,10 +1,10 @@
 // import files
 @import "_norm.scss";
 @import "_templates.scss";
+@import "mixins/_animations.scss";
 // fonts
 @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,300i,400i,500,600,700,700i,800,900&display=swap');
-
 
 body {
 	font-family: 'Quicksand', sans-serif;
@@ -59,12 +59,10 @@ section {
                     transition-duration: 0.2s;
                     z-index: 11;
                 }
-
                 &:active {
                     transform: scale(1.5) translateY(0%);
                     transition-duration: 0.2s;
                 }
-
                 &:hover+.accountName {
                     opacity: 0;
                     transition-duration: 0.2s;
@@ -644,8 +642,9 @@ section {
                 
                 .infinity-loader{
                     margin-left: 16%;
+                    margin-bottom: 10px;
                     width: 20%;
-                    height: 200px;
+                    height: 100px;
                     background:url("https://media3.giphy.com/media/Zcc3ZeeZ5ztdw1oNSB/giphy.gif");
                     background-size:  auto 100%;
                     background-repeat: no-repeat;
@@ -1058,6 +1057,23 @@ section {
             transition-duration: 0.3s;
         }
 
+        .desktop-wave{
+            position: fixed;
+            bottom: 0px;
+            height: 5px;
+            width: 100vw;
+            position: bottom;
+            background-blend-mode: darkens;
+            background-size: auto 100%;
+        }
+        .desktop-wave-top{
+            position: fixed;
+            top: 0px;
+            height: 5px;
+            width: 100vw;
+            background-size: auto 100%;
+            z-index: 105;
+        }
         footer {
             width: 100%;
             height: 200px;

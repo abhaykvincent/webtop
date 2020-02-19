@@ -1,0 +1,26 @@
+.desktop-wave{
+    animation-name: example;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    opacity: 0.5;
+}
+.desktop-wave-top{
+    height: 3px !important;
+    animation-name: example;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    opacity: 0.6;
+}
+@keyframes example {
+    0%  {background-color: rgb(202, 46, 46);}
+    10% {background-color: rgb(202, 153, 46);}
+    20% {background-color: rgb(168, 202, 46);}
+    30% {background-color: rgb(46, 202, 98);}
+    40% {background-color: rgb(46, 202, 181);}
+    50% {background-color: rgb(46, 179, 202);}
+    60% {background-color: rgb(46, 179, 202);}
+    70% {background-color: rgb(46, 62, 202);}
+    80% {background-color: rgb(171, 46, 202);}
+    90% {background-color: rgb(202, 46, 124);}
+    100% {background-color:rgb(202, 46, 54);}
+  }
