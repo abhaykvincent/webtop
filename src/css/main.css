@@ -358,7 +358,7 @@ template {
 
 body {
   font-family: 'Quicksand', sans-serif;
-  background-color: #f6f7f9;
+  background-color: #fafafa;
 }
 
 * {
@@ -1537,7 +1537,11 @@ section.landing-screen .desktop-wave-top {
 
 section.landing-screen footer {
   width: 100%;
-  height: 200px;
+  padding: 30px 40px 10px 40px;
+  background: #ffffff;
+  border-top: 2px solid rgba(0, 0, 0, 0.05);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1545,21 +1549,25 @@ section.landing-screen footer {
 
 section.landing-screen footer .footerElements {
   display: table-cell;
-  height: 200px;
-  padding: 40px;
+  border-radius: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
 section.landing-screen footer .left {
-  width: 33.3%;
-  height: 200px;
-  background: #0000001a;
+  width: 15%;
+}
+
+section.landing-screen footer .left a {
+  display: list-item;
+  list-style: none;
+  color: #404040;
+  line-height: 25px;
 }
 
 section.landing-screen footer .middle {
-  width: 33.3%;
-  background: #00000028;
+  width: 50%;
+  text-align: center;
 }
 
 section.landing-screen footer .middle .withLove {
@@ -1567,10 +1575,16 @@ section.landing-screen footer .middle .withLove {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  margin-top: 80px;
   width: 40%;
-  height: 10px;
   text-align: center;
+}
+
+section.landing-screen footer .middle .withLove .love {
+  color: #e44242;
+}
+
+section.landing-screen footer .middle .withLove .love:hover {
+  color: #e22f2f;
 }
 
 section.landing-screen footer .middle .techs {
@@ -1580,20 +1594,72 @@ section.landing-screen footer .middle .techs {
           transform: translateX(-50%);
   margin-top: 5px;
   width: 80%;
-  height: 20px;
-  background-color: rgba(0, 0, 0, 0.205);
+  color: rgba(0, 0, 0, 0.7);
+}
+
+section.landing-screen footer .middle .techs .footer-tech-i {
+  padding: 4px;
+}
+
+section.landing-screen footer .middle .techs .footer-tech-i:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 section.landing-screen footer .middle .copy {
   position: relative;
-  margin-top: 20px;
+  margin-top: 30px;
+  padding-bottom: 0px;
   width: 100%;
-  height: 10px;
   text-align: center;
+  font-size: 80%;
 }
 
 section.landing-screen footer .right {
-  width: 33.3%;
-  background: #0000001c;
+  width: 15%;
+  text-align: right;
+}
+
+section.landing-screen footer .right a {
+  display: list-item;
+  list-style: none;
+  color: #404040;
+  line-height: 25px;
+}
+
+section.landing-screen footer .right .appVersion {
+  position: fixed;
+  right: 50px;
+  bottom: 40px;
+}
+
+section.landing-screen footer .right .appVersion .appDetails {
+  margin: 0px;
+}
+
+section.landing-screen footer .right .appVersion .appDetails.ver {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+section.landing-screen footer .right .appVersion .appDetails.dev {
+  font-size: 70%;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+section.landing-screen .veryBottomFooter {
+  width: 100%;
+  height: 20px;
+  padding: 5px 5px;
+  background-color: #ebebeb;
+  line-height: 10px;
+  text-align: center;
+}
+
+section.landing-screen .veryBottomFooter a {
+  font-size: 70%;
+  margin: 0px 3px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  color: #5d5d5d !important;
 }
 /*# sourceMappingURL=main.css.map */

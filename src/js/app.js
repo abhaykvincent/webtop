@@ -1,6 +1,11 @@
 //////////////////////
 // GLOBAL VARIABLES //
 //////////////////////
+var app={
+    name: "Webtop",
+    v:"1.0.0",
+    developer:"Abhay"
+}
 var accounts = [{
     name: "Abhay Vincent",
     type: "admin",
@@ -458,6 +463,37 @@ function alert_deletePost() {
         alertWindow("Delete", "Do you want to delete this Post", "Delete", "red");
     });
 }
+//footer
+function addFooter_techs(){
+    techs= [
+    {name:"html",           icon:`fab fa-html5`},
+    {name:"css",            icon:`fab fa-css3-alt`},
+    {name:"js",             icon:`fab fa-js-square`},
+    {name:"npm",            icon:`fab fa-npm`},
+    {name:"git",            icon:`fab fa-github-square`},
+    {name:"git-kraken",     icon:`fab fa-gitkraken`},
+    {name:"font-awesome",   icon:`fab fa-font-awesome`},
+    {name:"apple",          icon:`fab fa-apple`},
+    ];
+    let content ="& "
+    techs.forEach(tech => {
+        content+= `<i class="footer-tech-i ${tech.icon}"></i>`
+        
+    });
+    $(".techs").html(content);
+}
+function addAppVersion(){
+    let name= app.name;
+    let version = app.v;
+    let developer  =  app.developer;
+    let content  =  "";
+
+    content  =  `
+    <p class="appDetails ver" >${name} ${version}</p>
+    <p class="appDetails dev" >Developed by ${developer}</p>`;
+
+    $(".appVersion").html(content);
+}
 ////////////////
 // Production
 function productionMode(screen) {
@@ -481,6 +517,9 @@ $(document).ready(function () {
     loadPosts();
     panelFunctionality();
     alert_deletePost();
+    //footer
+    addFooter_techs();
+    addAppVersion();
     
     productionMode(".landing-screen");
 });

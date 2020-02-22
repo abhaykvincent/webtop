@@ -8,7 +8,7 @@
 
 body {
 	font-family: 'Quicksand', sans-serif;
-    background-color: #f6f7f9
+    background-color: rgba(250, 250, 250, 1)
 }
 
 * {
@@ -1090,59 +1090,106 @@ section {
         }
         footer {
             width: 100%;
-            height: 200px;
+            padding: 30px 40px 10px 40px;
+            background: #ffffff;
+            border-top: 2px solid rgba(0, 0, 0, 0.05);
+            box-sizing: border-box;
             display: flex;
 
             .footerElements {
                 display: table-cell;
-                height: 200px;
-                padding: 40px;
+                border-radius: 0px;
                 box-sizing: border-box;
             }
-
-            .left {
-                width: 33.3%;
-                height: 200px;
-                background: #0000001a;
+            .left{
+                width: 15%;
+                a{
+                    display: list-item;
+                    list-style: none;
+                    color: rgb(64, 64, 64);
+                    line-height: 25px;
+                }
             }
-
             .middle {
-                width: 33.3%;
-                background: #00000028;
+                width: 50%;
+                text-align: center;
 
                 .withLove {
                     position: relative;
                     left: 50%;
                     transform: translateX(-50%);
-                    margin-top: 80px;
                     width: 40%;
-                    height: 10px;
                     text-align: center;
+                    .love{
+                        color: rgb(228, 66, 66);
+                        &:hover{
+                            color: rgb(226, 47, 47);
+                        }
+                    }
                 }
-
                 .techs {
                     position: relative;
                     left: 50%;
                     transform: translateX(-50%);
                     margin-top: 5px;
                     width: 80%;
-                    height: 20px;
-                    background-color: rgba(0, 0, 0, 0.205);
+                    color: rgba(0, 0, 0, 0.7);
+                    .footer-tech-i{
+                        padding: 4px;
+                        &:hover{
+                            transform: scale(1.2);
+                        }
+                    }
                 }
-
                 .copy {
                     position: relative;
-                    margin-top: 20px;
+                    margin-top: 30px;
+                    padding-bottom: 0px;
                     width: 100%;
-                    height: 10px;
-
                     text-align: center;
+                    font-size: 80%;
+                }
+            }
+            .right{
+                width: 15%;
+                text-align: right;
+                a{
+                    display: list-item;
+                    list-style: none;
+                    color: rgb(64, 64, 64);
+                    line-height: 25px;
+                }
+                .appVersion{
+                    position: fixed;
+                    right: 50px;
+                    bottom: 40px;
+                    .appDetails{
+                        margin: 0px;
+                        &.ver{
+                            color: rgba(0, 0, 0, 0.8);
+                        }
+                        &.dev{
+                            font-size: 70%;
+                            color: rgba(0, 0, 0, 0.6);
+                        }
+                    }
                 }
             }
 
-            .right {
-                width: 33.3%;
-                background: #0000001c;
+        }
+        .veryBottomFooter{
+            width: 100%;
+            height: 20px;
+            padding: 5px 5px;
+            background-color: rgb(235, 235, 235);
+            line-height: 10px;
+            text-align: center;
+            a{
+                font-size: 70%;
+                margin: 0px 3px;
+                font-weight: 600;
+                letter-spacing: 0.8px;
+                color: rgb(93, 93, 93) !important;
             }
         }
     }
