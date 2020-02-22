@@ -197,7 +197,6 @@ section {
                 font-weight: 200;
             }
             button{
-                color: white;
                 padding: 10px 50px;
                 font-weight: 400;
                 border-radius: 15px;
@@ -205,10 +204,25 @@ section {
                     transform: scale(1.05);
                     transition-duration: 0.1s;
                 }
+                &:active{
+                    color: rgba(0, 0, 0, 0) ;
+
+                }
             }
             &.red{
                 button{
-                    background-color: rgb(211, 67, 67);
+                    color:rgb(211, 67, 67);
+                    border: 3px solid rgb(211, 67, 67);
+                    background-color:rgba(243, 151, 151, 0.418);
+                    &:hover{
+                        background-color:rgb(211, 67, 67) ;
+                        color:#ffffff ;
+                    }
+                    &:active{
+                        color: rgb(211, 67, 67) ;
+                        letter-spacing: 1px;
+                        transition-duration: 0.3s;
+                    }
                 }
             }
         }

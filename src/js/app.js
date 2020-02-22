@@ -352,6 +352,7 @@ function addTask() {
             status: taskStatusValue
         }
         tasks.push(value);
+        debugger;
         let arrlength= tasks.length;
         tasks[arrlength-1]={
             taskId: "",
@@ -481,5 +482,5 @@ $(document).ready(function () {
     panelFunctionality();
     alert_deletePost();
     
-    //productionMode(".landing-screen");
+    productionMode(".landing-screen");
 });

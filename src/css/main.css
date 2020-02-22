@@ -574,7 +574,6 @@ section.landing-screen .alertWindow p {
 }
 
 section.landing-screen .alertWindow button {
-  color: white;
   padding: 10px 50px;
   font-weight: 400;
   border-radius: 15px;
@@ -587,8 +586,26 @@ section.landing-screen .alertWindow button:hover {
           transition-duration: 0.1s;
 }
 
+section.landing-screen .alertWindow button:active {
+  color: rgba(0, 0, 0, 0);
+}
+
 section.landing-screen .alertWindow.red button {
+  color: #d34343;
+  border: 3px solid #d34343;
+  background-color: rgba(243, 151, 151, 0.418);
+}
+
+section.landing-screen .alertWindow.red button:hover {
   background-color: #d34343;
+  color: #ffffff;
+}
+
+section.landing-screen .alertWindow.red button:active {
+  color: #d34343;
+  letter-spacing: 1px;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
 }
 
 section.landing-screen header {
