@@ -1537,6 +1537,11 @@ section.landing-screen .desktop-wave-top {
 
 section.landing-screen footer {
   width: 100%;
+  padding: 30px 30px 10px 30px;
+  background: #ffffff;
+  border-top: 2px solid rgba(0, 0, 0, 0.05);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1544,16 +1549,17 @@ section.landing-screen footer {
 
 section.landing-screen footer .footerElements {
   display: table-cell;
-  padding: 30px 30px 10px 30px;
-  border-top: 2px solid rgba(0, 0, 0, 0.05);
   border-radius: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
+section.landing-screen footer .left {
+  width: 20%;
+}
+
 section.landing-screen footer .middle {
-  width: 100%;
-  background: #ffffff;
+  width: 60%;
   text-align: center;
 }
 
@@ -1572,7 +1578,6 @@ section.landing-screen footer .middle .withLove .love {
 
 section.landing-screen footer .middle .withLove .love:hover {
   color: #e22f2f;
-  font-weight: 500;
 }
 
 section.landing-screen footer .middle .techs {
@@ -1596,10 +1601,34 @@ section.landing-screen footer .middle .techs .footer-tech-i:hover {
 
 section.landing-screen footer .middle .copy {
   position: relative;
-  margin-top: 20px;
+  margin-top: 30px;
   padding-bottom: 10px;
   width: 100%;
   text-align: center;
   font-size: 80%;
+}
+
+section.landing-screen footer .right {
+  width: 20%;
+  text-align: right;
+}
+
+section.landing-screen footer .right .appVersion {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+section.landing-screen footer .right .appVersion .appDetails {
+  margin: 0px;
+}
+
+section.landing-screen footer .right .appVersion .appDetails.ver {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+section.landing-screen footer .right .appVersion .appDetails.dev {
+  font-size: 70%;
+  color: rgba(0, 0, 0, 0.6);
 }
 /*# sourceMappingURL=main.css.map */

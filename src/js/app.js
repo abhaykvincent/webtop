@@ -1,6 +1,11 @@
 //////////////////////
 // GLOBAL VARIABLES //
 //////////////////////
+var app={
+    name: "Webtop",
+    v:"1.0.0",
+    developer:"Abhay"
+}
 var accounts = [{
     name: "Abhay Vincent",
     type: "admin",
@@ -477,6 +482,18 @@ function addFooter_techs(){
     });
     $(".techs").html(content);
 }
+function addAppVersion(){
+    let name= app.name;
+    let version = app.v;
+    let developer  =  app.developer;
+    let content  =  "";
+
+    content  =  `
+    <p class="appDetails ver" >${name} ${version}</p>
+    <p class="appDetails dev" >Developed by ${developer}</p>`;
+
+    $(".appVersion").html(content);
+}
 ////////////////
 // Production
 function productionMode(screen) {
@@ -502,6 +519,7 @@ $(document).ready(function () {
     alert_deletePost();
     //footer
     addFooter_techs();
+    addAppVersion();
     
     productionMode(".landing-screen");
 });

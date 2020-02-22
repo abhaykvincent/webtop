@@ -1090,18 +1090,22 @@ section {
         }
         footer {
             width: 100%;
+            padding: 30px 30px 10px 30px;
+            background: #ffffff;
+            border-top: 2px solid rgba(0, 0, 0, 0.05);
+            box-sizing: border-box;
             display: flex;
 
             .footerElements {
                 display: table-cell;
-                padding: 30px 30px 10px 30px;
-                border-top: 2px solid rgba(0, 0, 0, 0.05);
                 border-radius: 0px;
                 box-sizing: border-box;
             }
+            .left{
+                width: 20%;
+            }
             .middle {
-                width: 100%;
-                background: #ffffff;
+                width: 60%;
                 text-align: center;
 
                 .withLove {
@@ -1114,11 +1118,9 @@ section {
                         color: rgb(228, 66, 66);
                         &:hover{
                             color: rgb(226, 47, 47);
-                            font-weight: 500;
                         }
                     }
                 }
-
                 .techs {
                     position: relative;
                     left: 50%;
@@ -1133,14 +1135,32 @@ section {
                         }
                     }
                 }
-
                 .copy {
                     position: relative;
-                    margin-top: 20px;
+                    margin-top: 30px;
                     padding-bottom: 10px;
                     width: 100%;
                     text-align: center;
                     font-size: 80%;
+                }
+            }
+            .right{
+                width: 20%;
+                text-align: right;
+                .appVersion{
+                    position: fixed;
+                    right: 20px;
+                    bottom: 20px;
+                    .appDetails{
+                        margin: 0px;
+                        &.ver{
+                            color: rgba(0, 0, 0, 0.8);
+                        }
+                        &.dev{
+                            font-size: 70%;
+                            color: rgba(0, 0, 0, 0.6);
+                        }
+                    }
                 }
             }
         }
