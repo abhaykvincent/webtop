@@ -1570,7 +1570,7 @@ section.landing-screen footer .middle .withLove {
   margin-top: 80px;
   width: 40%;
   height: 10px;
-  background-color: rgba(0, 0, 0, 0.205);
+  text-align: center;
 }
 
 section.landing-screen footer .middle .techs {
@@ -1589,7 +1589,6 @@ section.landing-screen footer .middle .copy {
   margin-top: 20px;
   width: 100%;
   height: 10px;
-  background-color: rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
