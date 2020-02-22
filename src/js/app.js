@@ -361,7 +361,7 @@ function addTask() {
         taskList();
         $(".addTaskInput").val("");
         return false;
-  });
+    });
 }
 function deleteTask() {
     $(document).on("click", ".taskDelete_button", function() {
@@ -371,7 +371,7 @@ function deleteTask() {
                 tasks.splice(taskIndex, 1);
                             console.log(tasks);
                 taskList();
-      });
+    });
 }
 //Blog
 function panelFunctionality() {
@@ -481,7 +481,5 @@ $(document).ready(function () {
     panelFunctionality();
     alert_deletePost();
     
-    
-
-    productionMode(".landing-screen");
+    //productionMode(".landing-screen");
 });
