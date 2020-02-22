@@ -1109,14 +1109,13 @@ section {
             .middle {
                 width: 33.3%;
                 background: #00000028;
+                text-align: center;
 
                 .withLove {
                     position: relative;
                     left: 50%;
                     transform: translateX(-50%);
-                    margin-top: 80px;
                     width: 40%;
-                    height: 10px;
                     text-align: center;
                 }
 
@@ -1126,17 +1125,21 @@ section {
                     transform: translateX(-50%);
                     margin-top: 5px;
                     width: 80%;
-                    height: 20px;
-                    background-color: rgba(0, 0, 0, 0.205);
+                    color: rgba(0, 0, 0, 0.7);
+                    .footer-tech-i{
+                        padding: 4px;
+                        &:hover{
+                            transform: scale(1.2);
+                        }
+                    }
                 }
 
                 .copy {
                     position: relative;
                     margin-top: 20px;
                     width: 100%;
-                    height: 10px;
-
                     text-align: center;
+                    font-size: 80%;
                 }
             }
 
