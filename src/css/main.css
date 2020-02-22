@@ -1487,6 +1487,7 @@ section.landing-screen main .right .toToAPP .todo .todoContent #todoLists .addTa
   border: 0px;
   padding-top: 20px;
   margin-bottom: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 section.landing-screen main .right .toToAPP .todo .todoContent #todoListDetails {
