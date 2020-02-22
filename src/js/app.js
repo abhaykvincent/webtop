@@ -470,7 +470,7 @@ function addFooter_techs(){
     {name:"font-awesome",   icon:`fab fa-font-awesome`},
     {name:"apple",          icon:`fab fa-apple`},
     ];
-    let content =""
+    let content ="& "
     techs.forEach(tech => {
         content+= `<i class="footer-tech-i ${tech.icon}"></i>`
         
