@@ -1090,7 +1090,7 @@ section {
         }
         footer {
             width: 100%;
-            padding: 30px 30px 10px 30px;
+            padding: 30px 40px 10px 40px;
             background: #ffffff;
             border-top: 2px solid rgba(0, 0, 0, 0.05);
             box-sizing: border-box;
@@ -1102,10 +1102,16 @@ section {
                 box-sizing: border-box;
             }
             .left{
-                width: 20%;
+                width: 15%;
+                a{
+                    display: list-item;
+                    list-style: none;
+                    color: rgb(64, 64, 64);
+                    line-height: 25px;
+                }
             }
             .middle {
-                width: 60%;
+                width: 50%;
                 text-align: center;
 
                 .withLove {
@@ -1145,8 +1151,14 @@ section {
                 }
             }
             .right{
-                width: 20%;
+                width: 15%;
                 text-align: right;
+                a{
+                    display: list-item;
+                    list-style: none;
+                    color: rgb(64, 64, 64);
+                    line-height: 25px;
+                }
                 .appVersion{
                     position: fixed;
                     right: 50px;
@@ -1169,7 +1181,7 @@ section {
             width: 100%;
             height: 20px;
             padding: 5px 5px;
-            background-color: rgb(218, 218, 218);
+            background-color: rgb(235, 235, 235);
             line-height: 10px;
             text-align: center;
             a{
