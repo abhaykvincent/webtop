@@ -8,7 +8,7 @@
 
 body {
 	font-family: 'Quicksand', sans-serif;
-    background-color: #f6f7f9
+    background-color: rgba(250, 250, 250, 1)
 }
 
 * {
@@ -1138,7 +1138,7 @@ section {
                 .copy {
                     position: relative;
                     margin-top: 30px;
-                    padding-bottom: 10px;
+                    padding-bottom: 0px;
                     width: 100%;
                     text-align: center;
                     font-size: 80%;
@@ -1149,8 +1149,8 @@ section {
                 text-align: right;
                 .appVersion{
                     position: fixed;
-                    right: 20px;
-                    bottom: 20px;
+                    right: 50px;
+                    bottom: 40px;
                     .appDetails{
                         margin: 0px;
                         &.ver{
@@ -1162,6 +1162,22 @@ section {
                         }
                     }
                 }
+            }
+
+        }
+        .veryBottomFooter{
+            width: 100%;
+            height: 20px;
+            padding: 5px 5px;
+            background-color: rgb(218, 218, 218);
+            line-height: 10px;
+            text-align: center;
+            a{
+                font-size: 70%;
+                margin: 0px 3px;
+                font-weight: 600;
+                letter-spacing: 0.8px;
+                color: rgb(93, 93, 93) !important;
             }
         }
     }
