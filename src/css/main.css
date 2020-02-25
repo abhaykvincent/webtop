@@ -1105,12 +1105,31 @@ section.landing-screen main .left .settings .leftPanelEdit:hover {
 
 section.landing-screen main .left .calendar {
   text-align: center;
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
 }
 
 section.landing-screen main .left .calendar h1 {
   font-weight: 200;
   font-size: 100%;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+section.landing-screen main .left .calendar h1 .expand {
+  float: right;
+  color: rgba(0, 0, 0, 0.7);
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+section.landing-screen main .left .calendar h1 .expand:hover {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+  color: rgba(0, 0, 0, 0.9);
+  -webkit-transition-duration: 0.1s;
+          transition-duration: 0.1s;
 }
 
 section.landing-screen main .left .calendar .main {
@@ -1163,10 +1182,12 @@ section.landing-screen main .left .calendar .container .cell {
   height: 20px;
   color: #444444;
   background: rgba(0, 0, 0, 0.1);
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
 }
 
 section.landing-screen main .left .calendar .container .cell:hover {
-  color: #d6d6d6;
+  color: #f0f0f0;
   background: rgba(0, 0, 0, 0.5);
   -webkit-transform: scale(1.3);
           transform: scale(1.3);
