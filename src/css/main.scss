@@ -563,6 +563,7 @@ section {
                 box-sizing: border-box;
 
                 .leftPanelOption {
+                    display: block;
                     width: 100%;
                     height: auto;
                     margin-bottom: 10px;
@@ -602,7 +603,9 @@ section {
                         &:hover {
                             transition-duration: 0.1s;
                         }
-
+                        a{
+                            color: rgb(85, 85, 85);
+                        }
                         .leftPanelOption {
                             width: 100%;
                             margin: 0px  !important;
@@ -860,7 +863,8 @@ section {
                             margin-bottom: 1px;
                             padding: 10px;
                             box-sizing: border-box;
-                            background-color: rgba(0, 0, 0, 0.05);
+                            background-color: rgba(255, 255, 255, 0.05);
+                            border-bottom: 1px solid rgba(0, 0, 0, 0.199);
                             &:focus {
                                 outline: none;
                             }
@@ -884,7 +888,7 @@ section {
                         .addMainHeading {
                             height: 50px !important;
                             font-size: 150%;
-                            background-color: rgba(0, 0, 0, 0.1);
+                            background-color: rgba(0, 0, 0, 0.02);
                         }
 
                         .addContent {

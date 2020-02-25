@@ -97,19 +97,22 @@ var leftPanel = [{
         name: "Blog",
         icon: `<i class="fas fa-newspaper"></i>`,
         options: ["Add post", "Edit post"],
+        link:["#addPost"],
         optionIcon: [`<i class="fas fa-plus"></i>`, `<i class="far fa-trash-alt"></i>`]
     },
     {
         name: "Apeiro",
         icon: `<i class="fab fa-battle-net"></i>`,
-        options: ["Add post", "Add post", "Add post"],
+        options: ["Add post", "Add post"],
+        link:["#addPost"],
         optionIcon: [`<i class="fas fa-plus"></i>`, `<i class="far fa-trash-alt"></i>`],
     },
     {
         name: "Settings",
         icon: `<i class="fas fa-sliders-h"></i>`,
-        options: ["Change Password", "Add post", "Logout"],
-        optionIcon: [`<i class="fas fa-plus"></i>`, `<i class="far fa-trash-alt"></i>`],
+        options: ["Change Password","Logout"],
+        link:["#addPost"],
+        optionIcon: [`<i class="fas fa-key"></i>`, `<i class="fas fa-sign-out-alt"></i>`],
     }
 ];
 // top panel name and dropdown options
@@ -225,12 +228,12 @@ function addLeftPanelOptions() {
                         </div>
                         <div class="leftPanelOptions">`
         element.options.forEach((option, i) => {
-            content += `<div class="leftPanelOption">${element.optionIcon[i]} ${option}</div>`
+            content += `<a href="${element.link}" class="leftPanelOption">${element.optionIcon[i]} ${option}</a>`
         });
         content += `</div>
                     </div>`;
     });
-    $(".panels.left").append(content);
+    $(".leftPanelOption.settings").after(content);
 }
 function addTopPanelOptions() {
     let content = "";

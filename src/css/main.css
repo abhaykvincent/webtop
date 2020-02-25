@@ -976,6 +976,7 @@ section.landing-screen main .left {
 }
 
 section.landing-screen main .left .leftPanelOption {
+  display: block;
   width: 100%;
   height: auto;
   margin-bottom: 10px;
@@ -1022,6 +1023,10 @@ section.landing-screen main .left .leftPanelOption .leftPanelOptions {
 section.landing-screen main .left .leftPanelOption .leftPanelOptions:hover {
   -webkit-transition-duration: 0.1s;
           transition-duration: 0.1s;
+}
+
+section.landing-screen main .left .leftPanelOption .leftPanelOptions a {
+  color: #555555;
 }
 
 section.landing-screen main .left .leftPanelOption .leftPanelOptions .leftPanelOption {
@@ -1306,7 +1311,8 @@ section.landing-screen main .right .articles .addPost textarea {
   padding: 10px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.199);
 }
 
 section.landing-screen main .right .articles .addPost input:focus,
@@ -1333,7 +1339,7 @@ section.landing-screen main .right .articles .addPost .addPostPanel .buttonMain 
 section.landing-screen main .right .articles .addPost .addMainHeading {
   height: 50px !important;
   font-size: 150%;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.02);
 }
 
 section.landing-screen main .right .articles .addPost .addContent {
