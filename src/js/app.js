@@ -115,6 +115,11 @@ var leftPanel = [{
         optionIcon: [`<i class="fas fa-key"></i>`, `<i class="fas fa-sign-out-alt"></i>`],
     }
 ];
+var calander  = {
+    month:"Jan",
+    year:"2020",
+    dates:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
+}
 // top panel name and dropdown options
 var topPanel = [{
         name: "Lorem",
@@ -269,6 +274,14 @@ function leftpanelDropdownn() {
             $("+.leftPanelOptions", this).removeClass("showOptions");
         }
     });
+}
+function calendar(){
+    datesContent="";
+    $(".calanderApp .main").html(`<i class="fas fa-caret-left monthSwitch-left"></i>${calander.month} ${calander.year}<i class="fas fa-caret-right monthSwitch-right"></i>`);
+    calander.dates.forEach(date => {
+        datesContent += `<div class="cell">${date}</div>`
+    });
+    $(".calanderApp .container").html(datesContent);
 }
 //Task-manager
 function reminderAppMaxBTN() {
@@ -513,6 +526,7 @@ $(document).ready(function () {
     addLeftPanelOptions();
     topPanelDropdown();
     leftpanelDropdownn();
+    calendar();
     //Task-manager
     reminderAppMaxBTN();
     taskList(); //
