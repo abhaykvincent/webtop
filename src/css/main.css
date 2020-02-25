@@ -980,27 +980,32 @@ section.landing-screen main .left .leftPanelOption {
   height: auto;
   margin-bottom: 20px;
   background-color: rgba(212, 212, 212, 0.815);
+  border-radius: 3px;
 }
 
 section.landing-screen main .left .leftPanelOption .leftPanelLabel {
-  cursor: pointer;
+  cursor: s-resize;
   width: 100%;
   height: 40px;
   font-size: 50%;
   padding-left: 20px;
-  background-color: rgba(228, 228, 228, 0.164);
+  background-color: rgba(228, 228, 228, 0.15);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   line-height: 40px;
+  border-radius: 3px;
 }
 
 section.landing-screen main .left .leftPanelOption .leftPanelLabel h1 {
-  cursor: s-resize;
   font-weight: 300;
 }
 
 section.landing-screen main .left .leftPanelOption .leftPanelLabel h1 i {
   margin-right: 10px;
+}
+
+section.landing-screen main .left .leftPanelOption .leftPanelLabel_active {
+  cursor: n-resize !important;
 }
 
 section.landing-screen main .left .leftPanelOption .leftPanelOptions {
@@ -1010,6 +1015,7 @@ section.landing-screen main .left .leftPanelOption .leftPanelOptions {
   overflow: hidden;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
+  border-radius: 3px;
 }
 
 section.landing-screen main .left .leftPanelOption .leftPanelOptions:hover {
@@ -1020,16 +1026,17 @@ section.landing-screen main .left .leftPanelOption .leftPanelOptions:hover {
 section.landing-screen main .left .leftPanelOption .leftPanelOptions .leftPanelOption {
   height: 30px;
   width: 100%;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin: 0px  !important;
   padding-left: 20px;
   line-height: 30PX;
   font-weight: 300;
   font-size: 80%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  border-radius: 1px;
   -webkit-transition-duration: 0.1s;
           transition-duration: 0.1s;
+  background-color: #f1f1f1;
 }
 
 section.landing-screen main .left .leftPanelOption .leftPanelOptions .leftPanelOption i {
@@ -1037,7 +1044,7 @@ section.landing-screen main .left .leftPanelOption .leftPanelOptions .leftPanelO
 }
 
 section.landing-screen main .left .leftPanelOption .leftPanelOptions .leftPanelOption:HOVER {
-  background-color: rgba(167, 167, 167, 0.3);
+  background-color: rgba(240, 240, 240, 0.5);
   -webkit-transition-duration: 0.1s;
           transition-duration: 0.1s;
 }
@@ -1047,6 +1054,10 @@ section.landing-screen main .left .leftPanelOption .showOptions {
   height: auto;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
+}
+
+section.landing-screen main .left .leftPanelOption .showOptions + .leftPanelLabel {
+  cursor: n-resize !important;
 }
 
 section.landing-screen main .left .leftPanelOption.randomFeature1 {

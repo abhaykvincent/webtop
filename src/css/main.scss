@@ -567,23 +567,28 @@ section {
                     height: auto;
                     margin-bottom: 20px;
                     background-color: rgba(212, 212, 212, 0.815);
+                    border-radius: 3px;
 
                     .leftPanelLabel {
-                        cursor: pointer;
+                        cursor: s-resize;
                         width: 100%;
                         height: 40px;
                         font-size: 50%;
                         padding-left: 20px;
-                        background-color: rgba(228, 228, 228, 0.164);
+                        background-color: rgba(228, 228, 228, 0.15);
                         box-sizing: border-box;
                         line-height: 40px;
+                        border-radius: 3px;
+                        
                         h1{
-                            cursor: s-resize;
                             font-weight: 300;
                             i{
                                 margin-right: 10px;
                             }
                         }
+                    }
+                    .leftPanelLabel_active{
+                        cursor: n-resize !important;
                     }
 
                     .leftPanelOptions {
@@ -592,6 +597,7 @@ section {
                         height: 0px;
                         overflow: hidden;
                         transition-duration: 0.3s;
+                        border-radius: 3px;
 
                         &:hover {
                             transition-duration: 0.1s;
@@ -600,19 +606,20 @@ section {
                         .leftPanelOption {
                             height: 30px;
                             width: 100%;
-                            margin-top: 5px;
-                            margin-bottom: 5px;
+                            margin: 0px  !important;
                             padding-left: 20px;
                             line-height: 30PX;
                             font-weight: 300;
                             font-size: 80%;
                             box-sizing: border-box;
+                            border-radius: 1px;
                             transition-duration: 0.1s;
+                            background-color: rgb(241, 241, 241);
                             i{
                                 margin-right: 10px;
                             }
                             &:HOVER {
-                                background-color: rgba(167, 167, 167, 0.3);
+                                background-color: rgba(240, 240, 240, 0.5);
                                 transition-duration: 0.1s;
                             }
                             &:first-child {
@@ -625,6 +632,9 @@ section {
                         width: 100%;
                         height: auto;
                         transition-duration: 0.3s;
+                        & + .leftPanelLabel{
+                            cursor: n-resize !important;
+                        }
 
                     }
 

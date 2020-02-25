@@ -258,9 +258,11 @@ function leftpanelDropdownn() {
         e.preventDefault();
         if (isActive === "false") {
             $(this).data("active", "true");
+            $(this).addClass("leftPanelLabel_active");
             $("+.leftPanelOptions", this).addClass("showOptions");
         } else {
             $(this).data("active", "false");
+            $(this).removeClass("leftPanelLabel_active");
             $("+.leftPanelOptions", this).removeClass("showOptions");
         }
     });
