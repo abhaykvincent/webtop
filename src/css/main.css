@@ -1086,8 +1086,9 @@ section.landing-screen main .left .leftPanelOption.randomFeature2 {
 
 section.landing-screen main .left .settings {
   display: inline-block;
-  background-color: rgba(128, 128, 128, 0.1);
+  background-color: rgba(128, 128, 128, 0);
   margin-bottom: 5px;
+  border: 0px;
 }
 
 section.landing-screen main .left .settings .leftPanelEdit {
@@ -1095,7 +1096,6 @@ section.landing-screen main .left .settings .leftPanelEdit {
   display: block;
   float: right;
   margin: 0px;
-  padding: 2px 10px;
   font-size: 80%;
   font-weight: 300;
   color: #535353;

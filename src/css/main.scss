@@ -663,14 +663,14 @@ section {
 
                 .settings {
                     display: inline-block;
-                    background-color: rgba(128, 128, 128, 0.1);
+                    background-color: rgba(128, 128, 128, 0.0);
                     margin-bottom: 5px;
+                    border: 0px;;
                     .leftPanelEdit{
                         cursor: pointer;
                         display: block;
                         float: right;
                         margin: 0px;
-                        padding: 2px 10px;
                         font-size: 80%;
                         font-weight: 300;
                         color:rgb(83, 83, 83) ;
