@@ -504,6 +504,7 @@ section {
                     margin-right: 20px;
                     .dropdownIcon{
                         float: right;
+                        color: rgba(0, 0, 0, 0.7)
                     }
 
                     .topPanelOption-heading {
@@ -581,7 +582,10 @@ section {
                         box-sizing: border-box;
                         line-height: 40px;
                         border-radius: 3px;
-                        
+                        .dropdownIcon{
+                            float:right;
+                            line-height: 40px;
+                        }
                         h1{
                             font-weight: 300;
                             i{
@@ -591,6 +595,9 @@ section {
                     }
                     .leftPanelLabel_active{
                         cursor: n-resize !important;
+                        h1{
+
+                        }
                     }
 
                     .leftPanelOptions {
@@ -694,6 +701,11 @@ section {
                                 color: rgba(0, 0, 0, 0.9);
                                 transition-duration: 0.1s;
                             }
+                            &:active{
+                                transform: scale(2);
+                                color: rgba(0, 0, 0, 0) ;
+            
+                            }
                         }
                     }
                     .main{
@@ -702,6 +714,7 @@ section {
                         color: white;
                         background-color: rgb(255, 80, 80);
                         border-radius: 2px 2px 10px 10px;
+                        border: 1px solid rgba(0, 0, 0, 0.1);
                         .monthSwitch-left{
                             cursor: w-resize;
                             float: left;
@@ -722,11 +735,12 @@ section {
                         }
                     }
                     .container{
+                        display: inline-block;
                         width: 100%;
                         padding:5px;
                         color: white;
-                        background-color: rgb(218, 218, 218);
-                        display: inline-block;
+                        background-color: rgb(230, 230, 230);
+                        border: 1px solid rgba(0, 0, 0, 0.1);
                         .cell{
                             cursor: pointer;
                             display: inline-block;
@@ -738,11 +752,15 @@ section {
                             color: rgb(68, 68, 68);
                             background:rgba(0, 0, 0, 0.1);
                             transition-duration: 0.2s;
+                            &.today{
+                                color: rgb(235, 235, 235);
+                                background:rgba(0, 0, 0, 0.4);
+                                transform: scale(1.1);
+                            }
                             &:hover{
                                 color: rgb(240, 240, 240);
                                 background:rgba(0, 0, 0, 0.5);
                                 transform: scale(1.3);
-
                             }
                         }
                     }

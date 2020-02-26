@@ -116,9 +116,10 @@ var leftPanel = [{
     }
 ];
 var calander  = {
-    month:"Jan",
+    month:"January",
     year:"2020",
-    dates:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
+    dates:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],
+    today: 13
 }
 // top panel name and dropdown options
 var topPanel = [{
@@ -229,7 +230,7 @@ function addLeftPanelOptions() {
     leftPanel.forEach(element => {
         content += `<div class="leftPanelOption">
                         <div class="leftPanelLabel">
-                        <h1>${element.icon} ${element.name}</h1>
+                            <h1>${element.icon} ${element.name} <i class="dropdownIcon fas fa-chevron-down"></i></h1>
                         </div>
                         <div class="leftPanelOptions">`
         element.options.forEach((option, i) => {
@@ -268,10 +269,14 @@ function leftpanelDropdownn() {
             $(this).data("active", "true");
             $(this).addClass("leftPanelLabel_active");
             $("+.leftPanelOptions", this).addClass("showOptions");
+            $(".dropdownIcon",this ).addClass("fa-chevron-up");
+            $(".dropdownIcon",this ).removeClass("fa-chevron-down");
         } else {
             $(this).data("active", "false");
             $(this).removeClass("leftPanelLabel_active");
             $("+.leftPanelOptions", this).removeClass("showOptions");
+            $(".dropdownIcon",this ).removeClass("fa-chevron-up");
+            $(".dropdownIcon",this ).addClass("fa-chevron-down");
         }
     });
 }
@@ -279,7 +284,12 @@ function calendar(){
     datesContent="";
     $(".calanderApp .main").html(`<i class="fas fa-caret-left monthSwitch-left"></i>${calander.month} ${calander.year}<i class="fas fa-caret-right monthSwitch-right"></i>`);
     calander.dates.forEach(date => {
-        datesContent += `<div class="cell">${date}</div>`
+        if(date == calander.today){
+            datesContent += `<div class="cell today">${date}</div>`
+        }
+        else{
+            datesContent += `<div class="cell">${date}</div>`
+        }
     });
     $(".calanderApp .container").html(datesContent);
 }
@@ -291,6 +301,7 @@ function reminderAppMaxBTN() {
         let isActive = $(".heading .maximize").data('active');
         e.preventDefault();
         if (isActive === "false") {
+            document.title="Task Manager";
             console.log("was inactive");
             $(".heading .maximize").data("active", "true");
             $("#todoLists").css({
@@ -314,6 +325,7 @@ function reminderAppMaxBTN() {
             $(".toToAPP").css("padding", "0px 40px 0px 0px");
         } else {
             console.log("was active");
+            document.title="Webtop";
             $(".heading .maximize").data("active", "false");
             $("#todoLists").css({
                 "width": "100%"
