@@ -281,6 +281,7 @@ function leftpanelDropdownn() {
     });
 }
 function calendar(){
+    //html structure
     datesContent="";
     $(".calanderApp .main").html(`<i class="fas fa-caret-left monthSwitch-left"></i>${calander.month} ${calander.year}<i class="fas fa-caret-right monthSwitch-right"></i>`);
     calander.dates.forEach(date => {
@@ -292,6 +293,19 @@ function calendar(){
         }
     });
     $(".calanderApp .container").html(datesContent);
+    //functionality
+    $(".cell").data("active", true);
+    $(".container .cell").click(function (e) { 
+        e.preventDefault();
+        if($(".cell").data("active")  == false){
+            $(".cell").data("active", true);
+            $(".info").removeClass("active");
+        }
+        else{
+            $(".cell").data("active", false);
+            $(".info").addClass("active");
+        }
+    });
 }
 //Task-manager
 function reminderAppMaxBTN() {

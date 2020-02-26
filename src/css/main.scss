@@ -7,7 +7,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,300i,400i,500,600,700,700i,800,900&display=swap');
 
 body {
-	font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif ;
     background-color: rgba(250, 250, 250, 1)
 }
 
@@ -595,9 +595,6 @@ section {
                     }
                     .leftPanelLabel_active{
                         cursor: n-resize !important;
-                        h1{
-
-                        }
                     }
 
                     .leftPanelOptions {
@@ -615,6 +612,7 @@ section {
                         }
                         .leftPanelOption {
                             width: 100%;
+                            height: auto;
                             margin: 0px  !important;
                             padding: 4px 20px;
                             padding-left: 20px;
@@ -632,9 +630,6 @@ section {
                                 background-color: rgba(240, 240, 240, 0.5);
                                 transition-duration: 0.1s;
                             }
-                            &:first-child {
-                                
-                            }
                         }
                     }
 
@@ -646,18 +641,6 @@ section {
                             cursor: n-resize !important;
                         }
 
-                    }
-
-                    &.randomFeature1 {
-                        margin-top: 40px;
-                        height: 300px;
-                        background-color: rgb(128, 128, 128);
-                    }
-
-                    &.randomFeature2 {
-                        margin-top: 40px;
-                        height: 600px;
-                        background-color: rgba(128, 128, 128, 0.876);
                     }
                 }
 
@@ -715,6 +698,7 @@ section {
                         background-color: rgb(255, 80, 80);
                         border-radius: 2px 2px 10px 10px;
                         border: 1px solid rgba(0, 0, 0, 0.1);
+                        box-sizing: border-box;
                         .monthSwitch-left{
                             cursor: w-resize;
                             float: left;
@@ -741,6 +725,7 @@ section {
                         color: white;
                         background-color: rgb(230, 230, 230);
                         border: 1px solid rgba(0, 0, 0, 0.1);
+                        box-sizing: border-box;
                         .cell{
                             cursor: pointer;
                             display: inline-block;
@@ -756,13 +741,41 @@ section {
                                 color: rgb(235, 235, 235);
                                 background:rgba(0, 0, 0, 0.4);
                                 transform: scale(1.1);
+                                &:hover{
+                                    color: rgb(240, 240, 240);
+                                    background:#13627a;
+                                    transform: scale(1.3);
+                                }
                             }
                             &:hover{
                                 color: rgb(240, 240, 240);
-                                background:rgba(0, 0, 0, 0.5);
+                                background:#23abd4;
                                 transform: scale(1.3);
                             }
                         }
+                    }
+                    .info{
+                        width: 100%;
+                        height: 0px;
+                        margin-top: -15px;
+                        padding-top: 0px !important;
+                        background-color: rgb(223, 223, 223);
+
+                        text-align: left;
+                        border: 2px;
+                        transition-duration: 0.2s;
+                        overflow: hidden;
+                        box-sizing: border-box;
+                    }
+                    .info.active{
+                        width: 100%;
+                        height: auto;
+                        border: 2px;
+                        margin-top: -15px;
+                        padding: 0px  10px;
+                        padding-top: 20px !important;
+                        padding-bottom: 15px !important;
+                        box-sizing: border-box;
                     }
                 }
             }
@@ -919,8 +932,8 @@ section {
                     .editor {
                         display: inline-block;
                         width: 100%;
-                        height: 20px;
-                        margin-bottom: 20px;
+                        height: 15px;
+                        margin-bottom: 0px;
                         background-color: rgba(255, 255, 255, 0);
 
                         .buttons {
@@ -957,6 +970,13 @@ section {
                             border-bottom: 1px solid rgba(0, 0, 0, 0.199);
                             &:focus {
                                 outline: none;
+                                &::placeholder{
+                                    font-size: 110%;
+                                    transition-duration: 0.2s;
+                                }
+                            }
+                            &::placeholder{
+                                color: rgba(0, 0, 0, 0.3)
                             }
                         }
                         .addPostPanel{
@@ -968,6 +988,25 @@ section {
                             padding: 10px;
                             box-sizing: border-box;
                             background-color: rgba(0, 0, 0, 0.03);
+                            .postStylings{
+                                display: inline-block;
+                                height: 40px;
+                                line-height: 40px;
+                                i{
+                                    margin: 0px 5px;
+                                    font-weight: 600 !important;
+                                    font-size: 100%;
+                                    color: rgba(0, 0, 0, 0.5);
+                                    &:hover{
+                                        color: rgba(0, 0, 0, 0.8);
+                                        transform: scale(1.3);
+                                    }
+                                    &:active{
+                                        color: rgba(0, 0, 0, 1);
+                                        transform: scale(2);
+                                    }
+                                }
+                            }
                             .buttonMain{
                                 background-color: #1bab2d;
                             }
@@ -985,9 +1024,10 @@ section {
                             height: auto;
                             background-color: rgba(0, 0, 0, 0.0);
                             width: 100% !important;
-                            font-size: 80%;
+                            font-size: 70%;
+                            font-weight: 300;
                             margin: 0px !important;
-                            padding: 10px 30px;
+                            padding: 10px 10px;
                         }
                     }
                 }
@@ -996,6 +1036,7 @@ section {
                     float: right;
                     width: 50%;
                     padding: 0px 40px;
+                    margin-top: 20px;
                     box-sizing: border-box;
 
                     .app {

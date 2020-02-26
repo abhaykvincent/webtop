@@ -1037,6 +1037,7 @@ section.landing-screen main .left .leftPanelOption .leftPanelOptions a {
 
 section.landing-screen main .left .leftPanelOption .leftPanelOptions .leftPanelOption {
   width: 100%;
+  height: auto;
   margin: 0px  !important;
   padding: 4px 20px;
   padding-left: 20px;
@@ -1070,18 +1071,6 @@ section.landing-screen main .left .leftPanelOption .showOptions {
 
 section.landing-screen main .left .leftPanelOption .showOptions + .leftPanelLabel {
   cursor: n-resize !important;
-}
-
-section.landing-screen main .left .leftPanelOption.randomFeature1 {
-  margin-top: 40px;
-  height: 300px;
-  background-color: gray;
-}
-
-section.landing-screen main .left .leftPanelOption.randomFeature2 {
-  margin-top: 40px;
-  height: 600px;
-  background-color: rgba(128, 128, 128, 0.876);
 }
 
 section.landing-screen main .left .settings {
@@ -1151,6 +1140,8 @@ section.landing-screen main .left .calendar .main {
   background-color: #ff5050;
   border-radius: 2px 2px 10px 10px;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 section.landing-screen main .left .calendar .main .monthSwitch-left {
@@ -1184,6 +1175,8 @@ section.landing-screen main .left .calendar .container {
   color: white;
   background-color: #e6e6e6;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 section.landing-screen main .left .calendar .container .cell {
@@ -1207,11 +1200,45 @@ section.landing-screen main .left .calendar .container .cell.today {
           transform: scale(1.1);
 }
 
-section.landing-screen main .left .calendar .container .cell:hover {
+section.landing-screen main .left .calendar .container .cell.today:hover {
   color: #f0f0f0;
-  background: rgba(0, 0, 0, 0.5);
+  background: #13627a;
   -webkit-transform: scale(1.3);
           transform: scale(1.3);
+}
+
+section.landing-screen main .left .calendar .container .cell:hover {
+  color: #f0f0f0;
+  background: #23abd4;
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+
+section.landing-screen main .left .calendar .info {
+  width: 100%;
+  height: 0px;
+  margin-top: -15px;
+  padding-top: 0px !important;
+  background-color: #dfdfdf;
+  text-align: left;
+  border: 2px;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+section.landing-screen main .left .calendar .info.active {
+  width: 100%;
+  height: auto;
+  border: 2px;
+  margin-top: -15px;
+  padding: 0px  10px;
+  padding-top: 20px !important;
+  padding-bottom: 15px !important;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 section.landing-screen main .right {
@@ -1385,8 +1412,8 @@ section.landing-screen main .right .articles article .content {
 section.landing-screen main .right .articles .editor {
   display: inline-block;
   width: 100%;
-  height: 20px;
-  margin-bottom: 20px;
+  height: 15px;
+  margin-bottom: 0px;
   background-color: rgba(255, 255, 255, 0);
 }
 
@@ -1431,6 +1458,52 @@ section.landing-screen main .right .articles .addPost textarea:focus {
   outline: none;
 }
 
+section.landing-screen main .right .articles .addPost input:focus::-webkit-input-placeholder,
+section.landing-screen main .right .articles .addPost textarea:focus::-webkit-input-placeholder {
+  font-size: 110%;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+section.landing-screen main .right .articles .addPost input:focus:-ms-input-placeholder,
+section.landing-screen main .right .articles .addPost textarea:focus:-ms-input-placeholder {
+  font-size: 110%;
+  transition-duration: 0.2s;
+}
+
+section.landing-screen main .right .articles .addPost input:focus::-ms-input-placeholder,
+section.landing-screen main .right .articles .addPost textarea:focus::-ms-input-placeholder {
+  font-size: 110%;
+  transition-duration: 0.2s;
+}
+
+section.landing-screen main .right .articles .addPost input:focus::placeholder,
+section.landing-screen main .right .articles .addPost textarea:focus::placeholder {
+  font-size: 110%;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+section.landing-screen main .right .articles .addPost input::-webkit-input-placeholder,
+section.landing-screen main .right .articles .addPost textarea::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+section.landing-screen main .right .articles .addPost input:-ms-input-placeholder,
+section.landing-screen main .right .articles .addPost textarea:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+section.landing-screen main .right .articles .addPost input::-ms-input-placeholder,
+section.landing-screen main .right .articles .addPost textarea::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+section.landing-screen main .right .articles .addPost input::placeholder,
+section.landing-screen main .right .articles .addPost textarea::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
 section.landing-screen main .right .articles .addPost .addPostPanel {
   display: inline-block;
   border: 0px;
@@ -1441,6 +1514,31 @@ section.landing-screen main .right .articles .addPost .addPostPanel {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0.03);
+}
+
+section.landing-screen main .right .articles .addPost .addPostPanel .postStylings {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+}
+
+section.landing-screen main .right .articles .addPost .addPostPanel .postStylings i {
+  margin: 0px 5px;
+  font-weight: 600 !important;
+  font-size: 100%;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+section.landing-screen main .right .articles .addPost .addPostPanel .postStylings i:hover {
+  color: rgba(0, 0, 0, 0.8);
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+
+section.landing-screen main .right .articles .addPost .addPostPanel .postStylings i:active {
+  color: black;
+  -webkit-transform: scale(2);
+          transform: scale(2);
 }
 
 section.landing-screen main .right .articles .addPost .addPostPanel .buttonMain {
@@ -1457,15 +1555,17 @@ section.landing-screen main .right .articles .addPost .addContent {
   height: auto;
   background-color: rgba(0, 0, 0, 0);
   width: 100% !important;
-  font-size: 80%;
+  font-size: 70%;
+  font-weight: 300;
   margin: 0px !important;
-  padding: 10px 30px;
+  padding: 10px 10px;
 }
 
 section.landing-screen main .right .toToAPP {
   float: right;
   width: 50%;
   padding: 0px 40px;
+  margin-top: 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }

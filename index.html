@@ -92,7 +92,9 @@
                      <h1>Calendar<i class="fas fa-expand expand"></i></h1>
                     <div class="calanderApp">
                         <div class="main"></div>
-                        <div class="container">
+                        <div class="container"></div>
+                        <div class="info">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elitunde.
                         </div>
                     </div>
                 </div>
@@ -122,20 +124,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="infinity-loader">
-                </div>
                 <div class="articles">
                     <article class="editor">
-                        <div class="buttons ">Add Post</div>
-                        <div class="buttons ">Reminders</div>
-                        <div class="buttons rightTools ">Add Post</div>
                     </article>
                     
                     <article id="addPost" class="addPost">
-                        <textarea type="text" name="" class="addMainHeading"></textarea>
-                        <textarea type="text" name="" class="addSubHeading"></textarea>
-                        <textarea type="text" class="addContent" id="" cols="30" rows="10"></textarea>
+                        <textarea type="text" id="addMainHeading" class="addMainHeading" placeholder="Heading" onkeyup="javascript:capitalize(this.id, this.value);"></textarea>
+                        <textarea type="text" id="addSubHeading" class="addSubHeading"  placeholder="Sub heading" onkeyup="javascript:capitalize(this.id, this.value);"></textarea>
+                        <textarea type="text" id="addContent" class="addContent" id="" cols="30" rows="10"  placeholder="Content" onkeyup="javascript:capitalize(this.id, this.value);"></textarea>
                         <div class="addPostPanel">
+                            <div class="postStylings">
+                                <i class="fas fa-paperclip"></i>
+                                <i class="fas fa-bold"></i>
+                                <i class="fas fa-italic"></i>
+                            </div>
                             <div class="buttonMain">Add Post</div>
                         </div>
 
@@ -186,6 +188,7 @@
     <script src="src/js/vendor/TweenMax.min.js"></script>
     <script src="https://kit.fontawesome.com/9f2e6fd0b8.js" crossorigin="anonymous"></script>
     <script src="src/js/app.js"></script>
+    <script src="src/js/lib.js"></script>
     <!-- Styles -->
     <link rel="stylesheet" href="src/css/main.css">
     <link rel="stylesheet" href="src/css/animation.css">
