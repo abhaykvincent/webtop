@@ -7,7 +7,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,300i,400i,500,600,700,700i,800,900&display=swap');
 
 body {
-	font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif ;
     background-color: rgba(250, 250, 250, 1)
 }
 
@@ -142,7 +142,7 @@ section {
             background-color: rgb(231, 231, 231);
             border-radius: 15px;
             z-index: 70;
-            font-family: 'Poppins';
+            font-family: 'Poppins',sans-serif;
             text-align: center;
             transform: translate(-50%,-50%) scale(0);
             border:1px solid rgb(211, 67, 67);
@@ -504,6 +504,7 @@ section {
                     margin-right: 20px;
                     .dropdownIcon{
                         float: right;
+                        color: rgba(0, 0, 0, 0.7)
                     }
 
                     .topPanelOption-heading {
@@ -556,7 +557,7 @@ section {
             }
 
             .left {
-                font-family: 'Poppins';
+                font-family: 'Poppins',sans-serif;
                 float: left;
                 width: 20%;
                 padding: 40px;
@@ -581,7 +582,10 @@ section {
                         box-sizing: border-box;
                         line-height: 40px;
                         border-radius: 3px;
-                        
+                        .dropdownIcon{
+                            float:right;
+                            line-height: 40px;
+                        }
                         h1{
                             font-weight: 300;
                             i{
@@ -608,6 +612,7 @@ section {
                         }
                         .leftPanelOption {
                             width: 100%;
+                            height: auto;
                             margin: 0px  !important;
                             padding: 4px 20px;
                             padding-left: 20px;
@@ -625,9 +630,6 @@ section {
                                 background-color: rgba(240, 240, 240, 0.5);
                                 transition-duration: 0.1s;
                             }
-                            &:first-child {
-                                
-                            }
                         }
                     }
 
@@ -640,30 +642,18 @@ section {
                         }
 
                     }
-
-                    &.randomFeature1 {
-                        margin-top: 40px;
-                        height: 300px;
-                        background-color: rgb(128, 128, 128);
-                    }
-
-                    &.randomFeature2 {
-                        margin-top: 40px;
-                        height: 600px;
-                        background-color: rgba(128, 128, 128, 0.876);
-                    }
                 }
 
                 .settings {
                     display: inline-block;
-                    background-color: rgba(128, 128, 128, 0.1);
+                    background-color: rgba(128, 128, 128, 0.0);
                     margin-bottom: 5px;
+                    border: 0px;;
                     .leftPanelEdit{
                         cursor: pointer;
                         display: block;
                         float: right;
                         margin: 0px;
-                        padding: 2px 10px;
                         font-size: 80%;
                         font-weight: 300;
                         color:rgb(83, 83, 83) ;
@@ -673,6 +663,168 @@ section {
                         &:hover{
                             text-decoration: underline;
                         }
+                    }
+                }
+                .calendar{
+                    text-align: center;
+                    margin-top: 20px;
+                    padding-top: 10px;
+                    border-top: 1px  solid rgba(0, 0, 0, 0.3);
+                    border-radius: 2px;
+                    h1{
+                        font-weight: 200;
+                        font-size: 100%;
+                        margin-bottom: 10px;
+                        .expand{
+                            float:right;
+                            color: rgba(0, 0, 0, 0.7);
+                            transition-duration: 0.2s;
+                            &:hover{
+                                transform: scale(1.3);
+                                color: rgba(0, 0, 0, 0.9);
+                                transition-duration: 0.1s;
+                            }
+                            &:active{
+                                transform: scale(2);
+                                color: rgba(0, 0, 0, 0) ;
+            
+                            }
+                        }
+                    }
+                    .main{
+                        width: 100%;
+                        padding:5px;
+                        color: white;
+                        background-color: rgb(255, 80, 80);
+                        border-radius: 2px 2px 10px 10px;
+                        border: 1px solid rgba(0, 0, 0, 0.1);
+                        box-sizing: border-box;
+                        .monthSwitch-left{
+                            cursor: w-resize;
+                            float: left;
+                            padding: 0px 5px;
+                            &:active{
+                                color: rgb(168, 31, 31);
+                                transform: scale(1.3);
+                            }
+                        }
+                        .monthSwitch-right{
+                            cursor: e-resize;
+                            float: right;
+                            padding: 0px 5px;
+                            &:active{
+                                color: rgb(168, 31, 31);
+                                transform: scale(1.3);
+                            }
+                        }
+                    }
+                    .container{
+                        display: inline-block;
+                        width: 100%;
+                        padding:5px;
+                        color: white;
+                        background-color: rgb(255, 255, 255);
+                        border: 1px solid rgba(0, 0, 0, 0.1);
+                        box-sizing: border-box;
+                        border: 1px solid rgba(0, 0, 0, 0.2);
+                        .cell{
+                            cursor: pointer;
+                            display: inline-block;
+                            float: left;
+                            width:calc(10%  -  2px);
+                            margin: 1%;
+                            padding: 1%;
+                            height: 20px;
+                            color: rgb(68, 68, 68);
+                            background:rgba(0, 0, 0, 0.01);
+                            font-size: 90%;
+                            line-height: 20px;
+                            text-align: center;
+                            border: 1px solid  rgba(0, 0, 0, 0.1);
+                            transition-duration: 0.2s;
+                            border-radius: 5px;
+                            &.today{
+                                width:calc(10%  -  2px);
+                                height: 18px;
+                                line-height: 18px;
+                                color: rgb(68, 68, 68);
+                                border: 1px solid  rgba(0, 0, 0, 0.3);
+                                background:rgba(0, 0, 0, 0.05);
+                                transform: scale(1.1);
+                                &:hover{
+                                    color: rgb(240, 240, 240);
+                                    transform: scale(1.3);
+                                }
+                            }
+                            &:hover{
+                                color: rgb(54, 54, 54);
+                                background:#5da8d3;
+                                transform: scale(1.3);
+                            }
+                            &:nth-child(7n){
+                                background-color: rgba(190, 144, 58, 0.1);
+                                border: 1px solid rgba(190, 144, 58, 0.4);
+                                
+                            }
+                            &:nth-child(7n+1){
+                                background-color: rgba(190, 58, 58, 0.1);
+                                border: 1px solid rgba(190, 58, 58, 0.4);
+                                &:hover{
+                                    color: rgb(15, 15, 15);
+                                }
+                            }
+                        }
+                        .dayLabel{
+                            display: inline-block;
+                            float: left;
+                            height: auto;
+                            width:calc(10%  -  2px);
+                            margin: 1%;
+                            padding: 1%;
+                            background-color: rgba(0, 0, 0, 0);
+                            color: rgb(68, 68, 68);
+                            text-align: center;
+                            font-size: 60%;
+                            font-weight: 200;
+                            line-height: 15px;
+                            border: 1px solid  rgba(0, 0, 0, 0.0);
+                            &:hover{
+                                color: rgb(68, 68, 68);
+                                background-color: rgba(0, 0, 0, 0);
+                                transform: scale(1);
+                            }
+                            &:nth-child(7n){
+                                color: rgb(224, 147, 4) !important;
+                                background-color: rgba(190, 144, 58, 0) !important;
+                                border: 1px solid rgba(190, 144, 58, 0) !important;
+                            }
+                            &:nth-child(7n+1){
+                                color: rgba(190, 58, 58, 0.9) !important;
+                                background-color: rgba(190, 58, 58, 0) !important;
+                                border: 1px solid rgba(190, 58, 58, 0) !important;
+                            }
+                        }
+                    }
+                    .info{
+                        width: 100%;
+                        height: 0px;
+                        margin-top: -15px;
+                        padding: 0px 15px!important;
+                        background-color: rgb(220, 220, 220);
+
+                        text-align: left;
+                        border: 1px solid rgb(194, 194, 194);;
+                        transition-duration: 0.2s;
+                        overflow: hidden;
+                        box-sizing: border-box;
+                    }
+                    .info.active{
+                        width: 100%;
+                        height: auto;
+                        margin-top: -15px;
+                        padding: 20px  15px  15px 15px !important;
+                        text-align: left;
+                        box-sizing: border-box;
                     }
                 }
             }
@@ -703,7 +855,7 @@ section {
                     min-height: 10px;
 
                     article {
-                        font-family: 'Poppins';
+                        font-family: 'Poppins' sans-serif;
                         position: relative;
                         width: 100%;
                         height: auto;
@@ -829,8 +981,8 @@ section {
                     .editor {
                         display: inline-block;
                         width: 100%;
-                        height: 20px;
-                        margin-bottom: 20px;
+                        height: 15px;
+                        margin-bottom: 0px;
                         background-color: rgba(255, 255, 255, 0);
 
                         .buttons {
@@ -867,6 +1019,13 @@ section {
                             border-bottom: 1px solid rgba(0, 0, 0, 0.199);
                             &:focus {
                                 outline: none;
+                                &::placeholder{
+                                    font-size: 50%;
+                                    transition-duration: 0.2s;
+                                }
+                            }
+                            &::placeholder{
+                                color: rgba(0, 0, 0, 0.3)
                             }
                         }
                         .addPostPanel{
@@ -878,6 +1037,25 @@ section {
                             padding: 10px;
                             box-sizing: border-box;
                             background-color: rgba(0, 0, 0, 0.03);
+                            .postStylings{
+                                display: inline-block;
+                                height: 40px;
+                                line-height: 40px;
+                                i{
+                                    margin: 0px 5px;
+                                    font-weight: 600 !important;
+                                    font-size: 100%;
+                                    color: rgba(0, 0, 0, 0.5);
+                                    &:hover{
+                                        color: rgba(0, 0, 0, 0.8);
+                                        transform: scale(1.3);
+                                    }
+                                    &:active{
+                                        color: rgba(0, 0, 0, 1);
+                                        transform: scale(2);
+                                    }
+                                }
+                            }
                             .buttonMain{
                                 background-color: #1bab2d;
                             }
@@ -895,9 +1073,10 @@ section {
                             height: auto;
                             background-color: rgba(0, 0, 0, 0.0);
                             width: 100% !important;
-                            font-size: 80%;
+                            font-size: 70%;
+                            font-weight: 300;
                             margin: 0px !important;
-                            padding: 10px 30px;
+                            padding: 10px 10px;
                         }
                     }
                 }
@@ -906,6 +1085,7 @@ section {
                     float: right;
                     width: 50%;
                     padding: 0px 40px;
+                    margin-top: 20px;
                     box-sizing: border-box;
 
                     .app {
