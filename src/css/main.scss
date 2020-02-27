@@ -142,7 +142,7 @@ section {
             background-color: rgb(231, 231, 231);
             border-radius: 15px;
             z-index: 70;
-            font-family: 'Poppins';
+            font-family: 'Poppins',sans-serif;
             text-align: center;
             transform: translate(-50%,-50%) scale(0);
             border:1px solid rgb(211, 67, 67);
@@ -557,7 +557,7 @@ section {
             }
 
             .left {
-                font-family: 'Poppins';
+                font-family: 'Poppins',sans-serif;
                 float: left;
                 width: 20%;
                 padding: 40px;
@@ -723,34 +723,85 @@ section {
                         width: 100%;
                         padding:5px;
                         color: white;
-                        background-color: rgb(230, 230, 230);
+                        background-color: rgb(255, 255, 255);
                         border: 1px solid rgba(0, 0, 0, 0.1);
                         box-sizing: border-box;
+                        border: 1px solid rgba(0, 0, 0, 0.2);
                         .cell{
                             cursor: pointer;
                             display: inline-block;
                             float: left;
-                            width:10%;
+                            width:calc(10%  -  2px);
                             margin: 1%;
                             padding: 1%;
                             height: 20px;
                             color: rgb(68, 68, 68);
-                            background:rgba(0, 0, 0, 0.1);
+                            background:rgba(0, 0, 0, 0.01);
+                            font-size: 90%;
+                            line-height: 20px;
+                            text-align: center;
+                            border: 1px solid  rgba(0, 0, 0, 0.1);
                             transition-duration: 0.2s;
+                            border-radius: 5px;
                             &.today{
-                                color: rgb(235, 235, 235);
-                                background:rgba(0, 0, 0, 0.4);
+                                width:calc(10%  -  2px);
+                                height: 18px;
+                                line-height: 18px;
+                                color: rgb(68, 68, 68);
+                                border: 1px solid  rgba(0, 0, 0, 0.3);
+                                background:rgba(0, 0, 0, 0.05);
                                 transform: scale(1.1);
                                 &:hover{
                                     color: rgb(240, 240, 240);
-                                    background:#13627a;
                                     transform: scale(1.3);
                                 }
                             }
                             &:hover{
-                                color: rgb(240, 240, 240);
-                                background:#23abd4;
+                                color: rgb(54, 54, 54);
+                                background:#5da8d3;
                                 transform: scale(1.3);
+                            }
+                            &:nth-child(7n){
+                                background-color: rgba(190, 144, 58, 0.1);
+                                border: 1px solid rgba(190, 144, 58, 0.4);
+                                
+                            }
+                            &:nth-child(7n+1){
+                                background-color: rgba(190, 58, 58, 0.1);
+                                border: 1px solid rgba(190, 58, 58, 0.4);
+                                &:hover{
+                                    color: rgb(15, 15, 15);
+                                }
+                            }
+                        }
+                        .dayLabel{
+                            display: inline-block;
+                            float: left;
+                            height: auto;
+                            width:calc(10%  -  2px);
+                            margin: 1%;
+                            padding: 1%;
+                            background-color: rgba(0, 0, 0, 0);
+                            color: rgb(68, 68, 68);
+                            text-align: center;
+                            font-size: 60%;
+                            font-weight: 200;
+                            line-height: 15px;
+                            border: 1px solid  rgba(0, 0, 0, 0.0);
+                            &:hover{
+                                color: rgb(68, 68, 68);
+                                background-color: rgba(0, 0, 0, 0);
+                                transform: scale(1);
+                            }
+                            &:nth-child(7n){
+                                color: rgb(224, 147, 4) !important;
+                                background-color: rgba(190, 144, 58, 0) !important;
+                                border: 1px solid rgba(190, 144, 58, 0) !important;
+                            }
+                            &:nth-child(7n+1){
+                                color: rgba(190, 58, 58, 0.9) !important;
+                                background-color: rgba(190, 58, 58, 0) !important;
+                                border: 1px solid rgba(190, 58, 58, 0) !important;
                             }
                         }
                     }
@@ -758,11 +809,11 @@ section {
                         width: 100%;
                         height: 0px;
                         margin-top: -15px;
-                        padding-top: 0px !important;
-                        background-color: rgb(223, 223, 223);
+                        padding: 0px 15px!important;
+                        background-color: rgb(220, 220, 220);
 
                         text-align: left;
-                        border: 2px;
+                        border: 1px solid rgb(194, 194, 194);;
                         transition-duration: 0.2s;
                         overflow: hidden;
                         box-sizing: border-box;
@@ -770,11 +821,9 @@ section {
                     .info.active{
                         width: 100%;
                         height: auto;
-                        border: 2px;
                         margin-top: -15px;
-                        padding: 0px  10px;
-                        padding-top: 20px !important;
-                        padding-bottom: 15px !important;
+                        padding: 20px  15px  15px 15px !important;
+                        text-align: left;
                         box-sizing: border-box;
                     }
                 }
@@ -806,7 +855,7 @@ section {
                     min-height: 10px;
 
                     article {
-                        font-family: 'Poppins';
+                        font-family: 'Poppins' sans-serif;
                         position: relative;
                         width: 100%;
                         height: auto;
@@ -971,7 +1020,7 @@ section {
                             &:focus {
                                 outline: none;
                                 &::placeholder{
-                                    font-size: 110%;
+                                    font-size: 50%;
                                     transition-duration: 0.2s;
                                 }
                             }

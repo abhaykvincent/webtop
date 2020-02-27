@@ -284,7 +284,7 @@ function calendar(){
     //html structure
     datesContent="";
     $(".calanderApp .main").html(`<i class="fas fa-caret-left monthSwitch-left"></i>${calander.month} ${calander.year}<i class="fas fa-caret-right monthSwitch-right"></i>`);
-    calander.dates.forEach(date => {
+    calander.dates.forEach((date) => {
         if(date == calander.today){
             datesContent += `<div class="cell today">${date}</div>`
         }
@@ -292,7 +292,7 @@ function calendar(){
             datesContent += `<div class="cell">${date}</div>`
         }
     });
-    $(".calanderApp .container").html(datesContent);
+    $(".calanderApp .container").append(datesContent);
     //functionality
     $(".cell").data("active", true);
     $(".container .cell").click(function (e) { 
