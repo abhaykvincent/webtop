@@ -280,6 +280,7 @@ function leftpanelDropdownn() {
         }
     });
 }
+//calander
 function calendar(){
     //html structure
     datesContent="";
@@ -293,6 +294,8 @@ function calendar(){
         }
     });
     $(".calanderApp .container").append(datesContent);
+    $(".appsWindow").hide();
+    $(".currentApp").show();
     //functionality
     $(".cell").data("active", true);
     $(".container .cell").click(function (e) { 
@@ -306,6 +309,17 @@ function calendar(){
             $(".info").addClass("active");
         }
     });
+    $(".expand").click(function (e) { 
+        e.preventDefault();
+        calendarAdvanced();
+    });
+}
+function calendarAdvanced(){
+    console.log("Advanced Calendar");
+    $(".currentApp").removeClass("currentApp");
+    $("#advancedCalendar").addClass("currentApp");
+    $(".appsWindow").hide();
+    $(".currentApp").show();
 }
 //Task-manager
 function reminderAppMaxBTN() {

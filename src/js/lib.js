@@ -8,3 +8,7 @@ function capitalize(textboxid, str) {
     }
     document.getElementById(textboxid).value = str;
 }
+function showCurrentApp(){
+    $(".appsWindow").hide();
+    $(".currentApp").show();
+}
