@@ -549,7 +549,6 @@ function loadPosts() {
                             <div class="settings"><i class="fas fa-ellipsis-v"></i></div>
                             <div class="panelSettingsWindow"></div>
                         </div>
-                        <h1 class="mainHeading">${post.heading}</h1>
                         <h2 class="subHeading">${post.heading}</h2>
                         <p class="description place">${post.location} <i class="fas fa-map-marker-alt"></i></p>
                         <p class="description date">${post.date} <i class="fas fa-calendar-day"></i></p>
