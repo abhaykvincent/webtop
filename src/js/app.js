@@ -280,8 +280,13 @@ function leftpanelDropdownn() {
         }
     });
 }
+//calander
 function calendar(){
     //html structure
+    var d = new Date();
+    calander.today =  d.getDate();
+    calander.month =  getMonthName(d.getMonth());
+
     datesContent="";
     $(".calanderApp .main").html(`<i class="fas fa-caret-left monthSwitch-left"></i>${calander.month} ${calander.year}<i class="fas fa-caret-right monthSwitch-right"></i>`);
     calander.dates.forEach((date) => {
@@ -293,6 +298,7 @@ function calendar(){
         }
     });
     $(".calanderApp .container").append(datesContent);
+    showCurrentApp();
     //functionality
     $(".cell").data("active", true);
     $(".container .cell").click(function (e) { 
@@ -306,6 +312,31 @@ function calendar(){
             $(".info").addClass("active");
         }
     });
+
+    $(".expand").data("active", true);
+    $(".expand").click(function (e) { 
+        e.preventDefault();
+        console.log("active=true");
+        if( $(".expand").data("active")  == true){
+            $(".expand").data("active", false);
+            console.log("active=false");
+            calendarAdvanced();
+        }
+        else{
+            $(".expand").data("active", true);
+            console.log("active=true");
+            calendarAdvanced_hide();
+        }
+    });
+}
+function calendarAdvanced(){
+    console.log("Advanced Calendar");
+    $(".currentApp").removeClass("currentApp");
+    $("#advancedCalendar").addClass("currentApp");
+    showCurrentApp()
+}
+function calendarAdvanced_hide(){
+    hideAllApp();
 }
 //Task-manager
 function reminderAppMaxBTN() {
@@ -355,7 +386,7 @@ function reminderAppMaxBTN() {
             $(".heading .maximize").css({
                 "width": "35px"
             });
-            $(".toToAPP").css("width", "50%");
+            $(".toToAPP").css("width", "30%");
             $(".toToAPP").css("padding", "0px 40px");
 
         }
@@ -565,6 +596,8 @@ $(document).ready(function () {
     //footer
     addFooter_techs();
     addAppVersion();
+    click_monalisa();
     
     productionMode(".landing-screen");
+    //productionMode(".accounts-screen");
 });

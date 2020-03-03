@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Webtop</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134910798-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-134910798-2');
+    </script>
 </head>
 
 <body>
@@ -43,11 +52,11 @@
         </div>
 
         <header>
-            <div class="desktop-wave-top"></div>
+            <!-- <div class="desktop-wave-top"></div> -->
             
             <div class="logo"><i class="fab fa-weebly"></i></div>
             <div class="search">
-                <button class="searchButton">Search <i class="fas fa-search"></i></button>
+                <button class="searchButton  click">Search <i class="fas fa-search"></i></button>
                 <input class="searchInput" type="text" placeholder="search" name="" id="">
             </div>
             <div class="settings">
@@ -134,12 +143,13 @@
                 </div>
                 <div class="articles">
                     <article class="editor">
+                        <i class="minimize fas fa-compress"></i>
                     </article>
                     
-                    <article id="addPost" class="addPost">
-                        <textarea type="text" id="addMainHeading" class="addMainHeading" placeholder="Heading" onkeyup="javascript:capitalize(this.id, this.value);"></textarea>
-                        <textarea type="text" id="addSubHeading" class="addSubHeading"  placeholder="Sub heading" onkeyup="javascript:capitalize(this.id, this.value);"></textarea>
-                        <textarea type="text" id="addContent" class="addContent" id="" cols="30" rows="10"  placeholder="Content" onkeyup="javascript:capitalize(this.id, this.value);"></textarea>
+                    <article id="addPost" class="addPost appsWindow currentApp">
+                        <textarea type="text" id="addMainHeading" class="addMainHeading" placeholder="Heading"              onkeyup="javascript:capitalize(this.id, this.value);"  oninput="auto_grow(this)"></textarea>
+                        <textarea type="text" id="addSubHeading" class="addSubHeading"  placeholder="Sub heading"           onkeyup="javascript:capitalize(this.id, this.value);"  oninput="auto_grow(this)"></textarea>
+                        <textarea type="text" id="addContent" class="addContent" cols="30" rows="10"  placeholder="Content" onkeyup="javascript:capitalize(this.id, this.value);"  oninput="auto_grow(this)"></textarea>
                         <div class="addPostPanel">
                             <div class="postStylings">
                                 <i class="fas fa-paperclip"></i>
@@ -148,7 +158,24 @@
                             </div>
                             <div class="buttonMain">Add Post</div>
                         </div>
+                    </article>
 
+                    <article id="advancedCalendar" class=" appsWindow">
+                            <div class="calanderApp">
+                                <div class="main"></div>
+                                <div class="container">
+                                    <div class="dayLabel">Sun</div>
+                                    <div class="dayLabel">Mon</div>
+                                    <div class="dayLabel">Tue</div>
+                                    <div class="dayLabel">Wed</div>
+                                    <div class="dayLabel">Thu</div>
+                                    <div class="dayLabel">Fri</div>
+                                    <div class="dayLabel">Sat</div>
+                                </div>
+                                <div class="info">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elitunde.
+                                </div>
+                            </div>
                     </article>
                 </div>
         </main>
@@ -187,7 +214,9 @@
             <a href="">Quibusdam</a>
         </div>
     </section>
-
+    <audio controls>
+        <source id="click_monalisa" src="/src/sound/click_monalisa.mp3" type="audio/mpeg">
+      </audio>
 
     <!-- File connections -->
 
