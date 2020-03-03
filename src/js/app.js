@@ -146,15 +146,15 @@ var tasks = [{
     status: "pending"
 }, {
     taskId: 3,
-    taskName: "Resume",
+    taskName: "React App",
     status: "pending"
 }, {
     taskId: 4,
-    taskName: "Regex Form",
+    taskName: "Wordpress",
     status: "pending"
 }, {
     taskId: 5,
-    taskName: "Wordpress",
+    taskName: "Co-op",
     status: "pending"
 }];
 // Blog post Panel setting options and icons
