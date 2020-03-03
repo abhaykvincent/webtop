@@ -253,6 +253,42 @@ function addTopPanelOptions() {
         content += `</div></div>`;
     });
     $(".panels.top").append(content);
+
+    //Top panel option drop down
+    $(".topPanelOption-heading").data("active", "false");
+    $(".topPanelOption-heading").mouseenter(function (e) {
+        let isActive = $(this).data('active');
+        e.preventDefault();
+        if (isActive === "false") {
+            $(".topPanelOption-heading").data("active", "false");
+            $(this).data("active", "true");
+            $(".topPanelOption-list").removeClass("topPanelOption-list-active");
+            $("+.topPanelOption-list", this).addClass("topPanelOption-list-active");
+        } else {
+            $(this).data("active", "false");
+            $("+.topPanelOption-list", this).removeClass("topPanelOption-list-active");
+            function addPorr()
+{
+
+    leaveHideLis
+}        }
+    });            
+    function leaveHideList(){       
+        $(".topPanelOption-heading").mouseleave(function (e) {
+            e.preventDefault();
+            let isActive = $(this).data('active');
+            if (isActive === "true") {
+                $(".topPanelOption-heading").data("active", "false");
+                $(this).data("active", "true");
+                $(".topPanelOption-list").removeClass("topPanelOption-list-active");
+                $("+.topPanelOption-list", this).addClass("topPanelOption-list-active");
+            } else {
+                $(this).data("active", "false");
+                $("+.topPanelOption-list", this).removeClass("topPanelOption-list-active");
+
+            }
+        });
+    }                   
 }
 function topPanelDropdown() { //Article panel settings drop down
 
@@ -284,13 +320,20 @@ function leftpanelDropdownn() {
 function calendar(){
     //html structure
     var d = new Date();
-    calander.today =  d.getDate();
+    calander.today =  29//d.getDate();
     calander.month =  getMonthName(d.getMonth());
+    calander.day  =d.getDay();
 
     datesContent="";
+    for(i=0;i<=7-d.getDay();i++)
+    {
+        datesContent += `<div class="cell"></div>`
+    }
     $(".calanderApp .main").html(`<i class="fas fa-caret-left monthSwitch-left"></i>${calander.month} ${calander.year}<i class="fas fa-caret-right monthSwitch-right"></i>`);
-    calander.dates.forEach((date) => {
+    calander.dates.forEach((date,i) => {
+
         if(date == calander.today){
+            console.log(i);
             datesContent += `<div class="cell today">${date}</div>`
         }
         else{
@@ -454,6 +497,13 @@ function deleteTask() {
                 taskList();
     });
 }
+//Coin Flip
+function coin_flip(){
+    $(".currentApp").removeClass("currentApp");
+    $("#coinFlipApp").addClass("currentApp");
+    showCurrentApp();
+
+}
 //Blog
 function panelFunctionality() {
     $(".panel .settings").data("active", "false");
@@ -478,22 +528,6 @@ function panelFunctionality() {
         }
     });
 
-    //Top panel option drop down
-    $(".topPanelOption-heading").data("active", "false");
-    $(".topPanelOption-heading").mouseenter(function (e) {
-        let isActive = $(this).data('active');
-        e.preventDefault();
-        if (isActive === "false") {
-            $(".topPanelOption-heading").data("active", "false");
-            $(this).data("active", "true");
-            $(".topPanelOption-list").removeClass("topPanelOption-list-active");
-            $("+.topPanelOption-list", this).addClass("topPanelOption-list-active");
-        } else {
-            $(this).data("active", "false");
-            $("+.topPanelOption-list", this).removeClass("topPanelOption-list-active");
-
-        }
-    });
 }
 function loadPostSettings() {
     let content = "";
