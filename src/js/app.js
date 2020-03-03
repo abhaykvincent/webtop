@@ -157,6 +157,44 @@ var tasks = [{
     taskName: "Co-op",
     status: "pending"
 }];
+var illustartions=[
+    {
+        name:"Illustration",
+        src:"art1.jpg"
+    },
+    {
+        name:"Illustration",
+        src:"art2.jpg"
+    },
+    {
+        name:"Illustration",
+        src:"art3.jpg"
+    },
+    {
+        name:"Illustration",
+        src:"art4.jpg"
+    },
+    {
+        name:"Illustration",
+        src:"art5.jpg"
+    },
+    {
+        name:"Illustration",
+        src:"art6.jpg"
+    },
+    {
+        name:"Illustration",
+        src:"art7.jpg"
+    },
+    {
+        name:"Illustration",
+        src:"art8.jpg"
+    },
+    {
+        name:"Illustration",
+        src:"art9.jpg"
+    },
+]
 // Blog post Panel setting options and icons
 var postSettings = {
     options: [{
@@ -504,6 +542,23 @@ function coin_flip(){
     showCurrentApp();
 
 }
+//Arts
+function loadArts(){
+    loadIllustrations();
+}
+function loadIllustrations(){
+    let content ="";
+    illustartions.forEach(illustartion => {
+        content+=`<div class="illustration"
+                style="background-image: url('./src/img/illustrations/${illustartion.src}')">
+            </div>`;
+    });
+    $(".illustrations").html(content);
+    //styling
+    //var cw = $(".illustration").width();
+    console.log(document.querySelectorAll('.illustrations').offsetWidth);
+    //$(".illustration").css({'height':cw+'px'});
+}
 //Blog
 function panelFunctionality() {
     $(".panel .settings").data("active", "false");
@@ -622,6 +677,8 @@ $(document).ready(function () {
     taskList(); //
     deleteTask();
     addTask();
+    //Arts
+    loadArts();
     //Blogs
     loadPosts();
     panelFunctionality();

@@ -71,3 +71,9 @@ function getMonthName(x){
             break;
     }
 }
+
+function setHeightAsWidth(div){
+    var cw = $(div).width();
+    $(div).css({'height':cw+'px'});
+    console.log(div + cw);
+}

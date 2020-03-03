@@ -1270,8 +1270,23 @@ section {
                             background-color: rgba(0, 0, 0, 0.1);
                         }
                     }
+                    }
+                    #arts{
+                        .illustration{
+                            cursor: pointer;
+                            display: inline-block;
+                            width: calc(33.3% - 20px);
+                            padding-top: calc(33.3% - 20px);
+                            margin: 10px;
+                            background-size: 100% ;
+                            background-repeat: no-repeat ;
+                            background-position: center;
+                            &:hover{
+                                transform: scale(1.2);
+                            }
+                        }
+                    }
                 }
-
                 .toToAPP {
                     float: right;
                     width: 30%;
@@ -1595,4 +1610,5 @@ section {
             }
         }
     }
+    
 }
