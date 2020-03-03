@@ -9,11 +9,14 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134910798-2"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'UA-134910798-2');
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-134910798-2');
     </script>
 </head>
 
@@ -53,7 +56,7 @@
 
         <header>
             <!-- <div class="desktop-wave-top"></div> -->
-            
+
             <div class="logo"><i class="fab fa-weebly"></i></div>
             <div class="search">
                 <button class="searchButton  click">Search <i class="fas fa-search"></i></button>
@@ -98,7 +101,7 @@
                     <p class="leftPanelEdit"><i class="fas fa-cog"></i> Edit</p>
                 </div>
                 <div class="calendar">
-                     <h1>Calendar<i class="fas fa-expand expand"></i></h1>
+                    <h1>Calendar<i class="fas fa-expand expand"></i></h1>
                     <div class="calanderApp">
                         <div class="main"></div>
                         <div class="container">
@@ -145,11 +148,15 @@
                     <article class="editor">
                         <i class="minimize fas fa-compress"></i>
                     </article>
-                    
-                    <article id="addPost" class="addPost appsWindow currentApp">
-                        <textarea type="text" id="addMainHeading" class="addMainHeading" placeholder="Heading"              onkeyup="javascript:capitalize(this.id, this.value);"  oninput="auto_grow(this)"></textarea>
-                        <textarea type="text" id="addSubHeading" class="addSubHeading"  placeholder="Sub heading"           onkeyup="javascript:capitalize(this.id, this.value);"  oninput="auto_grow(this)"></textarea>
-                        <textarea type="text" id="addContent" class="addContent" cols="30" rows="10"  placeholder="Content" onkeyup="javascript:capitalize(this.id, this.value);"  oninput="auto_grow(this)"></textarea>
+
+                    <article id="addPost" class="addPost appsWindow ">
+                        <textarea contenteditable="TRUE" type="text" id="addMainHeading" class="addMainHeading" placeholder="Heading"
+                            onkeyup="javascript:capitalize(this.id, this.value);" oninput="auto_grow(this)"></textarea>
+                        <textarea type="text" id="addSubHeading" class="addSubHeading" placeholder="Sub heading"
+                            onkeyup="javascript:capitalize(this.id, this.value);" oninput="auto_grow(this)"></textarea>
+                        <textarea type="text" id="addContent" class="addContent" cols="30" rows="10"
+                            placeholder="Content" onkeyup="javascript:capitalize(this.id, this.value);"
+                            oninput="auto_grow(this)"></textarea>
                         <div class="addPostPanel">
                             <div class="postStylings">
                                 <i class="fas fa-paperclip"></i>
@@ -161,21 +168,30 @@
                     </article>
 
                     <article id="advancedCalendar" class=" appsWindow">
-                            <div class="calanderApp">
-                                <div class="main"></div>
-                                <div class="container">
-                                    <div class="dayLabel">Sun</div>
-                                    <div class="dayLabel">Mon</div>
-                                    <div class="dayLabel">Tue</div>
-                                    <div class="dayLabel">Wed</div>
-                                    <div class="dayLabel">Thu</div>
-                                    <div class="dayLabel">Fri</div>
-                                    <div class="dayLabel">Sat</div>
-                                </div>
-                                <div class="info">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elitunde.
-                                </div>
+                        <div class="calanderApp">
+                            <div class="main"></div>
+                            <div class="container">
+                                <div class="dayLabel">Sun</div>
+                                <div class="dayLabel">Mon</div>
+                                <div class="dayLabel">Tue</div>
+                                <div class="dayLabel">Wed</div>
+                                <div class="dayLabel">Thu</div>
+                                <div class="dayLabel">Fri</div>
+                                <div class="dayLabel">Sat</div>
                             </div>
+                            <div class="info">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elitunde.
+                            </div>
+                        </div>
+                    </article>
+
+                    <article id="coinFlipApp" class="appWindow">
+                        <div class="coinCanvas">
+                            <div class="coin"></div>
+                                <div class="tossCoin"></div>
+                            <div class="coin"></div>
+                        </div>
+                        <div class="coin-panel"></div>
                     </article>
                 </div>
         </main>
@@ -216,7 +232,7 @@
     </section>
     <audio controls>
         <source id="click_monalisa" src="/src/sound/click_monalisa.mp3" type="audio/mpeg">
-      </audio>
+    </audio>
 
     <!-- File connections -->
 
