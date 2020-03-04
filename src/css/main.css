@@ -1872,8 +1872,8 @@ section.landing-screen main .right .articles #arts .illustration {
 }
 
 section.landing-screen main .right .articles #arts .illustration:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 section.landing-screen main .right .toToAPP {

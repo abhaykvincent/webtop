@@ -160,39 +160,39 @@ var tasks = [{
 var illustartions=[
     {
         name:"Illustration",
-        src:"art1.jpg"
+        src:"art-low-0.jpg"
     },
     {
         name:"Illustration",
-        src:"art2.jpg"
+        src:"art-low-1.jpg"
     },
     {
         name:"Illustration",
-        src:"art3.jpg"
+        src:"art-low-2.jpg"
     },
     {
         name:"Illustration",
-        src:"art4.jpg"
+        src:"art-low-3.jpg"
     },
     {
         name:"Illustration",
-        src:"art5.jpg"
+        src:"art-low-4.jpg"
     },
     {
         name:"Illustration",
-        src:"art6.jpg"
+        src:"art-low-5.jpg"
     },
     {
         name:"Illustration",
-        src:"art7.jpg"
+        src:"art-low-6.jpg"
     },
     {
         name:"Illustration",
-        src:"art8.jpg"
+        src:"art-low-7.jpg"
     },
     {
         name:"Illustration",
-        src:"art9.jpg"
+        src:"art-low-8.jpg"
     },
 ]
 // Blog post Panel setting options and icons
@@ -550,7 +550,7 @@ function loadIllustrations(){
     let content ="";
     illustartions.forEach(illustartion => {
         content+=`<div class="illustration"
-                style="background-image: url('./src/img/illustrations/${illustartion.src}')">
+                style="background-image: url('./src/img/illustrations/low/test/${illustartion.src}')">
             </div>`;
     });
     $(".illustrations").html(content);
